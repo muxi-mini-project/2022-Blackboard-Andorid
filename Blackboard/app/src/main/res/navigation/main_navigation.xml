@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/CallboardFragment">
+
+    <fragment
+        android:id="@+id/CallboardFragment"
+        android:name="com.example.blackboard.CallboardFragment"
+        android:label="通告板"
+        tools:layout="@layout/callboard_fragment" />
+    <fragment
+        android:id="@+id/MineFragment"
+        android:name="com.example.blackboard.MineFragment"
+        android:label="我的"
+        tools:layout="@layout/mine_fragment" />
+</navigation>
