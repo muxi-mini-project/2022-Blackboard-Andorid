@@ -2,4 +2,5 @@
     <string name="app_name">Blackboard</string>
     <string name="login_number_label">学号</string>
     <string name="login_password_label">密码</string>
+    <string name="login_button">登录</string>
 </resources>
