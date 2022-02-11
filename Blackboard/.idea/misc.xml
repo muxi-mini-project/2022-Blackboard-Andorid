@@ -3,15 +3,29 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Public/AndroidStudioProjects/Blackboard/app/src/main/res/drawable/button.xml" value="0.37552083333333336" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/Blackboard/app/src/main/res/drawable/edit_background.xml" value="0.37552083333333336" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/Blackboard/app/src/main/res/drawable/edittext_style.xml" value="0.37552083333333336" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/Blackboard/app/src/main/res/drawable/edittext_style_focused.xml" value="0.37552083333333336" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/Blackboard/app/src/main/res/drawable/edittext_style_normal.xml" value="0.37552083333333336" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/Blackboard/app/src/main/res/drawable/edittext_sytle.xml" value="0.37552083333333336" />
+        <entry key="..\:/Users/Public/AndroidStudioProjects/Blackboard/app/src/main/res/drawable/nav_bg.xml" value="0.37552083333333336" />
+        <entry key="..\:/Users/Public/AndroidStudioProjects/Blackboard/app/src/main/res/drawable/tab_menu_bg.xml" value="0.37552083333333336" />
+        <entry key="..\:/Users/Public/AndroidStudioProjects/Blackboard/app/src/main/res/drawable/tab_menu_message.xml" value="0.36974358974358973" />
+        <entry key="..\:/Users/Public/AndroidStudioProjects/Blackboard/app/src/main/res/drawable/tab_menu_mine.xml" value="0.36974358974358973" />
+        <entry key="..\:/Users/Public/AndroidStudioProjects/Blackboard/app/src/main/res/drawable/tab_menu_text.xml" value="0.36974358974358973" />
+        <entry key="..\:/Users/Public/AndroidStudioProjects/Blackboard/app/src/main/res/layout/activity_board.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/Blackboard/app/src/main/res/layout/activity_login.xml" value="0.3170289855072464" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/Blackboard/app/src/main/res/layout/activity_main.xml" value="0.30480072463768115" />
+        <entry key="..\:/Users/Public/AndroidStudioProjects/Blackboard/app/src/main/res/layout/activity_mine.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Public/AndroidStudioProjects/Blackboard/app/src/main/res/layout/activity_search.xml" value="0.30570652173913043" />
+        <entry key="..\:/Users/Public/AndroidStudioProjects/Blackboard/app/src/main/res/layout/activty_board.xml" value="0.3038949275362319" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/Blackboard/app/src/main/res/layout/edit_background.xml" value="0.3242753623188406" />
+        <entry key="..\:/Users/Public/AndroidStudioProjects/Blackboard/app/src/main/res/layout/fragment_board.xml" value="0.3038949275362319" />
+        <entry key="..\:/Users/Public/AndroidStudioProjects/Blackboard/app/src/main/res/layout/fragment_message.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/Public/AndroidStudioProjects/Blackboard/app/src/main/res/layout/fragment_organization.xml" value="0.3038949275362319" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/Blackboard/app/src/main/res/layout/login_tab_fragment.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/Public/AndroidStudioProjects/Blackboard/app/src/main/res/menu/menu_navigation.xml" value="0.3333333333333333" />
       </map>
     </option>
   </component>
