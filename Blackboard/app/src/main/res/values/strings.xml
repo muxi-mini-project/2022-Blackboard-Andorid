@@ -7,4 +7,10 @@
     <string name="mine">我的</string>
     <string name="board_message">最新通知</string>
     <string name="board_organization">组织列表</string>
+    <string name="register_nickname_label">昵称</string>
+    <string name="register_nickname">快输入你的专属昵称吧~</string>
+    <string name="register_button">确认</string>
+    <string name="my_message">我的消息</string>
+    <string name="my_post">我的发布</string>
+    <string name="my_favorites">我的收藏</string>
 </resources>

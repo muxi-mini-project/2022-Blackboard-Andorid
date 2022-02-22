@@ -21,6 +21,8 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
     private BoardFragment f1;
     private OrganizationFragment f2;
     private FragmentManager manager;
+    private Button searchButton;
+    private Button addButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,8 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_board);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        searchButton = findViewById(R.id.board_search);
+        addButton = findViewById(R.id.board_add);
 
         //设置初始页面
         bottomNavigationView.setSelectedItemId(R.id.board);
@@ -52,6 +56,22 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
         manager = getSupportFragmentManager();
         init();
         messageButton.performClick();
+
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(BoardActivity.this, SearchActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(BoardActivity.this, AddActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void init() {

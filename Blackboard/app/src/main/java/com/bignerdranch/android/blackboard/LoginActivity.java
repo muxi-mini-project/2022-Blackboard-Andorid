@@ -62,7 +62,8 @@ public class LoginActivity extends AppCompatActivity {
         }
         //构建retrofit
         mRetrofit = new Retrofit.Builder()
-                .baseUrl("")
+                .baseUrl("http://122.112.236.36:8080/api/v1\n" +
+                        "/login")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(okHttpClientBuilder.build())
                 .build();
@@ -76,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
                 mToken =response.body().getToken();
                 if (mToken!=null&&!mToken.isEmpty()) {
                     Toast.makeText(LoginActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(LoginActivity.this, BoardActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                     startActivity(intent);
                 } else {
                     Toast.makeText(LoginActivity.this, "登陆失败", Toast.LENGTH_SHORT).show();
