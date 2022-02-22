@@ -14,8 +14,6 @@ import android.view.ViewGroup;
 
 public class CallboardFragment extends Fragment {
 
-    private CallboardViewModel mViewModel;
-
     public static CallboardFragment newInstance() {
         return new CallboardFragment();
     }
@@ -29,8 +27,6 @@ public class CallboardFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(CallboardViewModel.class);
-        // TODO: Use the ViewModel
     }
 
 }

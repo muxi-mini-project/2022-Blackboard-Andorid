@@ -3,6 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/MUXI/miniproject-blackboard/2022-Blackboard-Andorid/Blackboard/app/src/main/res/layout/callboard_fragment.xml" value="0.13323201621073963" />
+        <entry key="..\:/MUXI/miniproject-blackboard/2022-Blackboard-Andorid/Blackboard/app/src/main/res/layout/host_fragment.xml" value="0.2296195652173913" />
+        <entry key="..\:/MUXI/miniproject-blackboard/2022-Blackboard-Andorid/Blackboard/app/src/main/res/layout/main_activity.xml" value="0.1" />
+        <entry key="..\:/MUXI/miniproject-blackboard/2022-Blackboard-Andorid/Blackboard/app/src/main/res/layout/main_fragment.xml" value="0.13323201621073963" />
+        <entry key="..\:/MUXI/miniproject-blackboard/2022-Blackboard-Andorid/Blackboard/app/src/main/res/layout/mine_fragment.xml" value="0.2296195652173913" />
+        <entry key="..\:/MUXI/miniproject-blackboard/2022-Blackboard-Andorid/Blackboard/app/src/main/res/layout/notice_fragment.xml" value="0.13323201621073963" />
+        <entry key="..\:/MUXI/miniproject-blackboard/2022-Blackboard-Andorid/Blackboard/app/src/main/res/layout/organization_fragment.xml" value="0.2296195652173913" />
+        <entry key="..\:/MUXI/miniproject-blackboard/2022-Blackboard-Andorid/Blackboard/app/src/main/res/menu/callboard_menu.xml" value="0.27395833333333336" />
+        <entry key="..\:/MUXI/miniproject-blackboard/2022-Blackboard-Andorid/Blackboard/app/src/main/res/menu/main_menu.xml" value="0.27395833333333336" />
         <entry key="..\:/MyCodeStudy/AndroidStudioProjects/Blackboard/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2657407407407407" />
         <entry key="..\:/MyCodeStudy/AndroidStudioProjects/Blackboard/app/src/main/res/drawable/ic_baseline_assignment_24.xml" value="0.2657407407407407" />
         <entry key="..\:/MyCodeStudy/AndroidStudioProjects/Blackboard/app/src/main/res/drawable/ic_baseline_assignment_ind_24.xml" value="0.2657407407407407" />
