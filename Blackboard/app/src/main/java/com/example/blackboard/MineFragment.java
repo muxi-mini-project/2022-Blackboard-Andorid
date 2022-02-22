@@ -14,8 +14,6 @@ import android.view.ViewGroup;
 
 public class MineFragment extends Fragment {
 
-    private MineViewModel mViewModel;
-
     public static MineFragment newInstance() {
         return new MineFragment();
     }
@@ -29,8 +27,6 @@ public class MineFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(MineViewModel.class);
-        // TODO: Use the ViewModel
     }
 
 }

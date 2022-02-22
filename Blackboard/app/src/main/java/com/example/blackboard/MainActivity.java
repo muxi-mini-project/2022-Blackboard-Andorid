@@ -16,11 +16,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_fragment);
+        setContentView(R.layout.main_activity);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
-
-        NavController navController = Navigation.findNavController(this,R.id.bottomNavigationView);
-        AppBarConfiguration configuration = new AppBarConfiguration.Builder(bottomNavigationView.getMenu()).build();
+        NavController navController = Navigation.findNavController(this,R.id.host);
+        AppBarConfiguration configuration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this,navController,configuration);
         NavigationUI.setupWithNavController(bottomNavigationView,navController);
     }

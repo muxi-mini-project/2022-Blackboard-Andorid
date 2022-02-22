@@ -10,6 +10,7 @@
         android:name="com.example.blackboard.CallboardFragment"
         android:label="通告板"
         tools:layout="@layout/callboard_fragment" />
+
     <fragment
         android:id="@+id/MineFragment"
         android:name="com.example.blackboard.MineFragment"
