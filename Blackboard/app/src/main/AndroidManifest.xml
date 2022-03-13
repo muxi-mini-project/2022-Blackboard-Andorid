@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Blackboard">
         <activity
+            android:name=".PageActivity"
+            android:exported="true" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="true" />
         <activity

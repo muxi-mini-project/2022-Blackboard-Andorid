@@ -13,4 +13,11 @@
     <string name="my_message">我的消息</string>
     <string name="my_post">我的发布</string>
     <string name="my_favorites">我的收藏</string>
+    <string name="my_page">个人主页</string>
+    <string name="my_setting">设置</string>
+    <string name="page_post">发布</string>
+    <string name="page_favorites">收藏</string>
+    <string name="my_information">编辑资料</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -20,7 +20,7 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
     private Button organizationButton;
     private BoardFragment f1;
     private OrganizationFragment f2;
-    private FragmentManager manager;
+    private FragmentManager manager1;
     private Button searchButton;
     private Button addButton;
 
@@ -53,7 +53,7 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
             }
         });
 
-        manager = getSupportFragmentManager();
+        manager1 = getSupportFragmentManager();
         init();
         messageButton.performClick();
 
@@ -91,7 +91,7 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
     }
     @Override
     public void onClick(View view) {
-        FragmentTransaction transaction = manager.beginTransaction();
+        FragmentTransaction transaction = manager1.beginTransaction();
         hideAllFragment(transaction);
 
         switch (view.getId()) {

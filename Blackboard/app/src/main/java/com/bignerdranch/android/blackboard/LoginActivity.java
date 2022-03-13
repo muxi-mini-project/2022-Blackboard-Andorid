@@ -74,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
-                mToken =response.body().getToken();
+                mToken = response.body().getToken();
                 if (mToken!=null&&!mToken.isEmpty()) {
                     Toast.makeText(LoginActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
