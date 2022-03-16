@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+     <Button
+         android:id="@+id/settings_information"
+         android:text="@string/my_information"
+         android:padding="16dp"
+         android:textSize="16sp"
+         android:textAlignment="textStart"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:background="@drawable/button"
+         android:layout_marginTop="100dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/my_setting"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/settings_back"
+        android:layout_width="37dp"
+        android:layout_height="38dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/ic_settings_back"/>
+
+    <Button
+        android:id="@+id/exit"
+        android:text="@string/exit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"
+        android:textSize="20sp"
+        android:textColor="#ff0003"
+        android:layout_marginTop="180dp"/>
+
+
+</RelativeLayout>
