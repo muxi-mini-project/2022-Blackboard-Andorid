@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+<<<<<<< HEAD
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -26,12 +27,28 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
 
     //用于切换 通知和组织 的按钮
     int flag[] = new int[]{0, 0};
+=======
+import android.widget.TextView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+public class BoardActivity extends AppCompatActivity implements View.OnClickListener{
+
+    private Button messageButton;
+    private Button organizationButton;
+    private BoardFragment f1;
+    private OrganizationFragment f2;
+    private FragmentManager manager1;
+    private Button searchButton;
+    private Button addButton;
+>>>>>>> flsdqm
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_board);
 
+<<<<<<< HEAD
         /*          设置初始页面          */
 
         //初始化 BottomNavigation
@@ -41,12 +58,30 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuitem) {
                 switch (menuitem.getItemId()) {
+=======
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        searchButton = findViewById(R.id.board_search);
+        addButton = findViewById(R.id.board_add);
+
+        //设置初始页面
+        bottomNavigationView.setSelectedItemId(R.id.board);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuitem) {
+                switch(menuitem.getItemId()) {
+>>>>>>> flsdqm
                     case R.id.board:
                         return true;
 
                     case R.id.mine:
+<<<<<<< HEAD
                         startActivity(new Intent(getApplicationContext(), MineActivity.class));
                         overridePendingTransition(0, 0);
+=======
+                        startActivity(new Intent(getApplicationContext(),MineActivity.class));
+                        overridePendingTransition(0,0);
+>>>>>>> flsdqm
                         return true;
 
                 }
@@ -54,9 +89,16 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
             }
         });
 
+<<<<<<< HEAD
         //初始化 搜索和添加 按钮
         searchButton = findViewById(R.id.board_search);
         addButton = findViewById(R.id.board_add);
+=======
+        manager1 = getSupportFragmentManager();
+        init();
+        messageButton.performClick();
+
+>>>>>>> flsdqm
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,6 +106,10 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(intent);
             }
         });
+<<<<<<< HEAD
+=======
+
+>>>>>>> flsdqm
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,14 +117,21 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(intent);
             }
         });
+<<<<<<< HEAD
 
         //设置FragmentManager
         manager1 = getSupportFragmentManager();
         //初始化 通知和组织 按钮
+=======
+    }
+
+    private void init() {
+>>>>>>> flsdqm
         messageButton = findViewById(R.id.board_message);
         organizationButton = findViewById(R.id.board_organization);
         messageButton.setOnClickListener(this);
         organizationButton.setOnClickListener(this);
+<<<<<<< HEAD
         //默认点击 通知
         messageButton.performClick();
 
@@ -145,5 +198,41 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
         } else {
             organizationButton.setBackground(getDrawable(R.drawable.button_clicked));
         }
+=======
+    }
+
+    private void hideAllFragment(FragmentTransaction transaction) {
+        if (f1 != null) {
+            transaction.hide(f1);
+        }
+        if (f2 != null) {
+            transaction.hide(f2);
+        }
+    }
+    @Override
+    public void onClick(View view) {
+        FragmentTransaction transaction = manager1.beginTransaction();
+        hideAllFragment(transaction);
+
+        switch (view.getId()) {
+            case R.id.board_message:
+                if (f1 == null) {
+                    f1 = new BoardFragment();
+                    transaction.add(R.id.fragment_container, f1);
+                } else {
+                    transaction.show(f1);
+                }
+                break;
+            case R.id.board_organization:
+                if (f2 == null) {
+                    f2 = new OrganizationFragment();
+                    transaction.add(R.id.fragment_container, f2);
+                } else {
+                    transaction.show(f2);
+                }
+                break;
+        }
+        transaction.commit();
+>>>>>>> flsdqm
     }
 }
