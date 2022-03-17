@@ -43,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/button"
+            android:background="@drawable/button_clicked"
             android:text="@string/page_post"
             android:textSize="20sp" />
 
@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/button"
+            android:background="@drawable/button_clicked"
             android:text="@string/page_favorites"
             android:textSize="20sp" />
 
