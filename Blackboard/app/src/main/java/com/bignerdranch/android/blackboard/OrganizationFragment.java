@@ -23,7 +23,7 @@ public class OrganizationFragment extends Fragment {
         ELV = view.findViewById(R.id.ELV);
         //初始化数据
         final String[] parent = new String[]{"我加入的", "我创建的"};
-        final String[][] child = new String[][]{{"学校组织1", "学校组织2", "学校组织3"}, {"学校组织1", "学校组织2", "学校组织3"}};
+        final String[][] child = new String[][]{{"学校组织1", "学校组织2", "学校组织3"}, {"学校组织1", "学校组织2", "学校组织3","学校组织4"}};
         //使用Adapter
         OrganizationAdapter organizationAdapter = new OrganizationAdapter(parent,child,getActivity());
         ELV.setAdapter(organizationAdapter);
