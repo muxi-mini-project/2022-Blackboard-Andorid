@@ -7,12 +7,6 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <color name="gray">#11222222</color>
-=======
->>>>>>> flsdqm
-=======
     <color name="gray">#11222222</color>
 >>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
 </resources>

@@ -43,35 +43,13 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-<<<<<<< HEAD
-<<<<<<< HEAD
-            android:background="@drawable/button_clicked"
-=======
-            android:background="@drawable/button"
->>>>>>> flsdqm
-=======
-            android:background="@drawable/button_clicked"
->>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
-            android:text="@string/page_post"
-            android:textSize="20sp" />
-
+            android:background="@drawable/button_clicked"/>
         <Button
             android:id="@+id/page_favorites"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-<<<<<<< HEAD
-<<<<<<< HEAD
-            android:background="@drawable/button_clicked"
-=======
-            android:background="@drawable/button"
->>>>>>> flsdqm
-=======
-            android:background="@drawable/button_clicked"
->>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
-            android:text="@string/page_favorites"
-            android:textSize="20sp" />
-
+            android:background="@drawable/button_clicked"/>
     </LinearLayout>
 
     <androidx.fragment.app.FragmentContainerView

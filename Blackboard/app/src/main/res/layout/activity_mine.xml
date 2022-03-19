@@ -32,20 +32,8 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="44dp"
-<<<<<<< HEAD
-<<<<<<< HEAD
             android:background="@drawable/button_clicked"
-=======
-            android:background="@drawable/button"
->>>>>>> flsdqm
-=======
-            android:background="@drawable/button_clicked"
->>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
-            android:text="@string/my_message"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.264" />
+            tools:ignore="MissingConstraints" />
 
         <Button
             android:id="@+id/my_post"
@@ -56,20 +44,9 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="28dp"
-<<<<<<< HEAD
-<<<<<<< HEAD
+
             android:background="@drawable/button_clicked"
-=======
-            android:background="@drawable/button"
->>>>>>> flsdqm
-=======
-            android:background="@drawable/button_clicked"
->>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
-            android:text="@string/my_post"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/my_message"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.264" />
+            tools:ignore="MissingConstraints" />
 
         <Button
             android:id="@+id/my_favorites"
@@ -79,53 +56,27 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-<<<<<<< HEAD
-<<<<<<< HEAD
+
             android:background="@drawable/button_clicked"
-=======
-            android:background="@drawable/button"
->>>>>>> flsdqm
-=======
-            android:background="@drawable/button_clicked"
->>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
-            android:text="@string/my_favorites"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.367"
-            app:layout_constraintStart_toEndOf="@+id/my_post"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.264" />
+            tools:ignore="MissingConstraints" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="392dp"
-<<<<<<< HEAD
-<<<<<<< HEAD
             android:background="@drawable/button_clicked"
-=======
-            android:background="@drawable/button"
->>>>>>> flsdqm
-=======
-            android:background="@drawable/button_clicked"
->>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
-            android:text="@string/my_setting"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
-
+            tools:ignore="MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/bottom_navigation"
+        android:layout_alignParentBottom="true"
         app:itemBackground="@color/white"
-        app:itemTextColor="@drawable/selector"
         app:itemIconTint="@drawable/selector"
-        app:menu="@menu/menu_navigation"
-        android:layout_alignParentBottom="true"/>
+        app:itemTextColor="@drawable/selector"
+        app:menu="@menu/menu_navigation" />
 
 
 </RelativeLayout>

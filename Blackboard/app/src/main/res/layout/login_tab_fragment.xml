@@ -11,12 +11,14 @@
         android:text="@string/login_number_label"
         app:layout_constraintEnd_toStartOf="@+id/number"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="356dp" />
+        tools:layout_editor_absoluteY="356dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/login_password_label" />
+        android:text="@string/login_password_label"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/number"

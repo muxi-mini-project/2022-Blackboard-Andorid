@@ -3,29 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
-    <ExpandableListView
+  <ExpandableListView
         android:id="@+id/ELV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-<<<<<<< HEAD
-=======
-    <TextView
-        android:id="@+id/another_fragment_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="组织列表"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
->>>>>>> flsdqm
-=======
->>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
-
 </androidx.constraintlayout.widget.ConstraintLayout>

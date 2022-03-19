@@ -1,21 +1,11 @@
 package com.bignerdranch.android.blackboard;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 import android.graphics.drawable.Drawable;
-=======
->>>>>>> flsdqm
-=======
 import android.graphics.drawable.Drawable;
->>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -33,10 +23,9 @@ public class BoardFragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
-    {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //需要返回一个View        所以调用inflate
-        View view = inflater.inflate(R.layout.fragment_board,container,false);
+        View view = inflater.inflate(R.layout.fragment_board, container, false);
 
         //构造一个RecyclerView
         mRecyclerView = (RecyclerView) view.findViewById(R.id.rlv_board);
@@ -54,18 +43,15 @@ public class BoardFragment extends Fragment {
         return view;
     }
 
-    private class UpDate
-    {
+    private class UpDate {
         private ArrayList<MessageItem> items;
 
         //构造时候为items加入100个数据 并返回一个ArrayLIst
-        public ArrayList UpDate()
-        {
+        public ArrayList UpDate() {
             items = new ArrayList<>();
-            for (int i=0 ; i<100 ; i++)
-            {
+            for (int i = 0; i < 100; i++) {
                 MessageItem messageItem1 = new MessageItem();
-                messageItem1.setmName("name "+ i);
+                messageItem1.setmName("name " + i);
                 messageItem1.setmPhoto(R.drawable.ic_add);
                 messageItem1.setmText("text " + i);
                 items.add(messageItem1);
@@ -76,8 +62,7 @@ public class BoardFragment extends Fragment {
 
     }
 
-    private class myViewHolder extends RecyclerView.ViewHolder
-    {
+    private class myViewHolder extends RecyclerView.ViewHolder {
         private TextView textView_name;
         private ImageView imageView_photo;
         private TextView textView_text;
@@ -91,14 +76,12 @@ public class BoardFragment extends Fragment {
         }
     }
 
-    private class myAdapter extends RecyclerView.Adapter<myViewHolder>
-    {
+    private class myAdapter extends RecyclerView.Adapter<myViewHolder> {
         //adapter是RV的适配器 用于连数据与UI 所以需要一个数据列表List
-        ArrayList<MessageItem> data ;
+        ArrayList<MessageItem> data;
 
         //新建adapter需要构造器能将数据传入
-        public myAdapter(ArrayList<MessageItem> InData)
-        {
+        public myAdapter(ArrayList<MessageItem> InData) {
             this.data = InData;
         }
 
@@ -108,13 +91,12 @@ public class BoardFragment extends Fragment {
             //需要返回一个 myViewHolder       所以要new一个myViewHolder
             //myViewHolder函数 需要 View        所以要new一个View
             //inflate函数能将xml文件加载成View   所以要调用一个inflate函数(View子类)
-            View view = LayoutInflater.from(getActivity()).inflate(R.layout.item_message,null,false);
+            View view = LayoutInflater.from(getActivity()).inflate(R.layout.item_message, null, false);
             return new myViewHolder(view);
         }
 
         @Override
-        public void onBindViewHolder(@NonNull myViewHolder holder, int position)
-        {
+        public void onBindViewHolder(@NonNull myViewHolder holder, int position) {
             MessageItem messageItem = data.get(position);
 
             holder.textView_name.setText(messageItem.getmName());
@@ -124,23 +106,17 @@ public class BoardFragment extends Fragment {
         }
 
         @Override
-        public int getItemCount()
-        {
+        public int getItemCount() {
             return data.size();
         }
     }
-<<<<<<< HEAD
-=======
-
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
-public class BoardFragment extends Fragment {
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_board, container, false);
-        return view;
-    }
->>>>>>> flsdqm
-=======
->>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
 }
+//import androidx.annotation.Nullable;
+//import androidx.fragment.app.Fragment;
+
+//public class BoardFragment extends Fragment {
+//    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+//        View view = inflater.inflate(R.layout.fragment_board, container, false);
+//        return view;
+//    }
+//}
