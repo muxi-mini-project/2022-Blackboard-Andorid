@@ -32,6 +32,7 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_board);
 
+
         /*          设置初始页面          */
 
         //初始化 BottomNavigation
@@ -121,9 +122,6 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
                 {
                     flag[1] = 1;
                     flag[0] = 0;
-                } else {
-                    flag[1] = 0;
-                    flag[0] = 1;
                 }
             }
             break;

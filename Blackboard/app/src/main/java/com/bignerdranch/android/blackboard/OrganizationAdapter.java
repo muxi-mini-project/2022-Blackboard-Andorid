@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.TextView;
 
 
 public class OrganizationAdapter extends BaseExpandableListAdapter {
@@ -23,14 +24,22 @@ public class OrganizationAdapter extends BaseExpandableListAdapter {
     public View getGroupView(int ParentPosition, boolean isExpanded, View view, ViewGroup viewGroup) {
         if(view == null)
         {
-//            view = LayoutInflater.from(context).inflate()
+            view = LayoutInflater.from(context).inflate(R.layout.ogn_group_item,null);
         }
+        TextView textView = view.findViewById(R.id.group_TV);
+        textView.setText(parent[ParentPosition]);
         return view;
     }
 
     @Override
     public View getChildView(int ParentPosition, int ChildPosition, boolean isExpanded, View view, ViewGroup viewGroup) {
-        return null;
+        if (view == null)
+        {
+            view = LayoutInflater.from(context).inflate(R.layout.ogn_list_item,null);
+        }
+        TextView textView = view.findViewById(R.id.Child_TV);
+        textView.setText(child[ParentPosition][ChildPosition]);
+        return view;
     }
 
 
