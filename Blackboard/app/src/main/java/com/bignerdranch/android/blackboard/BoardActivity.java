@@ -56,8 +56,12 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
+=======
+
+>>>>>>> zyu
         /*          设置初始页面          */
 
         //初始化 BottomNavigation
@@ -209,9 +213,6 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
                 {
                     flag[1] = 1;
                     flag[0] = 0;
-                } else {
-                    flag[1] = 0;
-                    flag[0] = 1;
                 }
             }
             break;

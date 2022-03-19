@@ -27,9 +27,13 @@ public class OrganizationFragment extends Fragment {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
     Context context;
+=======
+//    Context context;
+>>>>>>> zyu
     ExpandableListView ELV;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -40,12 +44,16 @@ public class OrganizationFragment extends Fragment {
         //绑定ELV
         ELV = view.findViewById(R.id.ELV);
         //初始化数据
-        Data();
+        final String[] parent = new String[]{"我加入的", "我创建的"};
+        final String[][] child = new String[][]{{"学校组织1", "学校组织2", "学校组织3"}, {"学校组织1", "学校组织2", "学校组织3","学校组织4"}};
         //使用Adapter
+        OrganizationAdapter organizationAdapter = new OrganizationAdapter(parent,child,getActivity());
+        ELV.setAdapter(organizationAdapter);
 
         return view;
     }
 
+<<<<<<< HEAD
     private void Data() {
         String[] parent = new String[]{"我加入的", "我创建的"};
         String[][] child = new String[][]{{"学校组织1", "学校组织2", "学校组织3"}, {"学校组织1", "学校组织2", "学校组织3"}};
@@ -59,4 +67,10 @@ public class OrganizationFragment extends Fragment {
 >>>>>>> flsdqm
 =======
 >>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
+=======
+//    private void Data() {
+//        String[] parent = new String[]{"我加入的", "我创建的"};
+//        String[][] child = new String[][]{{"学校组织1", "学校组织2", "学校组织3"}, {"学校组织1", "学校组织2", "学校组织3"}};
+//    }
+>>>>>>> zyu
 }
