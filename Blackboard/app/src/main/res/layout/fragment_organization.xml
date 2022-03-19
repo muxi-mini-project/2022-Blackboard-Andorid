@@ -5,10 +5,14 @@
     android:layout_height="match_parent">
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
     <ExpandableListView
         android:id="@+id/ELV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+<<<<<<< HEAD
 =======
     <TextView
         android:id="@+id/another_fragment_textview"
@@ -21,5 +25,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 >>>>>>> flsdqm
+=======
+>>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,10 +33,14 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="44dp"
 <<<<<<< HEAD
+<<<<<<< HEAD
             android:background="@drawable/button_clicked"
 =======
             android:background="@drawable/button"
 >>>>>>> flsdqm
+=======
+            android:background="@drawable/button_clicked"
+>>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
             android:text="@string/my_message"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -53,10 +57,14 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="28dp"
 <<<<<<< HEAD
+<<<<<<< HEAD
             android:background="@drawable/button_clicked"
 =======
             android:background="@drawable/button"
 >>>>>>> flsdqm
+=======
+            android:background="@drawable/button_clicked"
+>>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
             android:text="@string/my_post"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/my_message"
@@ -72,10 +80,14 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
 <<<<<<< HEAD
+<<<<<<< HEAD
             android:background="@drawable/button_clicked"
 =======
             android:background="@drawable/button"
 >>>>>>> flsdqm
+=======
+            android:background="@drawable/button_clicked"
+>>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
             android:text="@string/my_favorites"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -89,10 +101,14 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="392dp"
 <<<<<<< HEAD
+<<<<<<< HEAD
             android:background="@drawable/button_clicked"
 =======
             android:background="@drawable/button"
 >>>>>>> flsdqm
+=======
+            android:background="@drawable/button_clicked"
+>>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
             android:text="@string/my_setting"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

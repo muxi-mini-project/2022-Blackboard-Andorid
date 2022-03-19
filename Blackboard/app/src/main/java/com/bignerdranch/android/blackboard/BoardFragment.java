@@ -1,14 +1,21 @@
 package com.bignerdranch.android.blackboard;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import android.graphics.drawable.Drawable;
 =======
 >>>>>>> flsdqm
+=======
+import android.graphics.drawable.Drawable;
+>>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -122,6 +129,7 @@ public class BoardFragment extends Fragment {
             return data.size();
         }
     }
+<<<<<<< HEAD
 =======
 
 import androidx.annotation.Nullable;
@@ -133,4 +141,6 @@ public class BoardFragment extends Fragment {
         return view;
     }
 >>>>>>> flsdqm
+=======
+>>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
 }

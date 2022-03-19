@@ -11,6 +11,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -27,6 +30,7 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
 
     //用于切换 通知和组织 的按钮
     int flag[] = new int[]{0, 0};
+<<<<<<< HEAD
 =======
 import android.widget.TextView;
 
@@ -42,6 +46,8 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
     private Button searchButton;
     private Button addButton;
 >>>>>>> flsdqm
+=======
+>>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +55,9 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_board);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
         /*          设置初始页面          */
 
         //初始化 BottomNavigation
@@ -58,6 +67,7 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuitem) {
                 switch (menuitem.getItemId()) {
+<<<<<<< HEAD
 =======
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         searchButton = findViewById(R.id.board_search);
@@ -71,10 +81,13 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
             public boolean onNavigationItemSelected(@NonNull MenuItem menuitem) {
                 switch(menuitem.getItemId()) {
 >>>>>>> flsdqm
+=======
+>>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
                     case R.id.board:
                         return true;
 
                     case R.id.mine:
+<<<<<<< HEAD
 <<<<<<< HEAD
                         startActivity(new Intent(getApplicationContext(), MineActivity.class));
                         overridePendingTransition(0, 0);
@@ -82,6 +95,10 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
                         startActivity(new Intent(getApplicationContext(),MineActivity.class));
                         overridePendingTransition(0,0);
 >>>>>>> flsdqm
+=======
+                        startActivity(new Intent(getApplicationContext(), MineActivity.class));
+                        overridePendingTransition(0, 0);
+>>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
                         return true;
 
                 }
@@ -89,6 +106,7 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
             }
         });
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         //初始化 搜索和添加 按钮
         searchButton = findViewById(R.id.board_search);
@@ -99,6 +117,11 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
         messageButton.performClick();
 
 >>>>>>> flsdqm
+=======
+        //初始化 搜索和添加 按钮
+        searchButton = findViewById(R.id.board_search);
+        addButton = findViewById(R.id.board_add);
+>>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -107,9 +130,12 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
             }
         });
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> flsdqm
+=======
+>>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -118,20 +144,29 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
             }
         });
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
 
         //设置FragmentManager
         manager1 = getSupportFragmentManager();
         //初始化 通知和组织 按钮
+<<<<<<< HEAD
 =======
     }
 
     private void init() {
 >>>>>>> flsdqm
+=======
+>>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
         messageButton = findViewById(R.id.board_message);
         organizationButton = findViewById(R.id.board_organization);
         messageButton.setOnClickListener(this);
         organizationButton.setOnClickListener(this);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
         //默认点击 通知
         messageButton.performClick();
 
@@ -198,6 +233,7 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
         } else {
             organizationButton.setBackground(getDrawable(R.drawable.button_clicked));
         }
+<<<<<<< HEAD
 =======
     }
 
@@ -234,5 +270,7 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
         }
         transaction.commit();
 >>>>>>> flsdqm
+=======
+>>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
     }
 }

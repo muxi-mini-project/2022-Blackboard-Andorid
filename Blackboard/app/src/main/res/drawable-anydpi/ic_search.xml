@@ -4,10 +4,14 @@
     android:viewportWidth="24"
     android:viewportHeight="24"
 <<<<<<< HEAD
+<<<<<<< HEAD
     android:tint="#ee333333"
 =======
     android:tint="#333333"
 >>>>>>> flsdqm
+=======
+    android:tint="#ee333333"
+>>>>>>> 11fe2cc0ed6d3ebc729ddc6fd645bc97dec89e83
     android:alpha="0.6">
   <path
       android:fillColor="@android:color/white"
