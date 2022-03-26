@@ -3,6 +3,28 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/drawable-anydpi/ic_add.xml" value="0.1" />
+        <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/drawable-v24/button_page_right.xml" value="0.128" />
+        <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/drawable/activity_background.xml" value="0.147" />
+        <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/drawable/button.xml" value="0.1" />
+        <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/drawable/button_clicked.xml" value="0.1" />
+        <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/drawable/button_page_left.xml" value="0.128" />
+        <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/drawable/button_send.xml" value="0.1615" />
+        <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/drawable/edittext_style_normal.xml" value="0.1" />
+        <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/drawable/ic_baseline_add_circle_outline_24.xml" value="0.1" />
+        <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/drawable/message_background.xml" value="0.147" />
+        <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/drawable/selector.xml" value="0.1" />
+        <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/drawable/star_hollow.xml" value="0.1" />
+        <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/drawable/star_solid.xml" value="0.1" />
+        <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/layout/activity_add.xml" value="0.152" />
+        <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/layout/activity_board.xml" value="0.176" />
+        <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/layout/fragment_board.xml" value="0.13323201621073963" />
+        <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/layout/fragment_organization.xml" value="0.13323201621073963" />
+        <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/layout/fragment_post.xml" value="0.1" />
+        <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/layout/item_message.xml" value="0.2" />
+        <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/layout/item_post.xml" value="0.1875" />
+        <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/layout/ogn_group_item.xml" value="0.13323201621073963" />
+        <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/layout/ogn_list_item.xml" value="0.13323201621073963" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/Blackboard/app/src/main/res/drawable-anydpi/ic_add.xml" value="0.192" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/Blackboard/app/src/main/res/drawable-anydpi/ic_search.xml" value="0.192" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/Blackboard/app/src/main/res/drawable-anydpi/ic_settings_back.xml" value="0.192" />

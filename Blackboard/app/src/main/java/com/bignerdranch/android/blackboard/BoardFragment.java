@@ -1,12 +1,13 @@
 package com.bignerdranch.android.blackboard;
 
-import android.graphics.drawable.Drawable;
+import static com.bignerdranch.android.blackboard.R.drawable.star_hollow;
+import static com.bignerdranch.android.blackboard.R.drawable.star_solid;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 public class BoardFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
+    private BoardAdapter boardAdapter;
 
     @Nullable
     @Override
@@ -36,13 +38,35 @@ public class BoardFragment extends Fragment {
         ArrayList<MessageItem> data = upDate.UpDate();
 
         //RecyclerView需要adapter来处理数据     新建一个能将List传进去的Adapter
-        myAdapter myAdapter = new myAdapter(data);
-        mRecyclerView.setAdapter(myAdapter);
+        boardAdapter = new BoardAdapter(this, data);
+        mRecyclerView.setAdapter(boardAdapter);
+
+        boardAdapter.setOnButtonClickListener(new BoardAdapter.OnButtonClickListener() {
+            @Override
+            public void OnButtonClick(View view,int position) {
+//                Toast.makeText(getActivity(), "Star", Toast.LENGTH_SHORT).show();
+
+//                view.setBackground(getResources().getDrawable(star_solid));
+                if (data.get(position).ismStar() == 0){
+                    data.get(position).setmStar(1);
+                } else {
+                    data.get(position).setmStar(0);
+                }
+
+                if (data.get(position).ismStar() == 0){
+                    view.setBackground(getResources().getDrawable(star_hollow));
+                }else{
+                    view.setBackground(getResources().getDrawable(star_solid));
+                }
+
+            }
+        });
 
         //返回View
         return view;
     }
 
+    //创建数据
     private class UpDate
     {
         private ArrayList<MessageItem> items;
@@ -53,11 +77,12 @@ public class BoardFragment extends Fragment {
             items = new ArrayList<>();
             for (int i=0 ; i<100 ; i++)
             {
-                MessageItem messageItem1 = new MessageItem();
-                messageItem1.setmName("name "+ i);
-                messageItem1.setmPhoto(R.drawable.ic_add);
-                messageItem1.setmText("text " + i);
-                items.add(messageItem1);
+                MessageItem messageItem = new MessageItem();
+                messageItem.setmName("name" + i);
+                messageItem.setmPhoto(R.drawable.qq);
+                messageItem.setmText(R.string.CCNU);
+                messageItem.setmStar(i%2);
+                items.add(messageItem);
             }
 
             return items;
@@ -65,57 +90,5 @@ public class BoardFragment extends Fragment {
 
     }
 
-    private class myViewHolder extends RecyclerView.ViewHolder
-    {
-        private TextView textView_name;
-        private ImageView imageView_photo;
-        private TextView textView_text;
 
-        public myViewHolder(@NonNull View itemView) {
-            super(itemView);
-
-            textView_name = itemView.findViewById(R.id.TV_name);
-            imageView_photo = itemView.findViewById(R.id.IV_photo);
-            textView_text = itemView.findViewById(R.id.TV_text);
-        }
-    }
-
-    private class myAdapter extends RecyclerView.Adapter<myViewHolder>
-    {
-        //adapter是RV的适配器 用于连数据与UI 所以需要一个数据列表List
-        ArrayList<MessageItem> data ;
-
-        //新建adapter需要构造器能将数据传入
-        public myAdapter(ArrayList<MessageItem> InData)
-        {
-            this.data = InData;
-        }
-
-        @NonNull
-        @Override
-        public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            //需要返回一个 myViewHolder       所以要new一个myViewHolder
-            //myViewHolder函数 需要 View        所以要new一个View
-            //inflate函数能将xml文件加载成View   所以要调用一个inflate函数(View子类)
-            View view = LayoutInflater.from(getActivity()).inflate(R.layout.item_message,null,false);
-            return new myViewHolder(view);
-        }
-
-        @Override
-        public void onBindViewHolder(@NonNull myViewHolder holder, int position)
-        {
-            MessageItem messageItem = data.get(position);
-
-            holder.textView_name.setText(messageItem.getmName());
-            Drawable photo = getResources().getDrawable(messageItem.getmPhoto());
-            holder.imageView_photo.setImageDrawable(photo);
-            holder.textView_text.setText(messageItem.getmText());
-        }
-
-        @Override
-        public int getItemCount()
-        {
-            return data.size();
-        }
-    }
 }

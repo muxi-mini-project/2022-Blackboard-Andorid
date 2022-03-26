@@ -13,21 +13,21 @@
 
                 <Button
                     android:id="@+id/board_search"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:background="@drawable/ic_search"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/board_add"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
                 <Button
                     android:id="@+id/board_add"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:background="@drawable/ic_add"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/ic_baseline_add_circle_outline_24"
+                    app:layout_constraintEnd_toStartOf="@id/board_search"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+
 
                 <TextView
                     android:id="@+id/textView"

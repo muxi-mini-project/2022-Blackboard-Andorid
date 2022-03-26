@@ -9,7 +9,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:text="学校组织"/>
+        android:layout_marginTop="10dp"
+        android:paddingLeft="15dp"
+        android:background="@drawable/button_clicked"
+        android:text="学校组织"
+        android:textSize="15sp"/>
 
 </LinearLayout>

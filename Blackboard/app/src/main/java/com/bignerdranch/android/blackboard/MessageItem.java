@@ -4,7 +4,8 @@ public class MessageItem {
 
     private String mName;
     private int mPhoto;
-    private String mText;
+    private int mText;
+    private int mStar;
 
     public String getmName() {
         return mName;
@@ -20,11 +21,19 @@ public class MessageItem {
         this.mPhoto = mPhoto;
     }
 
-    public String getmText() {
+    public int getmText() {
         return mText;
     }
-    public void setmText(String mText) {
+    public void setmText(int mText) {
         this.mText = mText;
     }
+
+    public int ismStar() {
+        return mStar;
+    }
+    public void setmStar(int mStar) {
+        this.mStar = mStar;
+    }
+
 
 }
