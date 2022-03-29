@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/activity_background"
+    tools:context=".PageActivity">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/my_page"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/page_information"
+        android:layout_width="88dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginLeft="280dp"
+        android:background="@drawable/ic_register"
+        android:text="@string/my_information" />
+
+    <RelativeLayout
+        android:id="@+id/page_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="192dp">
+
+        <View
+            android:id="@+id/relative"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_centerHorizontal="true"/>
+
+        <Button
+            android:id="@+id/page_post"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignRight="@+id/relative"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/button_page_left"
+            android:text="@string/page_post"
+
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/page_favorites"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignLeft="@+id/relative"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/button_page_right"
+            android:text="@string/page_favorites"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/page_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="489dp"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/page_navigation"/>
+
+</RelativeLayout>
