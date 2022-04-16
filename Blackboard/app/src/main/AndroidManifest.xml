@@ -17,7 +17,7 @@
         android:usesCleartextTraffic="true"
         android:requestLegacyExternalStorage="true">
         <activity
-            android:name=".Blackboard.OrganizationList.OrganizationActivity"
+            android:name=".Bean.OrganizationActivity"
             android:exported="true" />
         <activity
             android:name=".Blackboard.New.NewActivity"
@@ -47,18 +47,20 @@
             android:name=".Settings.Login.LoginActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustPan">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Mine.MineActivity"
             android:exported="true" />
         <activity
             android:name=".Blackboard.BoardActivity"
-            android:exported="true" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
 
 

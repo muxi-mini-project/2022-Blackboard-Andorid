@@ -166,6 +166,7 @@ public class PageActivity extends AppCompatActivity implements View.OnClickListe
 
                     String nickname = response.body().getData().getNickname();
                     pageNicknameTextview.setText(nickname);
+                    Toast.makeText(PageActivity.this, nickname, Toast.LENGTH_SHORT).show();
 
 
                 } else {

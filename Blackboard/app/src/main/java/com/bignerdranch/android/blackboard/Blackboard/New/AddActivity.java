@@ -15,6 +15,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class AddActivity extends AppCompatActivity {
 
+    /*添加话题*/
+
     private Button backButton;
     private TextView back;
     private CircleImageView photo;

@@ -42,7 +42,7 @@ public class BoardFragmentRLV extends Fragment {
         boardAdapter = new BoardAdapter(this, data);
         mRecyclerView.setAdapter(boardAdapter);
 
-        boardAdapter.setOnButtonClickListener(new BoardAdapter.OnButtonClickListener() {
+        boardAdapter.setOnStarClickListener(new BoardAdapter.OnButtonClickListener() {
             @Override
             public void OnButtonClick(View view,int position) {
 //                Toast.makeText(getActivity(), "Star", Toast.LENGTH_SHORT).show();

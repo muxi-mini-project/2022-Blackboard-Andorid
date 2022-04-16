@@ -9,8 +9,7 @@ import android.widget.ExpandableListView;
 
 import androidx.fragment.app.Fragment;
 
-import com.bignerdranch.android.blackboard.Blackboard.OrganizationList.OrganizationActivity;
-import com.bignerdranch.android.blackboard.Blackboard.OrganizationList.OrganizationAdapter;
+import com.bignerdranch.android.blackboard.Bean.OrganizationActivity;
 import com.bignerdranch.android.blackboard.R;
 
 public class OrganizationFragment extends Fragment {

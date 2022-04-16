@@ -86,7 +86,7 @@ class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.BoardViewHolder> {
 
     private OnButtonClickListener onButtonClickListener;
 
-    public void setOnButtonClickListener(OnButtonClickListener onButtonClickListener) {
+    public void setOnStarClickListener(OnButtonClickListener onButtonClickListener) {
         this.onButtonClickListener = onButtonClickListener;
     }
 
