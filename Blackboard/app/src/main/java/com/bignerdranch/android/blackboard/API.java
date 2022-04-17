@@ -8,6 +8,8 @@ import com.bignerdranch.android.blackboard.Settings.Change.UploadAvatar;
 import com.bignerdranch.android.blackboard.Settings.Login.LoginResponse;
 import com.bignerdranch.android.blackboard.Settings.Login.User;
 
+import java.util.List;
+
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -18,6 +20,8 @@ import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Part;
+import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface API {
 
@@ -27,9 +31,16 @@ public interface API {
     Call<MyResponse<Organization>> createOgn(@Body Organization organization, @Header("Authorization")String Authorization);
 
     /*查看指定组织*/
-    //get不能有body怎么办？？？？
-    @GET("organization/details")
-    Call<MyResponse<Organization>> details(@Body Organization organization, @Header("Authorization")String Authorization);
+    @GET("organization/details/{name}")
+    Call<MyResponse<Organization>> details(@Path("name")String name, @Header("Authorization")String Authorization);
+
+    /*查看创建*/
+    @GET("organization/personal/created")
+    Call<MyResponse<List<Organization>>> myCreate(
+            @Query("limit") int limit,
+            @Query("page") int page,
+            @Header("Authorization")String Authorization
+    );
 
     @POST("login")
     Call<LoginResponse> post(@Body User user);

@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bignerdranch.android.blackboard.API;
+import com.bignerdranch.android.blackboard.Utils;
 import com.bignerdranch.android.blackboard.R;
 
 import de.hdodenhof.circleimageview.BuildConfig;
@@ -85,10 +86,10 @@ public class LoginActivity extends AppCompatActivity {
                 if (response.isSuccessful() == true) {
                     token = "Bearer:" + response.body().getData();
 
-                    SharedPreferences p = getSharedPreferences("myPreferences", MODE_PRIVATE);
+                    SharedPreferences p = getSharedPreferences(Utils.SP, MODE_PRIVATE);
                     //获得SharedPreferences的Editor对象
                     SharedPreferences.Editor editor = p.edit();
-                    editor.putString("token",token);
+                    editor.putString(Utils.TOKEN,token);
                     editor.commit();//提交数据，完成存储操作
 
                     Toast.makeText(LoginActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();

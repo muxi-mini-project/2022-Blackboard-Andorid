@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.bignerdranch.android.blackboard.API;
 import com.bignerdranch.android.blackboard.Bean.Organization;
-import com.bignerdranch.android.blackboard.Blackboard.BoardActivity;
+import com.bignerdranch.android.blackboard.Utils;
 import com.bignerdranch.android.blackboard.Bean.OrganizationActivity;
 import com.bignerdranch.android.blackboard.MyResponse;
 import com.bignerdranch.android.blackboard.R;
@@ -59,7 +59,8 @@ public class NewActivity extends AppCompatActivity {
 
         newOrganizationButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
                 if (newNameEdittext.getText().toString().trim().equals(""))
                     Toast.makeText(NewActivity.this, "组织要有名字啊喂", Toast.LENGTH_SHORT).show();
                 else {
@@ -70,6 +71,7 @@ public class NewActivity extends AppCompatActivity {
                 }
 
                 if (creatable == 2) {
+                    creatable = 0;
                     Organization organization = new Organization(
                             newNameEdittext.getText().toString(),
                             newIntroductionEdittext.getText().toString()
@@ -102,8 +104,8 @@ public class NewActivity extends AppCompatActivity {
 
     private void sendNetWorkRequest(Organization organization)
     {
-        SharedPreferences p = getSharedPreferences("myPreferences",MODE_PRIVATE);
-        String Authorization = p.getString("token","null");
+        SharedPreferences p = getSharedPreferences(Utils.SP,MODE_PRIVATE);
+        String Authorization = p.getString(Utils.TOKEN,null);
 
         Retrofit retrofit =  new Retrofit.Builder()
             .baseUrl("http://119.3.2.168:8080/api/v1/")
@@ -116,13 +118,16 @@ public class NewActivity extends AppCompatActivity {
         call.enqueue(new Callback<MyResponse<Organization>>() {
             @Override
             public void onResponse(Call<MyResponse<Organization>> call, Response<MyResponse<Organization>> response) {
-                Toast.makeText(NewActivity.this, "创建成功", Toast.LENGTH_SHORT).show();
+                if (response.isSuccessful()) {
+                    Toast.makeText(NewActivity.this, "创建成功"+response.code(), Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(NewActivity.this,OrganizationActivity.class);
-                intent.putExtra("name",response.body().getData().getOrganization_name());
-                intent.putExtra("id",response.body().getData().getID());
-                startActivity(intent);
-                finish();
+                    Intent intent = new Intent(NewActivity.this, OrganizationActivity.class);
+                    intent.putExtra("name", response.body().getData().getOrganization_name());
+                    intent.putExtra("id", response.body().getData().getID());
+                    startActivity(intent);
+                    finish();
+                }else
+                    Toast.makeText(NewActivity.this, "昵称已被占用 error:"+response.code(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -133,8 +138,7 @@ public class NewActivity extends AppCompatActivity {
 
     }
 
-
-    public void back(View view)
+    public void ClickBack(View view)
     {
         finish();
     }

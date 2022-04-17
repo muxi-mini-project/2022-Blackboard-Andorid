@@ -20,9 +20,8 @@ public class Organization
         this.organization_name = organization_name;
         this.intro = intro;
     }
-    // 获取组织详情（id,name)
-    public Organization(int ID, String name) {
-        this.ID = ID;
+    // 获取组织详情（name)
+    public Organization( String name) {
         this.organization_name = organization_name;
     }
 
