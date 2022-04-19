@@ -86,13 +86,8 @@ public class NewActivity extends AppCompatActivity {
     //上传图片
     public void ChangeAvatar2(View view)
     {
-        switch(view.getId())
-        {
-            case R.id.new_portrait:
-            case R.id.img_portrait:
-                Toast.makeText(this, "跳转到上传头像", Toast.LENGTH_SHORT).show();
-                break;
-        }
+        Toast.makeText(this, "跳转到上传头像", Toast.LENGTH_SHORT).show();
+
     }
     //创建组织
     private void sendNetWorkRequest(Organization organization)

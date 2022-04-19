@@ -13,7 +13,7 @@ import com.bignerdranch.android.blackboard.R;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class AddActivity extends AppCompatActivity {
+public class PostActivity extends AppCompatActivity {
 
     /*发布通知*/
     private Button backButton;

@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -37,7 +38,8 @@ public class OrganizationFragment extends Fragment {
         organizationAdapter.setOnChildClickListener(new OrganizationAdapter.OnChildClickListener() {
             @Override
             public void OnChildClick(View view) {
-                Intent intent = new Intent(getActivity(), OrganizationActivity.class);
+                Intent intent = OrganizationActivity.newIntent(getActivity(),"MUXI1",1);
+                Toast.makeText(getActivity(), "先暂时来木犀看看叭~", Toast.LENGTH_SHORT).show();
                 startActivity(intent);
             }
         });

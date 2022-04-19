@@ -25,6 +25,7 @@ import android.widget.Toast;
 import com.bignerdranch.android.blackboard.API;
 import com.bignerdranch.android.blackboard.Bean.Topic.TopicAdapter;
 import com.bignerdranch.android.blackboard.Bean.Topic.Topics;
+import com.bignerdranch.android.blackboard.Blackboard.New.PostActivity;
 import com.bignerdranch.android.blackboard.MyResponse;
 import com.bignerdranch.android.blackboard.R;
 import com.bignerdranch.android.blackboard.Utils;
@@ -36,6 +37,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -60,7 +62,7 @@ public class OrganizationActivity extends AppCompatActivity
     private List<Topics> topicsData;
     private TopicAdapter adapter;
 
-    private ImageView photo;
+    private CircleImageView photo;
     private TextView ognName;
     private TextView introduction;
     private RecyclerView TopicRLV;
@@ -83,6 +85,13 @@ public class OrganizationActivity extends AppCompatActivity
         topicsData = new LinkedList<>();
         adapter = new TopicAdapter(OrganizationActivity.this,topicsData);
         TopicRLV.setAdapter(adapter);
+        adapter.SetAddClick(new TopicAdapter.AddClick() {
+            @Override
+            public void addClick() {
+                Intent intent = new Intent(OrganizationActivity.this, PostActivity.class);
+                startActivity(intent);
+            }
+        });
 
         //获取详细信息
         NetGetInformation(name);

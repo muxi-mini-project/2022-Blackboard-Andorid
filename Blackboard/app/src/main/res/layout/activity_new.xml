@@ -23,9 +23,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
 
         app:layout_constraintHorizontal_bias="0.2"
-        app:layout_constraintVertical_bias="0.15"
+        app:layout_constraintVertical_bias="0.13"
 
         android:src="@drawable/qq"
+        android:onClick="ChangeAvatar2"
         />
 
     <TextView
@@ -41,6 +42,8 @@
 
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintVertical_bias="1"
+
+        android:onClick="ChangeAvatar2"
         />
 
     <TextView
@@ -54,7 +57,7 @@
         app:layout_constraintBottom_toBottomOf="@id/OgnIntro"
 
         app:layout_constraintHorizontal_bias="0.2"
-        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintVertical_bias="0.35"
 
         android:text="组织名称"
         android:textColor="@color/blue"

@@ -10,7 +10,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bignerdranch.android.blackboard.Bean.Organization.OrganizationActivity;
 import com.bignerdranch.android.blackboard.R;
 
 import java.util.List;
@@ -37,6 +36,13 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicHolder>
             super(itemView);
             TopicName = itemView.findViewById(R.id.topicName);
             TopicAdd = itemView.findViewById(R.id.TopicAdd);
+
+            TopicAdd.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    addClick.addClick();
+                }
+            });
         }
     }
 
@@ -44,7 +50,7 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicHolder>
     @Override
     public TopicHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_topic,null,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_topic,parent,false);
         return new TopicHolder(view);
     }
     @Override
@@ -57,5 +63,13 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicHolder>
         return topicsList.size();
     }
 
-
+    public interface AddClick
+    {
+        public void addClick();
+    }
+    private AddClick addClick;
+    public void SetAddClick(AddClick addClick)
+    {
+        this.addClick = addClick;
+    }
 }
