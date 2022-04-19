@@ -33,8 +33,13 @@
 
     <TextView
         android:id="@+id/post_time"
+<<<<<<< HEAD
         android:layout_width="109dp"
         android:layout_height="22dp"
+=======
+        android:layout_width="252dp"
+        android:layout_height="27dp"
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
         android:layout_marginTop="4dp"
         android:text="发布时间"
         app:layout_constraintEnd_toEndOf="parent"

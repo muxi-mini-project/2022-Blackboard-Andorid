@@ -140,8 +140,11 @@ attr behavior_peekHeight
 attr behavior_saveFlags
 attr behavior_skipCollapsed
 attr borderWidth
+<<<<<<< HEAD
 attr border_color
 attr border_width
+=======
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
 attr borderlessButtonStyle
 attr bottomAppBarStyle
 attr bottomNavigationStyle
@@ -1654,8 +1657,11 @@ id FUNCTION
 id IV_photo
 id META
 id NO_DEBUG
+<<<<<<< HEAD
 id OgnIntro
 id OgnName
+=======
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
 id SHIFT
 id SHOW_ALL
 id SHOW_PATH
@@ -1665,7 +1671,10 @@ id TOP_END
 id TOP_START
 id TV_name
 id TV_text
+<<<<<<< HEAD
 id TopicAdd
+=======
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
 id TopicRLV
 id accelerate
 id accessibility_action_clickable_span
@@ -1737,7 +1746,10 @@ id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
 id back
+<<<<<<< HEAD
 id back1
+=======
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
 id back2
 id back_button
 id back_button2
@@ -1779,6 +1791,7 @@ id collapseActionView
 id confirm_button
 id container
 id content
+<<<<<<< HEAD
 id content1
 id content2
 id content3
@@ -1786,6 +1799,12 @@ id contentPanel
 id coordinator
 id cos
 id create
+=======
+id content2
+id contentPanel
+id coordinator
+id cos
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
 id custom
 id customPanel
 id cut
@@ -1929,8 +1948,15 @@ id my_post
 id name2
 id navigation_header_container
 id never
+<<<<<<< HEAD
 id new_introduction
 id new_name
+=======
+id new_back
+id new_introduction
+id new_name
+id new_organization
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
 id new_portrait
 id nickname
 id noScroll
@@ -2087,6 +2113,11 @@ id textView
 id textView1
 id textView2
 id textView3
+<<<<<<< HEAD
+=======
+id textView4
+id textView5
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
 id textView6
 id text_input_end_icon
 id text_input_start_icon
@@ -3132,7 +3163,11 @@ styleable ButtonBarLayout allowStacking
 styleable CardView android_minWidth android_minHeight cardBackgroundColor cardCornerRadius cardElevation cardMaxElevation cardPreventCornerOverlap cardUseCompatPadding contentPadding contentPaddingBottom contentPaddingLeft contentPaddingRight contentPaddingTop
 styleable Chip android_textAppearance android_textColor android_ellipsize android_maxWidth android_text android_checkable checkedIcon checkedIconEnabled checkedIconTint checkedIconVisible chipBackgroundColor chipCornerRadius chipEndPadding chipIcon chipIconEnabled chipIconSize chipIconTint chipIconVisible chipMinHeight chipMinTouchTargetSize chipStartPadding chipStrokeColor chipStrokeWidth chipSurfaceColor closeIcon closeIconEnabled closeIconEndPadding closeIconSize closeIconStartPadding closeIconTint closeIconVisible ensureMinTouchTargetSize hideMotionSpec iconEndPadding iconStartPadding rippleColor shapeAppearance shapeAppearanceOverlay showMotionSpec textEndPadding textStartPadding
 styleable ChipGroup checkedChip chipSpacing chipSpacingHorizontal chipSpacingVertical selectionRequired singleLine singleSelection
+<<<<<<< HEAD
 styleable CircleImageView civ_border_color civ_border_overlay civ_border_width civ_circle_background_color border_color border_width
+=======
+styleable CircleImageView civ_border_color civ_border_overlay civ_border_width civ_circle_background_color
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
 styleable CollapsingToolbarLayout collapsedTitleGravity collapsedTitleTextAppearance contentScrim expandedTitleGravity expandedTitleMargin expandedTitleMarginBottom expandedTitleMarginEnd expandedTitleMarginStart expandedTitleMarginTop expandedTitleTextAppearance maxLines scrimAnimationDuration scrimVisibleHeightTrigger statusBarScrim title titleEnabled toolbarId
 styleable CollapsingToolbarLayout_Layout layout_collapseMode layout_collapseParallaxMultiplier
 styleable ColorStateListItem android_color android_alpha alpha

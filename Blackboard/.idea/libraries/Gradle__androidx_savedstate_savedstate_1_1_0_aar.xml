@@ -2,8 +2,13 @@
   <library name="Gradle: androidx.savedstate:savedstate:1.1.0@aar">
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/467a835b52a179222c9cd595c4b15361/transformed/jetified-savedstate-1.1.0/jars/classes.jar!/" />
+<<<<<<< HEAD
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/467a835b52a179222c9cd595c4b15361/transformed/jetified-savedstate-1.1.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/467a835b52a179222c9cd595c4b15361/transformed/jetified-savedstate-1.1.0/AndroidManifest.xml" />
+=======
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/467a835b52a179222c9cd595c4b15361/transformed/jetified-savedstate-1.1.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/467a835b52a179222c9cd595c4b15361/transformed/jetified-savedstate-1.1.0/res" />
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
     </CLASSES>
     <JAVADOC />
     <SOURCES>

@@ -22,9 +22,13 @@
             android:layout_marginTop="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+<<<<<<< HEAD
             android:src="@drawable/girl" />
 
 
+=======
+            android:background="@drawable/girl" />
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
 
         <TextView
             android:id="@+id/TV_name"

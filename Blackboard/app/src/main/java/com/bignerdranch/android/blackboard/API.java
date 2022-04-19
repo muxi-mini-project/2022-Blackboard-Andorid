@@ -3,7 +3,11 @@ package com.bignerdranch.android.blackboard;
 import com.bignerdranch.android.blackboard.Bean.Organization.Organization;
 import com.bignerdranch.android.blackboard.Bean.Topic.Topics;
 import com.bignerdranch.android.blackboard.Mine.Information;
+<<<<<<< HEAD
 import com.bignerdranch.android.blackboard.Mine.Post.Post;
+=======
+import com.bignerdranch.android.blackboard.Mine.Post.Posts;
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
 import com.bignerdranch.android.blackboard.Settings.Change.ChangeName;
 import com.bignerdranch.android.blackboard.Settings.Change.UploadAvatar;
 import com.bignerdranch.android.blackboard.Settings.Login.LoginResponse;
@@ -55,7 +59,11 @@ public interface API {
     Call<LoginResponse> post(@Body User user);
 
     @GET("announcement")
+<<<<<<< HEAD
     Call<Post> get(@Body Post post);
+=======
+    Call<Posts> get(@Body Posts post);
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
 
     @PUT("user/changename")
     Call<ChangeName> put(@Body ChangeName changeName, @Header("Authorization") String Authorization);
@@ -70,4 +78,12 @@ public interface API {
     @POST("user/update")
     Call<UploadAvatar> post(@Part("file=") RequestBody body , @Header("Authorization") String Authorization );
 
+<<<<<<< HEAD
+=======
+    @GET("user/published")
+    Call<Posts> myPost(
+            @Query("limit") int limit,
+            @Query("page") int page, @Header("Authorization")String Authorization);
+
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
 }

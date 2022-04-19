@@ -39,7 +39,11 @@ public class LoginActivity extends AppCompatActivity {
     private String token;
     private API information;
     private Retrofit mRetrofit1;
+<<<<<<< HEAD
     private String nickname;
+=======
+
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
 
     private ImageButton eye;
     private Boolean isHide = true;
@@ -171,7 +175,11 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<Information> call, Response<Information> response) {
                 if (response.isSuccessful()) {
 
+<<<<<<< HEAD
                     nickname = response.body().getData().getNickname();
+=======
+                    String nickname = response.body().getData().getNickname();
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
 
                     Intent intent;
                     if(nickname!=null){

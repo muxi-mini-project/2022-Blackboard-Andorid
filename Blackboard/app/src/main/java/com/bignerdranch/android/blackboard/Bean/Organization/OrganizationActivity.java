@@ -25,7 +25,10 @@ import android.widget.Toast;
 import com.bignerdranch.android.blackboard.API;
 import com.bignerdranch.android.blackboard.Bean.Topic.TopicAdapter;
 import com.bignerdranch.android.blackboard.Bean.Topic.Topics;
+<<<<<<< HEAD
 import com.bignerdranch.android.blackboard.Blackboard.New.PostActivity;
+=======
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
 import com.bignerdranch.android.blackboard.MyResponse;
 import com.bignerdranch.android.blackboard.R;
 import com.bignerdranch.android.blackboard.Utils;
@@ -37,7 +40,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
+<<<<<<< HEAD
 import de.hdodenhof.circleimageview.CircleImageView;
+=======
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -62,7 +68,11 @@ public class OrganizationActivity extends AppCompatActivity
     private List<Topics> topicsData;
     private TopicAdapter adapter;
 
+<<<<<<< HEAD
     private CircleImageView photo;
+=======
+    private ImageView photo;
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
     private TextView ognName;
     private TextView introduction;
     private RecyclerView TopicRLV;
@@ -85,6 +95,7 @@ public class OrganizationActivity extends AppCompatActivity
         topicsData = new LinkedList<>();
         adapter = new TopicAdapter(OrganizationActivity.this,topicsData);
         TopicRLV.setAdapter(adapter);
+<<<<<<< HEAD
         adapter.SetAddClick(new TopicAdapter.AddClick() {
             @Override
             public void addClick() {
@@ -92,6 +103,8 @@ public class OrganizationActivity extends AppCompatActivity
                 startActivity(intent);
             }
         });
+=======
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
 
         //获取详细信息
         NetGetInformation(name);

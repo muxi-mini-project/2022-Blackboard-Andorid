@@ -170,8 +170,13 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
          */
         final AlertDialog.Builder normalDialog =
                 new AlertDialog.Builder(BoardActivity.this);
+<<<<<<< HEAD
         normalDialog.setTitle("我是一个人畜无害的应急食品！");
         normalDialog.setMessage("前面的区域以后再来探索吧！");
+=======
+        normalDialog.setTitle("学习圈");
+        normalDialog.setMessage("别急别急，在做了，在做了~");
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
         normalDialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

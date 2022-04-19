@@ -35,8 +35,13 @@ public class BoardFragmentRLV extends Fragment {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         //建立MessageItem的数据          所以调用UpDate并返回数据
+<<<<<<< HEAD
         Data upDate = new Data();
         ArrayList<MessageItem> data = upDate.DataList();
+=======
+        UpDate upDate = new UpDate();
+        ArrayList<MessageItem> data = upDate.UpDate();
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
 
         //RecyclerView需要adapter来处理数据     新建一个能将List传进去的Adapter
         boardAdapter = new BoardAdapter(this, data);
@@ -68,12 +73,20 @@ public class BoardFragmentRLV extends Fragment {
     }
 
     //创建数据
+<<<<<<< HEAD
     private class Data
+=======
+    private class UpDate
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
     {
         private ArrayList<MessageItem> items;
 
         //构造时候为items加入100个数据 并返回一个ArrayLIst
+<<<<<<< HEAD
         public ArrayList DataList()
+=======
+        public ArrayList UpDate()
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
         {
             items = new ArrayList<>();
             for (int i=0 ; i<100 ; i++)

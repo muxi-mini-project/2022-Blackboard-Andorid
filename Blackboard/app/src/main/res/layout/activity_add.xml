@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     tools:context=".Blackboard.New.PostActivity">
+=======
+    tools:context=".Blackboard.New.AddActivity">
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
     <Button
         android:id="@+id/back_button"
         android:layout_width="25dp"

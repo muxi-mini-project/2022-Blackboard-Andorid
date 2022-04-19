@@ -1,10 +1,17 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-3\\8190198988f5dc1a233e0c21b4a74ad8\\transformed\\appcompat-1.2.0\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+=======
+            "outputFile": "C:\\Users\\Public\\AndroidStudioProjects\\Blackboard\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\粉蓝色的浅梦\\.gradle\\caches\\transforms-3\\8190198988f5dc1a233e0c21b4a74ad8\\transformed\\appcompat-1.2.0\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

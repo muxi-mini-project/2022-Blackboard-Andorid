@@ -1,8 +1,15 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.lifecycle:lifecycle-livedata-core:2.3.1@aar">
     <CLASSES>
+<<<<<<< HEAD
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/b4df7864670f88d5668dedcb24fe690f/transformed/lifecycle-livedata-core-2.3.1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b4df7864670f88d5668dedcb24fe690f/transformed/lifecycle-livedata-core-2.3.1/res" />
+=======
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b4df7864670f88d5668dedcb24fe690f/transformed/lifecycle-livedata-core-2.3.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/4349506c849ca779e0c5c4fd295ba04e/transformed/lifecycle-livedata-core-2.3.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ba3fd86ec54c641abf326aa62702e47d/lifecycle-livedata-core-2.3.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/b4df7864670f88d5668dedcb24fe690f/transformed/lifecycle-livedata-core-2.3.1/jars/classes.jar!/" />
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b4df7864670f88d5668dedcb24fe690f/transformed/lifecycle-livedata-core-2.3.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />

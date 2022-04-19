@@ -1,6 +1,7 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-large-v4\\values-large-v4.xml",
             "map": [
                 {
@@ -15,6 +16,12 @@
                 },
                 {
                     "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-3\\e06ebd1b715f51b78d4c4c9ae709c8a8\\transformed\\material-1.2.1\\res\\values-large-v4\\values-large-v4.xml",
+=======
+            "outputFile": "C:\\Users\\Public\\AndroidStudioProjects\\Blackboard\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-large-v4\\values-large-v4.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\粉蓝色的浅梦\\.gradle\\caches\\transforms-3\\e06ebd1b715f51b78d4c4c9ae709c8a8\\transformed\\material-1.2.1\\res\\values-large-v4\\values-large-v4.xml",
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -29,6 +36,19 @@
                         "endColumns": "121,133",
                         "endOffsets": "869,1003"
                     }
+<<<<<<< HEAD
+=======
+                },
+                {
+                    "source": "C:\\Users\\粉蓝色的浅梦\\.gradle\\caches\\transforms-3\\8190198988f5dc1a233e0c21b4a74ad8\\transformed\\appcompat-1.2.0\\res\\values-large-v4\\values-large-v4.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,114,185,256,326,396,464,532,636",
+                        "endColumns": "58,70,70,69,69,67,67,103,115",
+                        "endOffsets": "109,180,251,321,391,459,527,631,747"
+                    }
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
                 }
             ]
         }

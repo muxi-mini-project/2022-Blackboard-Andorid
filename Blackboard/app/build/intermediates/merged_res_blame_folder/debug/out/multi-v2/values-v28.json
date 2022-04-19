@@ -1,10 +1,17 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v28\\values-v28.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-3\\8190198988f5dc1a233e0c21b4a74ad8\\transformed\\appcompat-1.2.0\\res\\values-v28\\values-v28.xml",
+=======
+            "outputFile": "C:\\Users\\Public\\AndroidStudioProjects\\Blackboard\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v28\\values-v28.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\粉蓝色的浅梦\\.gradle\\caches\\transforms-3\\8190198988f5dc1a233e0c21b4a74ad8\\transformed\\appcompat-1.2.0\\res\\values-v28\\values-v28.xml",
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
                     "from": {
                         "startLines": "2,3,4,8",
                         "startColumns": "4,4,4,4",
@@ -23,7 +30,11 @@
                     }
                 },
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-3\\e06ebd1b715f51b78d4c4c9ae709c8a8\\transformed\\material-1.2.1\\res\\values-v28\\values-v28.xml",
+=======
+                    "source": "C:\\Users\\粉蓝色的浅梦\\.gradle\\caches\\transforms-3\\e06ebd1b715f51b78d4c4c9ae709c8a8\\transformed\\material-1.2.1\\res\\values-v28\\values-v28.xml",
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

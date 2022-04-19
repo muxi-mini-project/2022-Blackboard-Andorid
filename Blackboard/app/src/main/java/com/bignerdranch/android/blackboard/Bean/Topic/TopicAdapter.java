@@ -10,6 +10,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+<<<<<<< HEAD
+=======
+import com.bignerdranch.android.blackboard.Bean.Organization.OrganizationActivity;
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
 import com.bignerdranch.android.blackboard.R;
 
 import java.util.List;
@@ -35,6 +39,7 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicHolder>
         public TopicHolder(@NonNull View itemView) {
             super(itemView);
             TopicName = itemView.findViewById(R.id.topicName);
+<<<<<<< HEAD
             TopicAdd = itemView.findViewById(R.id.TopicAdd);
 
             TopicAdd.setOnClickListener(new View.OnClickListener() {
@@ -43,6 +48,9 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicHolder>
                     addClick.addClick();
                 }
             });
+=======
+//            TopicAdd = itemView.findViewById(R.id.TopicAdd);
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
         }
     }
 
@@ -50,7 +58,11 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicHolder>
     @Override
     public TopicHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
+<<<<<<< HEAD
         View view = LayoutInflater.from(context).inflate(R.layout.item_topic,parent,false);
+=======
+        View view = LayoutInflater.from(context).inflate(R.layout.item_topic,null,false);
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
         return new TopicHolder(view);
     }
     @Override
@@ -63,6 +75,7 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicHolder>
         return topicsList.size();
     }
 
+<<<<<<< HEAD
     public interface AddClick
     {
         public void addClick();
@@ -72,4 +85,7 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicHolder>
     {
         this.addClick = addClick;
     }
+=======
+
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
 }

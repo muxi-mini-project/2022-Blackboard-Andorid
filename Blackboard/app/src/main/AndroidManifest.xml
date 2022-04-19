@@ -40,7 +40,11 @@
             android:name=".Settings.Login.RegisterActivity"
             android:exported="true" />
         <activity
+<<<<<<< HEAD
             android:name=".Blackboard.New.PostActivity"
+=======
+            android:name=".Blackboard.New.AddActivity"
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
             android:exported="true" />
         <activity
             android:name=".Blackboard.Search.SearchActivity"
@@ -49,11 +53,15 @@
             android:name=".Settings.Login.LoginActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustPan">
+<<<<<<< HEAD
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+=======
+
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
         </activity>
         <activity
             android:name=".Mine.MineActivity"
@@ -61,7 +69,15 @@
         <activity
             android:name=".Blackboard.BoardActivity"
             android:exported="true" >
+<<<<<<< HEAD
 
+=======
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
         </activity>
 
 

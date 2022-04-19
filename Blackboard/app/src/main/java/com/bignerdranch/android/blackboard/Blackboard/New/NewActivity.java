@@ -80,14 +80,29 @@ public class NewActivity extends AppCompatActivity {
         newNameEdittext = findViewById(R.id.new_name);
         newIntroductionEdittext = findViewById(R.id.new_introduction);
 
+<<<<<<< HEAD
         newBackButton = findViewById(R.id.back1);
         newOrganizationButton = findViewById(R.id.create);
+=======
+        newBackButton = findViewById(R.id.new_back);
+        newOrganizationButton = findViewById(R.id.new_organization);
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
     }
     //上传图片
     public void ChangeAvatar2(View view)
     {
+<<<<<<< HEAD
         Toast.makeText(this, "跳转到上传头像", Toast.LENGTH_SHORT).show();
 
+=======
+        switch(view.getId())
+        {
+            case R.id.new_portrait:
+            case R.id.img_portrait:
+                Toast.makeText(this, "跳转到上传头像", Toast.LENGTH_SHORT).show();
+                break;
+        }
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
     }
     //创建组织
     private void sendNetWorkRequest(Organization organization)
@@ -109,7 +124,11 @@ public class NewActivity extends AppCompatActivity {
             public void onResponse(Call<MyResponse<Organization>> call, Response<MyResponse<Organization>> response)
             {
                 if (response.isSuccessful()) {
+<<<<<<< HEAD
                     Toast.makeText(NewActivity.this, "创建成功", Toast.LENGTH_SHORT).show();
+=======
+                    Toast.makeText(NewActivity.this, "创建成功"+response.code(), Toast.LENGTH_SHORT).show();
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
 
                     String name = response.body().getData().getOrganization_name();
                     int id = response.body().getData().getID();

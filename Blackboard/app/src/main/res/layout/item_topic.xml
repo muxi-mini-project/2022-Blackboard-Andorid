@@ -6,6 +6,7 @@
         android:id="@+id/topicName"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+<<<<<<< HEAD
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,3 +34,20 @@
         android:background="@drawable/ic_baseline_add_circle_outline_24"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>
+=======
+        android:hint="#添加话题"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/blue"
+        android:textSize="25sp"
+        android:gravity="center_vertical"/>
+<!--    <Button-->
+<!--        android:id="@+id/TopicAdd"-->
+<!--        android:layout_width="40dp"-->
+<!--        android:layout_height="40dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:background="@drawable/ic_baseline_add_circle_outline_24"-->
+<!--        android:layout_marginTop="10dp"/>-->
+</androidx.constraintlayout.widget.ConstraintLayout>
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248

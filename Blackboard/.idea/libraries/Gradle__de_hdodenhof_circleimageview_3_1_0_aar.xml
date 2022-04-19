@@ -2,8 +2,13 @@
   <library name="Gradle: de.hdodenhof:circleimageview:3.1.0@aar">
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/5d9957564178c1b006bd153cda170e71/transformed/jetified-circleimageview-3.1.0/jars/classes.jar!/" />
+<<<<<<< HEAD
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/5d9957564178c1b006bd153cda170e71/transformed/jetified-circleimageview-3.1.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/5d9957564178c1b006bd153cda170e71/transformed/jetified-circleimageview-3.1.0/AndroidManifest.xml" />
+=======
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/5d9957564178c1b006bd153cda170e71/transformed/jetified-circleimageview-3.1.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/5d9957564178c1b006bd153cda170e71/transformed/jetified-circleimageview-3.1.0/res" />
+>>>>>>> e956993242be224503b811aa3c432db77c4dd248
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/de.hdodenhof/circleimageview/3.1.0/e33964c462b854162fee2bd3cd52889ef878df77/circleimageview-3.1.0-javadoc.jar!/" />
