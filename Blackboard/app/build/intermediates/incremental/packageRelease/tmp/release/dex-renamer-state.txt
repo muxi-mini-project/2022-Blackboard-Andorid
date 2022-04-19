@@ -1,4 +1,0 @@
-#Tue Apr 19 01:49:14 CST 2022
-base.0=S\:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
-renamed.0=classes.dex
-path.0=classes.dex

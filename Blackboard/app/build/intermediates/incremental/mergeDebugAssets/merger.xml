@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
-<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\assets"/><source path="S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\build\intermediates\shader_assets\debug\out"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\debug\assets"/></dataSet></merger>
-=======
-<merger version="3"><dataSet config="main" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Public\AndroidStudioProjects\Blackboard\app\src\main\assets"/><source path="C:\Users\Public\AndroidStudioProjects\Blackboard\app\build\intermediates\shader_assets\debug\out"/></dataSet><dataSet config="debug" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="C:\Users\Public\AndroidStudioProjects\Blackboard\app\src\debug\assets"/></dataSet></merger>
->>>>>>> e956993242be224503b811aa3c432db77c4dd248
