@@ -3,16 +3,22 @@ package com.bignerdranch.android.blackboard.Settings.Change;
 import android.Manifest;
 import android.annotation.TargetApi;
 import android.content.ContentUris;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.PixelFormat;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.text.TextUtils;
@@ -30,12 +36,16 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
+import java.io.BufferedOutputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 import com.bignerdranch.android.blackboard.API;
@@ -50,6 +60,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import de.hdodenhof.circleimageview.BuildConfig;
 import de.hdodenhof.circleimageview.CircleImageView;
 import okhttp3.MediaType;
+import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -69,9 +80,7 @@ public class InformationActivity extends AppCompatActivity {
     private API change,changeAvatar;
     private Button informationButton;
     private Button backButton;
-
-
-    private File file = null;
+//    private Context context;
 
 
     public static final int REQUEST_CODE_TAKE = 1;
@@ -80,7 +89,7 @@ public class InformationActivity extends AppCompatActivity {
     private Uri imageUri;
     private String imageBase64;
     private CircleImageView ivAvatar;
-
+//    private String base64;
 
 
     //底部弹窗
@@ -141,6 +150,7 @@ public class InformationActivity extends AppCompatActivity {
         String image64 = spfRecord.getString("image_64", "");
         ivAvatar.setImageBitmap(ImageUtil.base64ToImage(image64));
 
+//        base64 = image64;
 
 
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -168,19 +178,25 @@ public class InformationActivity extends AppCompatActivity {
                         mInformationEditText.getText().toString()
                 );
 
+
                 changeInformation(changeInformation);
 
                 Intent intent1 = getIntent();
                 Integer back = intent1.getIntExtra("from",0);
+
 
                 SharedPreferences spfRecord = getSharedPreferences("spfRecord", MODE_PRIVATE);
                 SharedPreferences.Editor edit = spfRecord.edit();
                 edit.putString("image_64", imageBase64);
                 edit.apply();
 
-                if(file != null){
-                    upLoad();
-                }
+
+
+//                if(base64 != imageBase64){
+//                    upload();
+//                }
+
+
 
                 if(back==0){
                     Intent intent = new Intent(InformationActivity.this, PageActivity.class);
@@ -262,7 +278,7 @@ public class InformationActivity extends AppCompatActivity {
                 .build();
 
         SharedPreferences p = getSharedPreferences("myPreferences", MODE_PRIVATE);
-        String Authorization = p.getString("token","null");
+        String Authorization = p.getString("token",null);
 
         change = mRetrofit1.create(API.class);
         Call<ChangeName> call = change.put(changeName,Authorization);
@@ -288,58 +304,138 @@ public class InformationActivity extends AppCompatActivity {
         });
     }
 
-    private void upLoad() {
+//    public File FileSaveToInside(Context context, String fileName) {
+//
+//        SharedPreferences spfRecord = getSharedPreferences("spfRecord", MODE_PRIVATE);
+//        String image64 = spfRecord.getString("image_64", null);
+//        Bitmap bitmap = ImageUtil.base64ToImage(image64);
+//
+//        FileOutputStream fos = null;
+//        String path = null;
+//        File file = null;
+//        try {
+//            //设置路径
+//            File folder = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+//            //判断目录是否存在
+//
+//            //目录不存在时自动创建
+//            if (folder.exists() ||folder.mkdir()) {
+//                file = new File(folder, fileName);
+//                fos = new FileOutputStream(file);
+//                //写入文件
+//                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+//                fos.flush();
+//                path = file.getAbsolutePath();
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            Toast.makeText(InformationActivity.this,e.getMessage()+"1231414",Toast.LENGTH_SHORT).show();
+//
+//        } finally {
+//            try {
+//                if (fos != null) {
+//                    //关闭流
+//                    fos.close();
+//                }
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//                Toast.makeText(InformationActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
+//            }
+//
+//        }
+//
+//        return file;
+//    }
 
-        //创建OkHttp client
-        OkHttpClient.Builder okHttpClientBuilder = new OkHttpClient.Builder();
+//    private File saveBitmap()
+//    {
+//        SharedPreferences spfRecord = getSharedPreferences("spfRecord", MODE_PRIVATE);
+//        String image64 = spfRecord.getString("image_64", null);
+//        Bitmap bitmap = ImageUtil.base64ToImage(image64);
+//
+//        //创建文件，因为不存在2级目录，所以不用判断exist，要保存png，这里后缀就是png，要保存jpg，后缀就用jpg
+//        File file = new File(Environment.getExternalStorageDirectory() +"/avatar.png");
+//
+//
+//
+//        try {
+//            //文件输出流
+//            FileOutputStream fileOutputStream = new FileOutputStream(file);
+//            //压缩图片，如果要保存png，就用Bitmap.CompressFormat.PNG，要保存jpg就用Bitmap.CompressFormat.JPEG,质量是100%，表示不压缩
+//            bitmap.compress(Bitmap.CompressFormat.PNG,100, fileOutputStream);
+//            //写入，这里会卡顿，因为图片较大
+//            fileOutputStream.flush();
+//            //记得要关闭写入流
+//            fileOutputStream.close();
+//            //成功的提示，写入成功后，请在对应目录中找保存的图片
+//            Toast.makeText(InformationActivity.this,"写入成功！目录" + Environment.getExternalStorageDirectory()+"/avatar.png",Toast.LENGTH_SHORT).show();
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//            //失败的提示
+//            Toast.makeText(InformationActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            //失败的提示
+//            Toast.makeText(InformationActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
+//        }
+//        return file;
+//    }
 
-        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-        logging.setLevel(HttpLoggingInterceptor.Level.BODY);//此处有四个级别，body为显示所有
 
-        //判断是开发者模式，则调用OkHttp日志记录拦截器，方便debug
-        if(BuildConfig.DEBUG) {
-            okHttpClientBuilder.addInterceptor(logging);
-        }
-
-
-//        MediaType mediaType = MediaType.Companion.parse("multipart/form-data");
-//        RequestBody fileBody = RequestBody.Companion.create(file,mediaType);
-//        MultipartBody body = new MultipartBody.Builder()
-//                .addFormDataPart("file", file.getName(),fileBody)
+//    private void upload() {
+//
+//        //创建OkHttp client
+//        OkHttpClient.Builder okHttpClientBuilder = new OkHttpClient.Builder();
+//
+//        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+//        logging.setLevel(HttpLoggingInterceptor.Level.BODY);//此处有四个级别，body为显示所有
+//
+//        //判断是开发者模式，则调用OkHttp日志记录拦截器，方便debug
+//        if(BuildConfig.DEBUG) {
+//            okHttpClientBuilder.addInterceptor(logging);
+//        }
+//
+//
+////        MediaType mediaType = MediaType.Companion.parse("multipart/form-data");
+////        RequestBody fileBody = RequestBody.Companion.create(file,mediaType);
+////        MultipartBody body = new MultipartBody.Builder()
+////                .addFormDataPart("file", file.getName(),fileBody)
+////                .build();
+//
+//        mRetrofit2 = new Retrofit.Builder()
+//                .baseUrl("http://119.3.2.168:8080/api/v1/")
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .client(okHttpClientBuilder.build())
 //                .build();
-
-        mRetrofit2 = new Retrofit.Builder()
-                .baseUrl("http://119.3.2.168:8080/api/v1/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .client(okHttpClientBuilder.build())
-                .build();
-
-        RequestBody body = RequestBody.create(file, MediaType.parse("multipart/form-data"));
-
-        SharedPreferences p = getSharedPreferences("myPreferences", MODE_PRIVATE);
-        String Authorization = p.getString("token","null");
-
-        changeAvatar = mRetrofit2.create(API.class);
-        Call<UploadAvatar> call = changeAvatar.post(body, Authorization);
-        call.enqueue(new Callback<UploadAvatar>() {
-            @Override
-            public void onResponse(Call<UploadAvatar> call, Response<UploadAvatar> response) {
-                if (response.isSuccessful()) {
-                    Toast.makeText(InformationActivity.this, "成功了", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    Toast.makeText(InformationActivity.this, "出错了", Toast.LENGTH_SHORT).show();
-
-                }
-
-            }
-
-            @Override
-            public void onFailure(Call<UploadAvatar> call, Throwable t) {
-                Toast.makeText(InformationActivity.this, "出错了", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
+//
+//        File file = FileSaveToInside(context,"avatar");
+//        RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"),file);
+//        MultipartBody.Part part = MultipartBody.Part.createFormData("file",file.getName(),requestFile);
+//
+//        SharedPreferences p = getSharedPreferences("myPreferences", MODE_PRIVATE);
+//        String Authorization = p.getString("token","null");
+//
+//        changeAvatar = mRetrofit2.create(API.class);
+//        Call<UploadAvatar> call = changeAvatar.post(part, Authorization);
+//        call.enqueue(new Callback<UploadAvatar>() {
+//            @Override
+//            public void onResponse(Call<UploadAvatar> call, Response<UploadAvatar> response) {
+//                if (response.isSuccessful()) {
+//                    Toast.makeText(InformationActivity.this, "成功了", Toast.LENGTH_SHORT).show();
+//                }
+//                else{
+//                    Toast.makeText(InformationActivity.this, "出错了", Toast.LENGTH_SHORT).show();
+//
+//                }
+//
+//            }
+//
+//            @Override
+//            public void onFailure(Call<UploadAvatar> call, Throwable t) {
+//                Toast.makeText(InformationActivity.this, "出错了", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
 
 
 
@@ -506,7 +602,7 @@ public class InformationActivity extends AppCompatActivity {
         Log.d(TAG, "displayImage: ------------" + imagePath);
         if (imagePath != null) {
             Bitmap bitmap = BitmapFactory.decodeFile(imagePath);
-            ivAvatar.setImageBitmap(bitmap);
+            ivAvatar.setImageBitmap(bitmap) ;
             String imageToBase64 = ImageUtil.imageToBase64(bitmap);
             imageBase64 = imageToBase64;
         }

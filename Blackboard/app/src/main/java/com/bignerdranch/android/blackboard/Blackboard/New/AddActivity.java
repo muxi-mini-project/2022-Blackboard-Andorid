@@ -15,8 +15,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class AddActivity extends AppCompatActivity {
 
-    /*添加话题*/
-
+    /*发布通知*/
     private Button backButton;
     private TextView back;
     private CircleImageView photo;
@@ -31,25 +30,23 @@ public class AddActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add);
 
         //初始化界面
+        initView();
+
+    }
+
+    //初始化控件
+    private void initView() {
         backButton = findViewById(R.id.back_button);
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
         back = findViewById(R.id.back);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
         photo = findViewById(R.id.photo);
         editText = findViewById(R.id.edit);
         topic = findViewById(R.id.topic);
         addPhoto = findViewById(R.id.addPhoto);
         send = findViewById(R.id.send);
-
+    }
+    //返回
+    public void clickBack(View view)
+    {
+        finish();
     }
 }

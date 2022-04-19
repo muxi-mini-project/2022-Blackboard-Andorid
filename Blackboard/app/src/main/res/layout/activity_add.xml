@@ -12,7 +12,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="5dp"
-        android:background="@drawable/ic_settings_back"/>
+        android:background="@drawable/ic_settings_back"
+        android:onClick="clickBack"/>
     <TextView
         android:id="@+id/back"
         android:layout_width="50dp"
@@ -21,7 +22,7 @@
         app:layout_constraintTop_toTopOf="@id/back_button"
         android:text="返回"
         android:textSize="17sp"
-        />
+        android:onClick="clickBack" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/say"

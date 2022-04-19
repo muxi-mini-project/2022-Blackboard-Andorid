@@ -1,12 +1,16 @@
 package com.bignerdranch.android.blackboard.Blackboard;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -54,6 +58,9 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
                         startActivity(new Intent(getApplicationContext(), MineActivity.class));
                         overridePendingTransition(0, 0);
                         return true;
+
+                    case R.id.study:
+                        showNormalDialog();
 
                 }
                 return false;
@@ -152,4 +159,44 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
             organizationButton.setBackground(getDrawable(R.drawable.button_clicked));
         }
     }
+
+
+
+    private void showNormalDialog(){
+        /* @setIcon 设置对话框图标
+         * @setTitle 设置对话框标题
+         * @setMessage 设置对话框消息提示
+         * setXXX方法返回Dialog对象，因此可以链式设置属性
+         */
+        final AlertDialog.Builder normalDialog =
+                new AlertDialog.Builder(BoardActivity.this);
+        normalDialog.setTitle("我是一个人畜无害的应急食品！");
+        normalDialog.setMessage("前面的区域以后再来探索吧！");
+        normalDialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        normalDialog.setNegativeButton("被迫确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        AlertDialog dialog = normalDialog.create();
+
+        // 显示
+        dialog.show();
+
+        //自定义的东西
+        //放在show()之后，不然有些属性是没有效果的，比如height和width
+        Window dialogWindow = dialog.getWindow();
+        WindowManager m = getWindowManager();
+        WindowManager.LayoutParams p = dialogWindow.getAttributes(); // 获取对话框当前的参数值
+
+        p.alpha = 0.8f;//设置透明度
+        dialogWindow.setAttributes(p);
+    }
+
 }

@@ -17,8 +17,10 @@
         android:usesCleartextTraffic="true"
         android:requestLegacyExternalStorage="true">
         <activity
-            android:name=".Bean.OrganizationActivity"
-            android:exported="true" />
+            android:name=".Bean.Organization.OrganizationActivity"
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name=".Blackboard.New.NewActivity"
             android:exported="true" />

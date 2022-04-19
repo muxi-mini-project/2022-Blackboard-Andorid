@@ -13,9 +13,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bignerdranch.android.blackboard.API;
-import com.bignerdranch.android.blackboard.Bean.Organization;
+import com.bignerdranch.android.blackboard.Bean.Organization.Organization;
 import com.bignerdranch.android.blackboard.Utils;
-import com.bignerdranch.android.blackboard.Bean.OrganizationActivity;
+import com.bignerdranch.android.blackboard.Bean.Organization.OrganizationActivity;
 import com.bignerdranch.android.blackboard.MyResponse;
 import com.bignerdranch.android.blackboard.R;
 
@@ -47,6 +47,33 @@ public class NewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new);
 
+        //初始化界面
+        initView();
+
+        //创建按钮
+        newOrganizationButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                if (newNameEdittext.getText().toString().trim().equals("") ||
+                    newIntroductionEdittext.getText().toString().trim().equals(""))
+                {
+                    Toast.makeText(NewActivity.this, "一个都不能少哦", Toast.LENGTH_SHORT).show();
+                }else
+                {
+                    Organization organization = new Organization(
+                            newNameEdittext.getText().toString(),
+                            newIntroductionEdittext.getText().toString());
+                    sendNetWorkRequest(organization);
+                }
+            }
+        });
+
+    }
+
+    //初始化界面
+    private void initView()
+    {
         Portrait = findViewById(R.id.img_portrait);
         newPortrait = findViewById(R.id.new_portrait);
 
@@ -55,42 +82,8 @@ public class NewActivity extends AppCompatActivity {
 
         newBackButton = findViewById(R.id.new_back);
         newOrganizationButton = findViewById(R.id.new_organization);
-
-
-        newOrganizationButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view)
-            {
-                if (newNameEdittext.getText().toString().trim().equals(""))
-                    Toast.makeText(NewActivity.this, "组织要有名字啊喂", Toast.LENGTH_SHORT).show();
-                else {
-                    creatable++;
-                    if (newIntroductionEdittext.getText().toString().trim().equals(""))
-                        Toast.makeText(NewActivity.this, "还要有酷酷de简介呢", Toast.LENGTH_SHORT).show();
-                    else creatable++;
-                }
-
-                if (creatable == 2) {
-                    creatable = 0;
-                    Organization organization = new Organization(
-                            newNameEdittext.getText().toString(),
-                            newIntroductionEdittext.getText().toString()
-                    );
-                    sendNetWorkRequest(organization);
-                }
-            }
-        });
-
-//        newBackButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(NewActivity.this, BoardActivity.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//        });
     }
-
+    //上传图片
     public void ChangeAvatar2(View view)
     {
         switch(view.getId())
@@ -101,7 +94,7 @@ public class NewActivity extends AppCompatActivity {
                 break;
         }
     }
-
+    //创建组织
     private void sendNetWorkRequest(Organization organization)
     {
         SharedPreferences p = getSharedPreferences(Utils.SP,MODE_PRIVATE);
@@ -115,29 +108,33 @@ public class NewActivity extends AppCompatActivity {
         API createORGN = retrofit.create(API.class);
         Call<MyResponse<Organization>> call = createORGN.createOgn(organization,Authorization);
 
-        call.enqueue(new Callback<MyResponse<Organization>>() {
+        call.enqueue(new Callback<MyResponse<Organization>>()
+        {
             @Override
-            public void onResponse(Call<MyResponse<Organization>> call, Response<MyResponse<Organization>> response) {
+            public void onResponse(Call<MyResponse<Organization>> call, Response<MyResponse<Organization>> response)
+            {
                 if (response.isSuccessful()) {
                     Toast.makeText(NewActivity.this, "创建成功"+response.code(), Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(NewActivity.this, OrganizationActivity.class);
-                    intent.putExtra("name", response.body().getData().getOrganization_name());
-                    intent.putExtra("id", response.body().getData().getID());
+                    String name = response.body().getData().getOrganization_name();
+                    int id = response.body().getData().getID();
+                    Intent intent = OrganizationActivity.newIntent(NewActivity.this,name,id);
                     startActivity(intent);
+
                     finish();
                 }else
                     Toast.makeText(NewActivity.this, "昵称已被占用 error:"+response.code(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
-            public void onFailure(Call<MyResponse<Organization>> call, Throwable t) {
+            public void onFailure(Call<MyResponse<Organization>> call, Throwable t)
+            {
                 Toast.makeText(NewActivity.this, "sth wrong :( ", Toast.LENGTH_SHORT).show();
             }
         });
 
     }
-
+    //返回
     public void ClickBack(View view)
     {
         finish();

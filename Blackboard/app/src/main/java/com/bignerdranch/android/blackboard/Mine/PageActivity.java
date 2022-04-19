@@ -43,10 +43,8 @@ public class PageActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView ivAvatar;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-
-
-
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page);
 
@@ -80,6 +78,8 @@ public class PageActivity extends AppCompatActivity implements View.OnClickListe
             pageFavoritesButton.performClick();
         }
 
+
+
     }
 
     @Override
@@ -88,6 +88,7 @@ public class PageActivity extends AppCompatActivity implements View.OnClickListe
         finish();
         Intent intent = new Intent(PageActivity.this, MineActivity.class);
         startActivity(intent);
+        overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
     }
 
     private void init() {

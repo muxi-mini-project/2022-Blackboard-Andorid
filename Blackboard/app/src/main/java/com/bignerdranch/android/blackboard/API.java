@@ -1,6 +1,7 @@
 package com.bignerdranch.android.blackboard;
 
-import com.bignerdranch.android.blackboard.Bean.Organization;
+import com.bignerdranch.android.blackboard.Bean.Organization.Organization;
+import com.bignerdranch.android.blackboard.Bean.Topic.Topics;
 import com.bignerdranch.android.blackboard.Mine.Information;
 import com.bignerdranch.android.blackboard.Mine.Post.Post;
 import com.bignerdranch.android.blackboard.Settings.Change.ChangeName;
@@ -14,7 +15,6 @@ import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
-import retrofit2.http.HTTP;
 import retrofit2.http.Header;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
@@ -34,13 +34,22 @@ public interface API {
     @GET("organization/details/{name}")
     Call<MyResponse<Organization>> details(@Path("name")String name, @Header("Authorization")String Authorization);
 
-    /*查看创建*/
+    /*创建话题*/
+    @POST("announcement/group")
+    Call<MyResponse<Topics>> createTopic(@Body Topics topics,@Header("Authorization")String Authorization);
+
+    /*查看话题*/
+    @GET("announcement/group")
+    Call<MyResponse<List<Topics>>> topicDetail(
+            @Query("ID") String id,
+            @Query("limit") String limit,
+            @Query("page") String page, @Header("Authorization")String Authorization);
+
+    /*查看创建的组织*/
     @GET("organization/personal/created")
     Call<MyResponse<List<Organization>>> myCreate(
             @Query("limit") int limit,
-            @Query("page") int page,
-            @Header("Authorization")String Authorization
-    );
+            @Query("page") int page, @Header("Authorization")String Authorization);
 
     @POST("login")
     Call<LoginResponse> post(@Body User user);
