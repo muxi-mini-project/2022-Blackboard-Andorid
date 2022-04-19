@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Blackboard</string>
+    <string name="login_number_label">学号</string>
+    <string name="login_password_label">密码</string>
+    <string name="login_button">登录</string>
+    <string name="board">通告板</string>
+    <string name="mine">我的</string>
+    <string name="board_message">最新消息</string>
+    <string name="board_organization">组织列表</string>
+    <string name="register_nickname_label">昵称</string>
+    <string name="register_nickname">快输入你的专属昵称吧~</string>
+    <string name="register_button">确认</string>
+    <string name="my_message">我的消息</string>
+    <string name="my_post">我的发布</string>
+    <string name="my_favorites">我的收藏</string>
+    <string name="my_page">个人主页</string>
+    <string name="my_setting">设置</string>
+    <string name="page_post">发布</string>
+    <string name="page_favorites">收藏</string>
+    <string name="my_information">编辑资料</string>
+    <string name="exit">退出登录</string>
+    <string name="CCNU">华中师范大学位于九省通衢的湖北省武汉市，坐落在武昌南湖之滨的桂子山上，占地面积120余万平方米，是教育部直属重点综合性师范大学，国家“211工程”重点建设大学，国家教师教育“985优势学科创新平台”建设高校，首批列入国家“双一流”建设高校，是国家培养中、高等学校师资和其他高级专门人才的重要基地。</string>
+</resources>
