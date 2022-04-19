@@ -38,7 +38,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.postViewHolder
         //根据点击位置绑定数据
         Post post = postList.get(position);
 
-        holder.mItemPostUpdatedAt.setText(post.getUpdatedAt());//获取实体类中的updatedAt字段并设置
+        holder.mItemPostUpdatedAt.setText(post.getCreatedAt());//获取实体类中的updatedAt字段并设置
         holder.mItemPostContents.setText(post.getContents());//获取实体类中的contents字段并设置
         holder.mItemPostOrganizationName.setText(post.getOrganization_name());
     }

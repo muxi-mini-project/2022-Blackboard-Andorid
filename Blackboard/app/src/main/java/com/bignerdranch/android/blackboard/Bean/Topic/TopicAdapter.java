@@ -36,7 +36,7 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicHolder>
         public TopicHolder(@NonNull View itemView) {
             super(itemView);
             TopicName = itemView.findViewById(R.id.topicName);
-//            TopicAdd = itemView.findViewById(R.id.TopicAdd);
+            TopicAdd = itemView.findViewById(R.id.TopicAdd);
         }
     }
 

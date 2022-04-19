@@ -7,32 +7,56 @@
     android:layout_height="match_parent"
     tools:context=".Bean.Organization.OrganizationActivity">
 
-    <Button
-        android:id="@+id/back_button2"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/content1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.1"
+
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/ic_settings_back"
-        android:onClick="ClickBack"/>
-    <TextView
-        android:id="@+id/back2"
-        android:layout_width="50dp"
-        android:layout_height="25dp"
-        app:layout_constraintStart_toEndOf="@id/back_button2"
-        app:layout_constraintTop_toTopOf="@id/back_button2"
-        android:text="返回"
-        android:textSize="17sp"
-        android:onClick="ClickBack"/>
+        android:gravity="center_vertical">
+        <Button
+            android:id="@+id/back_button2"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintHorizontal_bias="0.04"
+
+            android:onClick="ClickBack"
+            android:background="@drawable/ic_settings_back"
+            />
+        <TextView
+            android:id="@+id/back2"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+
+            app:layout_constraintStart_toEndOf="@id/back_button2"
+            app:layout_constraintTop_toTopOf="@id/back_button2"
+
+            android:text="返回"
+            android:textSize="17sp"
+            android:onClick="ClickBack"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/content2"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        app:layout_constraintTop_toBottomOf="@id/back_button2"
-        android:layout_marginTop="10dp">
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/content1"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.5"
+        >
 
         <ImageView
             android:id="@+id/photo2"
@@ -68,21 +92,36 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/TopicRLV"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/content3"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/content2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.5"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/TopicRLV"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            />
 
 
-    <Button
-        android:id="@+id/addTopic"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="添加分组"
-        android:onClick="addTopic"
-        app:layout_constraintTop_toBottomOf="@id/TopicRLV" />
+        <Button
+            android:id="@+id/addTopic"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="添加分组"
+            android:onClick="addTopic"
+            app:layout_constraintTop_toBottomOf="@id/TopicRLV" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

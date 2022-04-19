@@ -44,7 +44,7 @@ public class PostFragment extends Fragment {
     private void initData() {
         for (int i=0;i<10;i++){
             Post post=new Post();
-            post.setUpdatedAt("发布时间"+i);
+            post.setCreatedAt("发布时间"+i);
             post.setContents("发布内容"+i);
             post.setOrganization_name("发布团队"+i);
             postList.add(post);
