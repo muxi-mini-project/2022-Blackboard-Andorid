@@ -193,18 +193,13 @@ public class InformationActivity extends AppCompatActivity {
                 edit.apply();
 
 
-
-
-
-
-
 //                if(back==0){
 //                    Intent intent = new Intent(InformationActivity.this, PageActivity.class);
 //                    startActivity(intent);
 //                } else{
 //                    Intent intent = new Intent(InformationActivity.this, SettingsActivity.class);
 //                    startActivity(intent);
-//                }
+
                 finish();
             }
         });

@@ -70,9 +70,8 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
             }
         });
 
-        //初始化 搜索和添加 按钮
+        //搜索按钮
         searchButton = findViewById(R.id.board_search);
-        addButton = findViewById(R.id.board_add);
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,6 +79,8 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(intent);
             }
         });
+        //新建按钮
+        addButton = findViewById(R.id.board_add);
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,19 +88,19 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(intent);
             }
         });
-
         //设置FragmentManager
         manager1 = getSupportFragmentManager();
-        //初始化 通知和组织 按钮
+        //通知按钮
         messageButton = findViewById(R.id.board_message);
-        organizationButton = findViewById(R.id.board_organization);
         messageButton.setOnClickListener(this);
+        //组织按钮
+        organizationButton = findViewById(R.id.board_organization);
         organizationButton.setOnClickListener(this);
         //默认点击 通知
         messageButton.performClick();
 
-    }
 
+    }
 
     @Override
     public void onClick(View view) {
@@ -154,7 +155,6 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
         } else {
             messageButton.setBackground(getDrawable(R.drawable.button_clicked));
         }
-
         if (flag[1] == 0)
         {
             organizationButton.setBackground(getDrawable(R.drawable.button_unclicked));

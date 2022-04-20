@@ -52,6 +52,13 @@ public interface API {
             @Query("limit") int limit,
             @Query("page") int page, @Header("Authorization")String Authorization);
 
+    /*查看关注的组织*/
+    @GET("organization/personal/following")
+    Call<MyResponse<List<Organization>>> myFollow(
+            @Query("limit") int limit,
+            @Query("page") int page,@Header("Authorization")String Authorization);
+
+
     @POST("login")
     Call<LoginResponse> post(@Body User user);
 
@@ -70,6 +77,11 @@ public interface API {
     @Multipart
     @POST("user/update")
     Call<UploadAvatar> post(@Part MultipartBody.Part file, @Header("Authorization") String Authorization );
+
+    @GET("user/published")
+    Call<Posts> myPost(
+            @Query("limit") int limit,
+            @Query("page") int page, @Header("Authorization")String Authorization);
 
     @GET("user/published")
     Call<Posts> myPost(

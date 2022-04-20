@@ -7,23 +7,24 @@ import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
 
+import com.bignerdranch.android.blackboard.Bean.Organization.Organization;
 import com.bignerdranch.android.blackboard.R;
 
 import java.util.List;
 
 
 public class OrganizationAdapter extends BaseExpandableListAdapter {
-    private String[] parent;
-    private String[][] child;
+    private String[] parent = new String[] {"我创建的","我关注的"};
+    private List<List<Organization>> myList;
     private Context context;
 
-    public OrganizationAdapter(String[] parent, String[][] child, Context context)
+    public OrganizationAdapter( List<List<Organization>> myList, Context context)
     {
-        this.parent = parent;
-        this.child = child;
+        this.myList = myList;
         this.context = context;
     }
 
+    //创建布局
     @Override
     public View getGroupView(int ParentPosition, boolean isExpanded, View view, ViewGroup viewGroup) {
         if(view == null)
@@ -34,29 +35,27 @@ public class OrganizationAdapter extends BaseExpandableListAdapter {
         textView.setText(parent[ParentPosition]);
         return view;
     }
-
     @Override
     public View getChildView(int ParentPosition, int ChildPosition, boolean isExpanded, View view, ViewGroup viewGroup) {
-        if (view == null)
-        {
-            view = LayoutInflater.from(context).inflate(R.layout.ogn_list_item,null);
-        }
+        view = LayoutInflater.from(context).inflate(R.layout.ogn_list_item,null);
         TextView textView = view.findViewById(R.id.Child_TV);
-        textView.setText(child[ParentPosition][ChildPosition]);
+
+        String name = myList.get(ParentPosition).get(ChildPosition).getOrganization_name();
+        textView.setText(name);
+        int id = myList.get(ParentPosition).get(ChildPosition).getID();
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (onChildClickListener != null)
                 {
-                    onChildClickListener.OnChildClick(view);
+                    onChildClickListener.OnChildClick(name,id);
                 }
             }
         });
 
         return view;
     }
-
 
     //获得父项的长度
     @Override
@@ -65,8 +64,9 @@ public class OrganizationAdapter extends BaseExpandableListAdapter {
     }
     //获得子项的长度
     @Override
-    public int getChildrenCount(int ChildPosition) {
-        return child[ChildPosition].length;
+    public int getChildrenCount(int ChildPosition)
+    {
+        return myList.get(ChildPosition).size();
     }
 
     //获得父项
@@ -77,7 +77,7 @@ public class OrganizationAdapter extends BaseExpandableListAdapter {
     //获得子项
     @Override
     public Object getChild(int ParentPosition, int ChildPosition) {
-        return child[ParentPosition][ChildPosition];
+        return myList.get(ParentPosition).get(ChildPosition);
     }
 
     //获得父项的ID
@@ -105,11 +105,9 @@ public class OrganizationAdapter extends BaseExpandableListAdapter {
 
 
     public interface OnChildClickListener{
-        public void OnChildClick(View view);
+        public void OnChildClick(String name,int id);
     }
-
     private OnChildClickListener onChildClickListener;
-
     public void setOnChildClickListener(OnChildClickListener onChildClickListener)
     {
         this.onChildClickListener = onChildClickListener;
