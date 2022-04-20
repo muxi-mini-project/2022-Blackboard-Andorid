@@ -1,10 +1,13 @@
 package com.bignerdranch.android.blackboard.Mine.Post;
 
+import static android.content.Context.MODE_PRIVATE;
+
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+import android.widget.Adapter;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -12,20 +15,31 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bignerdranch.android.blackboard.Mine.Post.Post;
-import com.bignerdranch.android.blackboard.Mine.Post.PostAdapter;
+import com.bignerdranch.android.blackboard.API;
+import com.bignerdranch.android.blackboard.MyResponse;
 import com.bignerdranch.android.blackboard.R;
+import com.bignerdranch.android.blackboard.Utils;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class PostFragment extends Fragment {
 
     private View view; //定义view用来设置fragment的layout
     public RecyclerView mPostRecyclerView; //定义RecyclerView
     //定义以post实体类为对象的数据集合
-    private ArrayList<Post> postList = new ArrayList<Post>();
+    private List<Posts.DataDTO> postList = new ArrayList<>();
     //自定义recyclerview的适配器
     private PostAdapter mPostAdapter;
+
+
 
     @Nullable
     @Override
@@ -38,18 +52,44 @@ public class PostFragment extends Fragment {
         //填入数据
         initData();
 
+
+        mPostAdapter.refresh(postList);
+
+
         return view;
     }
 
+
     private void initData() {
-        for (int i=0;i<10;i++){
-            Post post=new Post();
-            post.setCreatedAt("发布时间"+i);
-            post.setContents("发布内容"+i);
-            post.setOrganization_name("发布团队"+i);
-            postList.add(post);
-        }
+        SharedPreferences p = getActivity().getSharedPreferences(Utils.SP, MODE_PRIVATE);
+        String Authorization = p.getString(Utils.TOKEN, null);
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://119.3.2.168:8080/api/v1/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        API get = retrofit.create(API.class);
+        Call<Posts> call = get.myPost(5,0,Authorization);
+
+        call.enqueue(new Callback<Posts>() {
+            @Override
+            public void onResponse(Call<Posts> call, Response<Posts> response) {
+
+                Posts posts = response.body();
+                postList.addAll(posts.getData());
+                mPostAdapter.refresh(postList);
+            }
+
+            @Override
+            public void onFailure(Call <Posts> call, Throwable t)
+            {
+
+            }
+        });
     }
+
+
 
     private void initRecyclerView() {
         //获取RecyclerView
@@ -67,14 +107,14 @@ public class PostFragment extends Fragment {
         mPostRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL));
 
         //RecyclerView中没有item的监听事件，需要自己在适配器中写一个监听事件的接口。参数根据自定义
-        mPostAdapter.setOnItemClickListener(new PostAdapter.OnItemClickListener() {
-            @Override
-            public void OnItemClick(View view, Post data) {
-                //此处进行监听事件的业务处理
-                Toast.makeText(getActivity(), data.toString(), Toast.LENGTH_SHORT).show();
-            }
-
-        });
+//        mPostAdapter.setOnItemClickListener(new PostAdapter.OnItemClickListener() {
+//            @Override
+//            public void OnItemClick(View view, Post data) {
+//                //此处进行监听事件的业务处理
+//                Toast.makeText(getActivity(), data.toString(), Toast.LENGTH_SHORT).show();
+//            }
+//
+//        });
     }
 
 }

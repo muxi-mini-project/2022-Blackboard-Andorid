@@ -34,16 +34,14 @@ public class SettingsActivity extends AppCompatActivity {
                 Intent intent = new Intent(SettingsActivity.this, InformationActivity.class);
                 intent.putExtra("from",1);
                 startActivity(intent);
-                finish();
+//                finish();
             }
         });
 
         settingsBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SettingsActivity.this, MineActivity.class);
-                startActivity(intent);
-//                finish();
+                finish();
             }
         });
 
@@ -66,7 +64,5 @@ public class SettingsActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         finish();
-        Intent intent = new Intent(SettingsActivity.this,MineActivity.class);
-        startActivity(intent);
     }
 }

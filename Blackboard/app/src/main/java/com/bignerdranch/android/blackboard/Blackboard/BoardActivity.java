@@ -47,7 +47,8 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
         //初始化 BottomNavigation
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.board);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener()
+        {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuitem) {
                 switch (menuitem.getItemId()) {
@@ -56,7 +57,9 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
 
                     case R.id.mine:
                         startActivity(new Intent(getApplicationContext(), MineActivity.class));
-                        overridePendingTransition(0, 0);
+                        overridePendingTransition(0, 0 );
+//                        overridePendingTransition(0, android.R.anim.fade_out );
+                        finish();
                         return true;
 
                     case R.id.study:
@@ -67,9 +70,8 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
             }
         });
 
-        //初始化 搜索和添加 按钮
+        //搜索按钮
         searchButton = findViewById(R.id.board_search);
-        addButton = findViewById(R.id.board_add);
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,6 +79,8 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(intent);
             }
         });
+        //新建按钮
+        addButton = findViewById(R.id.board_add);
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,19 +88,19 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(intent);
             }
         });
-
         //设置FragmentManager
         manager1 = getSupportFragmentManager();
-        //初始化 通知和组织 按钮
+        //通知按钮
         messageButton = findViewById(R.id.board_message);
-        organizationButton = findViewById(R.id.board_organization);
         messageButton.setOnClickListener(this);
+        //组织按钮
+        organizationButton = findViewById(R.id.board_organization);
         organizationButton.setOnClickListener(this);
         //默认点击 通知
         messageButton.performClick();
 
-    }
 
+    }
 
     @Override
     public void onClick(View view) {
@@ -151,7 +155,6 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
         } else {
             messageButton.setBackground(getDrawable(R.drawable.button_clicked));
         }
-
         if (flag[1] == 0)
         {
             organizationButton.setBackground(getDrawable(R.drawable.button_unclicked));
@@ -159,8 +162,6 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
             organizationButton.setBackground(getDrawable(R.drawable.button_clicked));
         }
     }
-
-
 
     private void showNormalDialog(){
         /* @setIcon 设置对话框图标
@@ -170,8 +171,8 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
          */
         final AlertDialog.Builder normalDialog =
                 new AlertDialog.Builder(BoardActivity.this);
-        normalDialog.setTitle("我是一个人畜无害的应急食品！");
-        normalDialog.setMessage("前面的区域以后再来探索吧！");
+        normalDialog.setTitle("学习圈");
+        normalDialog.setMessage("别急别急，在做了，在做了~");
         normalDialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

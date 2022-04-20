@@ -41,7 +41,7 @@
         app:layout_constraintEnd_toEndOf="parent"
 
         app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintVertical_bias="1"
+        app:layout_constraintVertical_bias="0.95"
 
         android:onClick="ChangeAvatar2"
         />

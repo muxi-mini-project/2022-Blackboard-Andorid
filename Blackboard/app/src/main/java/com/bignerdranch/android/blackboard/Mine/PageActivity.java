@@ -68,7 +68,6 @@ public class PageActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent = new Intent(PageActivity.this, InformationActivity.class);
                 intent.putExtra("from",0);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -86,8 +85,6 @@ public class PageActivity extends AppCompatActivity implements View.OnClickListe
     public void onBackPressed() {
         super.onBackPressed();
         finish();
-        Intent intent = new Intent(PageActivity.this, MineActivity.class);
-        startActivity(intent);
     }
 
     private void init() {

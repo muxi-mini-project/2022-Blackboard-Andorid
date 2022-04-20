@@ -6,6 +6,7 @@ public class MessageItem {
     private int mPhoto;
     private int mText;
     private int mStar;
+    private int id;
 
     public String getmName() {
         return mName;
@@ -35,5 +36,7 @@ public class MessageItem {
         this.mStar = mStar;
     }
 
-
+    public int getId() {
+        return id;
+    }
 }

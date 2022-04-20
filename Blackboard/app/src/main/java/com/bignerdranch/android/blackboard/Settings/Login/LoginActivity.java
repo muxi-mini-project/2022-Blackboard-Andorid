@@ -83,6 +83,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 sendNetworkRequest(user);
 
+                finish();
             }
         });
     }

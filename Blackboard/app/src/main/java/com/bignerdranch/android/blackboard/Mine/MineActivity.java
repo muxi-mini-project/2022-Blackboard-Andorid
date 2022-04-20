@@ -71,7 +71,6 @@ public class MineActivity extends AppCompatActivity {
                 Intent intent = new Intent(MineActivity.this, PageActivity.class);
                 intent.putExtra("selector",true);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -89,7 +88,6 @@ public class MineActivity extends AppCompatActivity {
                 Intent intent = new Intent(MineActivity.this, PageActivity.class);
                 intent.putExtra("selector",true);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -99,7 +97,6 @@ public class MineActivity extends AppCompatActivity {
                 Intent intent = new Intent(MineActivity.this, PageActivity.class);
                 intent.putExtra("selector",false);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -108,7 +105,6 @@ public class MineActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MineActivity.this, SettingsActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -117,13 +113,16 @@ public class MineActivity extends AppCompatActivity {
         //设置现在选择的页面
         bottomNavigationView.setSelectedItemId(R.id.mine);
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener()
+        {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuitem) {
                 switch(menuitem.getItemId()) {
                     case R.id.board:
                         startActivity(new Intent(getApplicationContext(), BoardActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(0, 0 );
+//                        overridePendingTransition(0,android.R.anim.fade_out);
+                        finish();
                         return true;
 
                     case R.id.mine:
@@ -196,8 +195,8 @@ public class MineActivity extends AppCompatActivity {
          */
         final AlertDialog.Builder normalDialog =
                 new AlertDialog.Builder(MineActivity.this);
-        normalDialog.setTitle("我是一个人畜无害的应急食品！");
-        normalDialog.setMessage("前面的区域以后再来探索吧！");
+        normalDialog.setTitle("学习圈");
+        normalDialog.setMessage("别急别急，在做了，在做了~");
         normalDialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

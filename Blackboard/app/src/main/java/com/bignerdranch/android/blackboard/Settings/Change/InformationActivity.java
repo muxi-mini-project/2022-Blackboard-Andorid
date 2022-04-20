@@ -156,15 +156,15 @@ public class InformationActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = getIntent();
-                Integer back = intent1.getIntExtra("from",0);
-                if(back==0){
-                    Intent intent = new Intent(InformationActivity.this, PageActivity.class);
-                    startActivity(intent);
-                } else{
-                    Intent intent = new Intent(InformationActivity.this, SettingsActivity.class);
-                    startActivity(intent);
-                }
+//                Intent intent1 = getIntent();
+//                Integer back = intent1.getIntExtra("from",0);
+//                if(back==0){
+//                    Intent intent = new Intent(InformationActivity.this, PageActivity.class);
+//                    startActivity(intent);
+//                } else{
+//                    Intent intent = new Intent(InformationActivity.this, SettingsActivity.class);
+//                    startActivity(intent);
+//                }
 
                 finish();
             }
@@ -198,13 +198,13 @@ public class InformationActivity extends AppCompatActivity {
 
 
 
-                if(back==0){
-                    Intent intent = new Intent(InformationActivity.this, PageActivity.class);
-                    startActivity(intent);
-                } else{
-                    Intent intent = new Intent(InformationActivity.this, SettingsActivity.class);
-                    startActivity(intent);
-                }
+//                if(back==0){
+//                    Intent intent = new Intent(InformationActivity.this, PageActivity.class);
+//                    startActivity(intent);
+//                } else{
+//                    Intent intent = new Intent(InformationActivity.this, SettingsActivity.class);
+//                    startActivity(intent);
+//                }
                 finish();
             }
         });

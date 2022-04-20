@@ -1,5 +1,7 @@
 package com.bignerdranch.android.blackboard.Blackboard.New;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +16,17 @@ import com.bignerdranch.android.blackboard.R;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class PostActivity extends AppCompatActivity {
+
+    private static String EXTRA_OgnName = "OgnName";
+    private static String EXTRA_GroupName = "GroupName";
+
+    public Intent newIntent(Context context,String OgnName, String GroupName)
+    {
+        Intent intent = new Intent(context,PostActivity.class);
+        intent.putExtra(EXTRA_OgnName,OgnName);
+        intent.putExtra(EXTRA_GroupName,GroupName);
+        return intent;
+    }
 
     /*发布通知*/
     private Button backButton;

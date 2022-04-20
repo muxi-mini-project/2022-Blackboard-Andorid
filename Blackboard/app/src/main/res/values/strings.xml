@@ -20,4 +20,13 @@
     <string name="my_information">编辑资料</string>
     <string name="exit">退出登录</string>
     <string name="CCNU">华中师范大学位于九省通衢的湖北省武汉市，坐落在武昌南湖之滨的桂子山上，占地面积120余万平方米，是教育部直属重点综合性师范大学，国家“211工程”重点建设大学，国家教师教育“985优势学科创新平台”建设高校，首批列入国家“双一流”建设高校，是国家培养中、高等学校师资和其他高级专门人才的重要基地。</string>
+    <string name="title_activity_message_detail">MessageDetail</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

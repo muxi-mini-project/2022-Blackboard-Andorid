@@ -45,9 +45,14 @@ public class SearchResultActivity extends AppCompatActivity {
         searchResultBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SearchResultActivity.this, BoardActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(SearchResultActivity.this, BoardActivity.class);
+//                startActivity(intent);
+                finish();
             }
         });
+    }
+
+    public void ClickBack(View view) {
+        finish();
     }
 }

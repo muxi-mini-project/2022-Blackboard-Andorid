@@ -1,12 +1,14 @@
 package com.bignerdranch.android.blackboard.Blackboard.LatestMessage;
 
-import static com.bignerdranch.android.blackboard.R.drawable.star_hollow;
-import static com.bignerdranch.android.blackboard.R.drawable.star_solid;
+import static com.bignerdranch.android.blackboard.R.drawable.star;
+import static com.bignerdranch.android.blackboard.R.drawable.unstar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bignerdranch.android.blackboard.Bean.Organization.OrganizationActivity;
 import com.bignerdranch.android.blackboard.R;
 
 import java.util.ArrayList;
@@ -42,9 +45,9 @@ public class BoardFragmentRLV extends Fragment {
         boardAdapter = new BoardAdapter(this, data);
         mRecyclerView.setAdapter(boardAdapter);
 
-        boardAdapter.setOnStarClickListener(new BoardAdapter.OnButtonClickListener() {
+        boardAdapter.setItemOnClickListener(new BoardAdapter.ItemOnClickListener() {
             @Override
-            public void OnButtonClick(View view,int position) {
+            public void OnStarClick(View view, int position) {
 //                Toast.makeText(getActivity(), "Star", Toast.LENGTH_SHORT).show();
 
 //                view.setBackground(getResources().getDrawable(star_solid));
@@ -55,13 +58,22 @@ public class BoardFragmentRLV extends Fragment {
                 }
 
                 if (data.get(position).ismStar() == 0){
-                    view.setBackground(getResources().getDrawable(star_hollow));
+                    view.setBackground(getResources().getDrawable(unstar));
                 }else{
-                    view.setBackground(getResources().getDrawable(star_solid));
+                    view.setBackground(getResources().getDrawable(star));
                 }
 
             }
+            @Override
+            public void OnItemClick(String name,int id)
+            {
+//                Intent intent = OrganizationActivity.newIntent(getActivity(),name,id);
+                Intent intent = OrganizationActivity.newIntent(getActivity(),"MUXI",106);
+                startActivity(intent);
+                Toast.makeText(getActivity(), "还在加工 先来MUXI休息会吧", Toast.LENGTH_SHORT).show();
+            }
         });
+
 
         //返回View
         return view;
@@ -82,12 +94,14 @@ public class BoardFragmentRLV extends Fragment {
                 messageItem.setmName("name" + i);
                 messageItem.setmPhoto(R.drawable.qq);
                 messageItem.setmText(R.string.CCNU);
-                messageItem.setmStar(i%2);
+                messageItem.setmStar(0);
                 items.add(messageItem);
             }
 
             return items;
         }
+
+
 
     }
 

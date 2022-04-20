@@ -9,73 +9,125 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/content"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/message_background"
         android:layout_width="match_parent"
-        android:layout_height="250dp">
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="7:4"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+
+        android:background="@drawable/message_background"
+        >
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/IV_photo"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent="0.25"
+            app:layout_constraintDimensionRatio="1:1"
+
             app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/girl" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
 
+            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintVertical_bias="0.05"
 
+            android:src="@drawable/girl"
+            />
 
         <TextView
             android:id="@+id/TV_name"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent="0.15"
+
+            app:layout_constraintTop_toTopOf="@id/IV_photo"
+            app:layout_constraintBottom_toBottomOf="@id/date"
+            app:layout_constraintStart_toEndOf="@id/IV_photo"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintHorizontal_bias="0.08"
+            app:layout_constraintVertical_bias="0"
+
             android:text="TextView"
+            android:textColor="@color/black"
             android:textSize="20sp"
-            android:textColor="@color/white"
-            android:layout_marginLeft="10dp"
-            app:layout_constraintStart_toEndOf="@+id/IV_photo"
-            app:layout_constraintTop_toTopOf="@id/IV_photo" />
+            />
 
         <TextView
             android:id="@+id/date"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent="0.06"
+
+            app:layout_constraintTop_toBottomOf="@id/TV_name"
+            app:layout_constraintBottom_toBottomOf="@id/IV_photo"
+            app:layout_constraintStart_toStartOf="@id/TV_name"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintVertical_bias="0"
+
             android:text="2022-1-1"
+            android:textColor="@color/black"
             android:textSize="10sp"
-            android:textColor="@color/white"
-            android:layout_marginLeft="10dp"
-            app:layout_constraintStart_toEndOf="@id/IV_photo"
-            app:layout_constraintBottom_toBottomOf="@id/IV_photo"/>
+            />
 
         <Button
             android:id="@+id/star"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:background="@drawable/star_hollow"
-            android:layout_marginRight="10dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintDimensionRatio="1:1"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/TV_name"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            app:layout_constraintHorizontal_bias="0.95"
+            app:layout_constraintVertical_bias="0.05"
+
+            android:background="@drawable/unstar"
+            />
 
         <TextView
             android:id="@+id/TV_text"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent="0.6"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.9"
+
+            app:layout_constraintTop_toBottomOf="@id/IV_photo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
             android:text="TextView"
-            android:textColor="@color/white"
-            android:layout_marginLeft="10dp"
-            app:layout_constraintStart_toStartOf="@id/IV_photo"
-            app:layout_constraintTop_toBottomOf="@+id/IV_photo" />
+            android:textColor="@color/black"
+            />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/blank"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:background="@drawable/activity_background"
-        app:layout_constraintTop_toBottomOf="@id/content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

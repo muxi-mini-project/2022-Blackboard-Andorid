@@ -3,7 +3,7 @@ package com.bignerdranch.android.blackboard;
 import com.bignerdranch.android.blackboard.Bean.Organization.Organization;
 import com.bignerdranch.android.blackboard.Bean.Topic.Topics;
 import com.bignerdranch.android.blackboard.Mine.Information;
-import com.bignerdranch.android.blackboard.Mine.Post.Post;
+import com.bignerdranch.android.blackboard.Mine.Post.Posts;
 import com.bignerdranch.android.blackboard.Settings.Change.ChangeName;
 import com.bignerdranch.android.blackboard.Settings.Change.UploadAvatar;
 import com.bignerdranch.android.blackboard.Settings.Login.LoginResponse;
@@ -51,11 +51,18 @@ public interface API {
             @Query("limit") int limit,
             @Query("page") int page, @Header("Authorization")String Authorization);
 
+    /*查看关注的组织*/
+    @GET("organization/personal/following")
+    Call<MyResponse<List<Organization>>> myFollow(
+            @Query("limit") int limit,
+            @Query("page") int page,@Header("Authorization")String Authorization);
+
+
     @POST("login")
     Call<LoginResponse> post(@Body User user);
 
     @GET("announcement")
-    Call<Post> get(@Body Post post);
+    Call<Posts> get(@Body Posts post);
 
     @PUT("user/changename")
     Call<ChangeName> put(@Body ChangeName changeName, @Header("Authorization") String Authorization);
@@ -69,5 +76,10 @@ public interface API {
     @Multipart
     @POST("user/update")
     Call<UploadAvatar> post(@Part("file=") RequestBody body , @Header("Authorization") String Authorization );
+
+    @GET("user/published")
+    Call<Posts> myPost(
+            @Query("limit") int limit,
+            @Query("page") int page, @Header("Authorization")String Authorization);
 
 }
