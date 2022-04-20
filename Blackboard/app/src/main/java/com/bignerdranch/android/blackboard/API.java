@@ -83,9 +83,5 @@ public interface API {
             @Query("limit") int limit,
             @Query("page") int page, @Header("Authorization")String Authorization);
 
-    @GET("user/published")
-    Call<Posts> myPost(
-            @Query("limit") int limit,
-            @Query("page") int page, @Header("Authorization")String Authorization);
 
 }
