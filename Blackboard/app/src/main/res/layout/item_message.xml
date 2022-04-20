@@ -76,10 +76,10 @@
             app:layout_constraintTop_toBottomOf="@id/TV_name"
             app:layout_constraintBottom_toBottomOf="@id/IV_photo"
             app:layout_constraintStart_toStartOf="@id/TV_name"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/star"
 
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintVertical_bias="0"
+            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintVertical_bias="0.1"
 
             android:text="2022-1-1"
             android:textColor="@color/black"

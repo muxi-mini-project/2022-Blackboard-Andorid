@@ -1,4 +1,4 @@
-package com.bignerdranch.android.blackboard;
+package com.bignerdranch.android.blackboard.Utils;
 
 public class Utils
 {

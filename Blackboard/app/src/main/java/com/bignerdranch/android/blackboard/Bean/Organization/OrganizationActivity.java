@@ -1,7 +1,5 @@
 package com.bignerdranch.android.blackboard.Bean.Organization;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,30 +10,24 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bignerdranch.android.blackboard.API;
+import com.bignerdranch.android.blackboard.Utils.API;
 import com.bignerdranch.android.blackboard.Bean.Topic.TopicAdapter;
 import com.bignerdranch.android.blackboard.Bean.Topic.Topics;
 import com.bignerdranch.android.blackboard.Blackboard.New.PostActivity;
-import com.bignerdranch.android.blackboard.MyResponse;
+import com.bignerdranch.android.blackboard.Utils.MyResponse;
 import com.bignerdranch.android.blackboard.R;
-import com.bignerdranch.android.blackboard.Utils;
+import com.bignerdranch.android.blackboard.Utils.Utils;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.ListIterator;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import retrofit2.Call;
@@ -227,7 +219,7 @@ public class OrganizationActivity extends AppCompatActivity
     public void addTopic(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(OrganizationActivity.this);
         final Dialog dialog= builder.create();
-        View v = LayoutInflater.from(OrganizationActivity.this).inflate(R.layout.create_dialog,null);
+        View v = LayoutInflater.from(OrganizationActivity.this).inflate(R.layout.dialog_create,null);
         TextView cancel = v.findViewById(R.id.passive);
         TextView sure = v.findViewById(R.id.positive);
         EditText editText = v.findViewById(R.id.edittext);

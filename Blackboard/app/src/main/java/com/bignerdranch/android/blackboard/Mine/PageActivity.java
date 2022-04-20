@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.bignerdranch.android.blackboard.API;
+import com.bignerdranch.android.blackboard.Utils.API;
 import com.bignerdranch.android.blackboard.Mine.Favourite.FavoritesFragment;
 import com.bignerdranch.android.blackboard.Mine.Post.PostFragment;
 import com.bignerdranch.android.blackboard.R;

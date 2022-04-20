@@ -3,23 +3,17 @@ package com.bignerdranch.android.blackboard.Settings.Change;
 import android.Manifest;
 import android.annotation.TargetApi;
 import android.content.ContentUris;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.PixelFormat;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.text.TextUtils;
@@ -37,23 +31,17 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
-import java.io.BufferedOutputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 
-import com.bignerdranch.android.blackboard.API;
+import com.bignerdranch.android.blackboard.Utils.API;
 import com.bignerdranch.android.blackboard.Mine.Information;
-import com.bignerdranch.android.blackboard.Mine.PageActivity;
 import com.bignerdranch.android.blackboard.R;
-import com.bignerdranch.android.blackboard.Settings.SettingsActivity;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 
