@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.bignerdranch.android.blackboard.API;
+import com.bignerdranch.android.blackboard.Utils.API;
 import com.bignerdranch.android.blackboard.Blackboard.BoardActivity;
 import com.bignerdranch.android.blackboard.Mine.Information;
 import com.bignerdranch.android.blackboard.R;

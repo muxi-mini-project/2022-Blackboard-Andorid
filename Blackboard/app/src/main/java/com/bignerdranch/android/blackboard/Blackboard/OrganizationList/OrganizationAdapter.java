@@ -29,7 +29,7 @@ public class OrganizationAdapter extends BaseExpandableListAdapter {
     public View getGroupView(int ParentPosition, boolean isExpanded, View view, ViewGroup viewGroup) {
         if(view == null)
         {
-            view = LayoutInflater.from(context).inflate(R.layout.ogn_group_item,null);
+            view = LayoutInflater.from(context).inflate(R.layout.item_ogn_group,null);
         }
         TextView textView = view.findViewById(R.id.group_TV);
         textView.setText(parent[ParentPosition]);
@@ -37,7 +37,7 @@ public class OrganizationAdapter extends BaseExpandableListAdapter {
     }
     @Override
     public View getChildView(int ParentPosition, int ChildPosition, boolean isExpanded, View view, ViewGroup viewGroup) {
-        view = LayoutInflater.from(context).inflate(R.layout.ogn_list_item,null);
+        view = LayoutInflater.from(context).inflate(R.layout.item_ogn_list,null);
         TextView textView = view.findViewById(R.id.Child_TV);
 
         String name = myList.get(ParentPosition).get(ChildPosition).getOrganization_name();

@@ -12,11 +12,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bignerdranch.android.blackboard.API;
+import com.bignerdranch.android.blackboard.Utils.API;
 import com.bignerdranch.android.blackboard.Bean.Organization.Organization;
-import com.bignerdranch.android.blackboard.Utils;
+import com.bignerdranch.android.blackboard.Utils.Utils;
 import com.bignerdranch.android.blackboard.Bean.Organization.OrganizationActivity;
-import com.bignerdranch.android.blackboard.MyResponse;
+import com.bignerdranch.android.blackboard.Utils.MyResponse;
 import com.bignerdranch.android.blackboard.R;
 
 import de.hdodenhof.circleimageview.CircleImageView;

@@ -10,17 +10,15 @@ import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.bignerdranch.android.blackboard.API;
+import com.bignerdranch.android.blackboard.Utils.API;
 import com.bignerdranch.android.blackboard.Bean.Organization.Organization;
 import com.bignerdranch.android.blackboard.Bean.Organization.OrganizationActivity;
-import com.bignerdranch.android.blackboard.MyResponse;
+import com.bignerdranch.android.blackboard.Utils.MyResponse;
 import com.bignerdranch.android.blackboard.R;
-import com.bignerdranch.android.blackboard.Utils;
+import com.bignerdranch.android.blackboard.Utils.Utils;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 

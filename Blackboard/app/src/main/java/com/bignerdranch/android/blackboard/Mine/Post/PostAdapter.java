@@ -9,7 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bignerdranch.android.blackboard.MyResponse;
 import com.bignerdranch.android.blackboard.R;
 
 import java.util.ArrayList;

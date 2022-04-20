@@ -1,4 +1,4 @@
-package com.bignerdranch.android.blackboard;
+package com.bignerdranch.android.blackboard.Utils;
 
 import com.bignerdranch.android.blackboard.Bean.Organization.Organization;
 import com.bignerdranch.android.blackboard.Bean.Topic.Topics;
@@ -8,11 +8,11 @@ import com.bignerdranch.android.blackboard.Settings.Change.ChangeName;
 import com.bignerdranch.android.blackboard.Settings.Change.UploadAvatar;
 import com.bignerdranch.android.blackboard.Settings.Login.LoginResponse;
 import com.bignerdranch.android.blackboard.Settings.Login.User;
+import com.bignerdranch.android.blackboard.Utils.MyResponse;
 
 import java.util.List;
 
 import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
