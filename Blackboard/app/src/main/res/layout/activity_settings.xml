@@ -29,7 +29,7 @@
         android:layout_height="38dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/ic_settings_back"/>
+        android:background="@drawable/ic_settings_back" />
 
     <Button
         android:id="@+id/exit"
