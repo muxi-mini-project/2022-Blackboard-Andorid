@@ -6,12 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bignerdranch.android.blackboard.Bean.Organization.OrganizationActivity;
 import com.bignerdranch.android.blackboard.R;
 
 import java.util.ArrayList;
@@ -46,7 +46,7 @@ class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.BoardViewHolder> {
             imageView_photo = itemView.findViewById(R.id.IV_photo);
             textView_text = itemView.findViewById(R.id.TV_text);
             Star = itemView.findViewById(R.id.star);
-            blank = itemView.findViewById(R.id.blank);
+//            blank = itemView.findViewById(R.id.blank);
         }
     }
 
@@ -70,17 +70,23 @@ class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.BoardViewHolder> {
         Drawable photo = boardFragmentRLV.getResources().getDrawable(messageItem.getmPhoto());
         holder.imageView_photo.setImageDrawable(photo);
         holder.textView_text.setText(messageItem.getmText());
-        holder.blank.setText("");
 
         holder.Star.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-
-                if (onButtonClickListener != null) {
-                    onButtonClickListener.OnButtonClick(view,position);
-                }
+            public void onClick(View view)
+            {
+                    itemOnClickListener.OnStarClick(view,position);
             }
         });
+        holder.imageView_photo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                itemOnClickListener.OnItemClick(messageItem.getmName(),messageItem.getId());
+            }
+        });
+
+
+
     }
 
     @Override
@@ -88,14 +94,14 @@ class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.BoardViewHolder> {
         return data.size();
     }
 
-
-    private OnButtonClickListener onButtonClickListener;
-    public void setOnStarClickListener(OnButtonClickListener onButtonClickListener) {
-        this.onButtonClickListener = onButtonClickListener;
+    //监听接口
+    public interface ItemOnClickListener {
+        public void OnStarClick(View view, int position);
+        public void OnItemClick(String name,int id);
     }
-    public interface OnButtonClickListener {
-        public void OnButtonClick(View view,int position);
+    //收藏
+    private ItemOnClickListener itemOnClickListener;
+    public void setItemOnClickListener(ItemOnClickListener itemOnClickListener) {
+        this.itemOnClickListener = itemOnClickListener;
     }
-
-
 }

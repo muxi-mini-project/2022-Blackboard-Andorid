@@ -30,7 +30,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
-import com.bignerdranch.android.blackboard.API;
+import com.bignerdranch.android.blackboard.Utils.API;
 import com.bignerdranch.android.blackboard.Blackboard.BoardActivity;
 import com.bignerdranch.android.blackboard.Blackboard.New.NewActivity;
 import com.bignerdranch.android.blackboard.R;

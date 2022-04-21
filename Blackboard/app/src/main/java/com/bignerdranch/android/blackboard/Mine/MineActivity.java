@@ -18,7 +18,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.bignerdranch.android.blackboard.API;
+import com.bignerdranch.android.blackboard.Utils.API;
 import com.bignerdranch.android.blackboard.Blackboard.BoardActivity;
 import com.bignerdranch.android.blackboard.R;
 import com.bignerdranch.android.blackboard.Settings.Change.ImageUtil;

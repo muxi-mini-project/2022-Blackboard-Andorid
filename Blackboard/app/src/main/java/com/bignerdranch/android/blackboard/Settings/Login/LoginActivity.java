@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.bignerdranch.android.blackboard.API;
+import com.bignerdranch.android.blackboard.Utils.API;
 import com.bignerdranch.android.blackboard.Blackboard.BoardActivity;
 import com.bignerdranch.android.blackboard.Mine.Information;
 import com.bignerdranch.android.blackboard.R;
@@ -90,8 +90,6 @@ public class LoginActivity extends AppCompatActivity {
                 );
 
                 sendNetworkRequest(user);
-
-
             }
         });
     }
@@ -133,6 +131,7 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
 
                     getNickname();
+                    finish();
 
 //                    Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
 //                    startActivity(intent);

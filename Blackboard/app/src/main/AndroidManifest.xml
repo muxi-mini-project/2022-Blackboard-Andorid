@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bignerdranch.android.blackboard">
+    package="com.bignerdranch.android.blackboard" >
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!--相机权限-->
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 相机权限 -->
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -14,12 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.Blackboard"
-        android:usesCleartextTraffic="true"
-        android:requestLegacyExternalStorage="true">
+        android:usesCleartextTraffic="true" >
         <activity
             android:name=".Bean.Organization.OrganizationActivity"
             android:exported="true" >
-
         </activity>
         <activity
             android:name=".Blackboard.New.NewActivity"
@@ -48,7 +45,7 @@
         <activity
             android:name=".Settings.Login.LoginActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustPan">
+            android:windowSoftInputMode="adjustPan" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -64,22 +61,15 @@
 
         </activity>
 
-
-
         <provider
-            android:authorities="com.bignerdranch.android.blackboard.fileprovider"
             android:name="androidx.core.content.FileProvider"
+            android:authorities="com.bignerdranch.android.blackboard.fileprovider"
             android:exported="false"
-            android:grantUriPermissions="true"
-            >
+            android:grantUriPermissions="true" >
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/files" />
         </provider>
-
-
-
-
     </application>
 
 </manifest>
