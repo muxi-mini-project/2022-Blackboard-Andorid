@@ -11,6 +11,7 @@ import com.bignerdranch.android.blackboard.Settings.Login.User;
 
 import java.util.List;
 
+import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -68,7 +69,7 @@ public interface API {
 
     @Multipart
     @POST("user/update")
-    Call<UploadAvatar> post(@Part("file=") RequestBody body , @Header("Authorization") String Authorization );
+    Call<UploadAvatar> post(@Part MultipartBody.Part file, @Header("Authorization") String Authorization );
 
     @GET("user/published")
     Call<Posts> myPost(

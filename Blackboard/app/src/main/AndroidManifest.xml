@@ -11,7 +11,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.Blackboard"
         android:usesCleartextTraffic="true"
@@ -40,7 +40,7 @@
             android:name=".Settings.Login.RegisterActivity"
             android:exported="true" />
         <activity
-            android:name=".Blackboard.New.AddActivity"
+            android:name=".Blackboard.New.PostActivity"
             android:exported="true" />
         <activity
             android:name=".Blackboard.Search.SearchActivity"
@@ -49,7 +49,11 @@
             android:name=".Settings.Login.LoginActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".Mine.MineActivity"
@@ -57,11 +61,7 @@
         <activity
             android:name=".Blackboard.BoardActivity"
             android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
 

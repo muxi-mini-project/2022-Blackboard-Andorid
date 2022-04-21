@@ -15,6 +15,7 @@ import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -89,6 +90,7 @@ public class InformationActivity extends AppCompatActivity {
     private Uri imageUri;
     private String imageBase64;
     private CircleImageView ivAvatar;
+    private File file;
 //    private String base64;
 
 
@@ -156,15 +158,15 @@ public class InformationActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = getIntent();
-                Integer back = intent1.getIntExtra("from",0);
-                if(back==0){
-                    Intent intent = new Intent(InformationActivity.this, PageActivity.class);
-                    startActivity(intent);
-                } else{
-                    Intent intent = new Intent(InformationActivity.this, SettingsActivity.class);
-                    startActivity(intent);
-                }
+//                Intent intent1 = getIntent();
+//                Integer back = intent1.getIntExtra("from",0);
+//                if(back==0){
+//                    Intent intent = new Intent(InformationActivity.this, PageActivity.class);
+//                    startActivity(intent);
+//                } else{
+//                    Intent intent = new Intent(InformationActivity.this, SettingsActivity.class);
+//                    startActivity(intent);
+//                }
 
                 finish();
             }
@@ -192,19 +194,17 @@ public class InformationActivity extends AppCompatActivity {
 
 
 
-//                if(base64 != imageBase64){
-//                    upload();
+
+
+
+
+//                if(back==0){
+//                    Intent intent = new Intent(InformationActivity.this, PageActivity.class);
+//                    startActivity(intent);
+//                } else{
+//                    Intent intent = new Intent(InformationActivity.this, SettingsActivity.class);
+//                    startActivity(intent);
 //                }
-
-
-
-                if(back==0){
-                    Intent intent = new Intent(InformationActivity.this, PageActivity.class);
-                    startActivity(intent);
-                } else{
-                    Intent intent = new Intent(InformationActivity.this, SettingsActivity.class);
-                    startActivity(intent);
-                }
                 finish();
             }
         });
@@ -304,6 +304,9 @@ public class InformationActivity extends AppCompatActivity {
         });
     }
 
+
+
+
 //    public File FileSaveToInside(Context context, String fileName) {
 //
 //        SharedPreferences spfRecord = getSharedPreferences("spfRecord", MODE_PRIVATE);
@@ -382,60 +385,59 @@ public class InformationActivity extends AppCompatActivity {
 //    }
 
 
-//    private void upload() {
-//
-//        //创建OkHttp client
-//        OkHttpClient.Builder okHttpClientBuilder = new OkHttpClient.Builder();
-//
-//        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-//        logging.setLevel(HttpLoggingInterceptor.Level.BODY);//此处有四个级别，body为显示所有
-//
-//        //判断是开发者模式，则调用OkHttp日志记录拦截器，方便debug
-//        if(BuildConfig.DEBUG) {
-//            okHttpClientBuilder.addInterceptor(logging);
-//        }
-//
-//
-////        MediaType mediaType = MediaType.Companion.parse("multipart/form-data");
-////        RequestBody fileBody = RequestBody.Companion.create(file,mediaType);
-////        MultipartBody body = new MultipartBody.Builder()
-////                .addFormDataPart("file", file.getName(),fileBody)
-////                .build();
-//
-//        mRetrofit2 = new Retrofit.Builder()
-//                .baseUrl("http://119.3.2.168:8080/api/v1/")
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .client(okHttpClientBuilder.build())
+    private void upload(File file) {
+
+        //创建OkHttp client
+        OkHttpClient.Builder okHttpClientBuilder = new OkHttpClient.Builder();
+
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+        logging.setLevel(HttpLoggingInterceptor.Level.BODY);//此处有四个级别，body为显示所有
+
+        //判断是开发者模式，则调用OkHttp日志记录拦截器，方便debug
+        if(BuildConfig.DEBUG) {
+            okHttpClientBuilder.addInterceptor(logging);
+        }
+
+
+//        MediaType mediaType = MediaType.Companion.parse("multipart/form-data");
+//        RequestBody fileBody = RequestBody.Companion.create(file,mediaType);
+//        MultipartBody body = new MultipartBody.Builder()
+//                .addFormDataPart("file", file.getName(),fileBody)
 //                .build();
-//
-//        File file = FileSaveToInside(context,"avatar");
-//        RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"),file);
-//        MultipartBody.Part part = MultipartBody.Part.createFormData("file",file.getName(),requestFile);
-//
-//        SharedPreferences p = getSharedPreferences("myPreferences", MODE_PRIVATE);
-//        String Authorization = p.getString("token","null");
-//
-//        changeAvatar = mRetrofit2.create(API.class);
-//        Call<UploadAvatar> call = changeAvatar.post(part, Authorization);
-//        call.enqueue(new Callback<UploadAvatar>() {
-//            @Override
-//            public void onResponse(Call<UploadAvatar> call, Response<UploadAvatar> response) {
-//                if (response.isSuccessful()) {
-//                    Toast.makeText(InformationActivity.this, "成功了", Toast.LENGTH_SHORT).show();
-//                }
-//                else{
-//                    Toast.makeText(InformationActivity.this, "出错了", Toast.LENGTH_SHORT).show();
-//
-//                }
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Call<UploadAvatar> call, Throwable t) {
-//                Toast.makeText(InformationActivity.this, "出错了", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//    }
+
+        mRetrofit2 = new Retrofit.Builder()
+                .baseUrl("http://119.3.2.168:8080/api/v1/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(okHttpClientBuilder.build())
+                .build();
+
+        RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"), file);
+        MultipartBody.Part part = MultipartBody.Part.createFormData("file",file.getName(),requestFile);
+
+        SharedPreferences p = getSharedPreferences("myPreferences", MODE_PRIVATE);
+        String Authorization = p.getString("token","null");
+
+        changeAvatar = mRetrofit2.create(API.class);
+        Call<UploadAvatar> call = changeAvatar.post(part, Authorization);
+        call.enqueue(new Callback<UploadAvatar>() {
+            @Override
+            public void onResponse(Call<UploadAvatar> call, Response<UploadAvatar> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(InformationActivity.this, "成功了", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(InformationActivity.this, "出错了", Toast.LENGTH_SHORT).show();
+
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<UploadAvatar> call, Throwable t) {
+                Toast.makeText(InformationActivity.this, "出错了", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 
 
 
@@ -471,21 +473,21 @@ public class InformationActivity extends AppCompatActivity {
     }
 
     private void doTake() {
-        File imageTemp = new File(getExternalCacheDir(), "imageOut.jpeg");
-        if (imageTemp.exists()) {
-            imageTemp.delete();
+        file = new File(getExternalCacheDir(), "imageOut.jpg");
+        if (file.exists()) {
+            file.delete();
         }
         try {
-            imageTemp.createNewFile();
+            file.createNewFile();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         if (Build.VERSION.SDK_INT > 24) {
             // contentProvider
-            imageUri = FileProvider.getUriForFile(this, "com.bignerdranch.android.blackboard.fileprovider", imageTemp);
+            imageUri = FileProvider.getUriForFile(this, "com.bignerdranch.android.blackboard.fileprovider", file);
         } else {
-            imageUri = Uri.fromFile(imageTemp);
+            imageUri = Uri.fromFile(file);
         }
         Intent intent = new Intent();
         intent.setAction("android.media.action.IMAGE_CAPTURE");
@@ -499,25 +501,30 @@ public class InformationActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CODE_TAKE) {
             if (resultCode == RESULT_OK) {
-                // 获取拍摄的照片
-                try {
-                    InputStream inputStream = getContentResolver().openInputStream(imageUri);
-                    Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
-                    ivAvatar.setImageBitmap(bitmap);
-                    String imageToBase64 = ImageUtil.imageToBase64(bitmap);
-                    imageBase64 = imageToBase64;
-                } catch (FileNotFoundException e) {
-
+                if (getFile() == null || !getFile().exists()) {
+                    ivAvatar.setImageBitmap(null);
+                } else {
+                    upload(getFile());
+                    // 获取拍摄的照片
+                    try {
+                        InputStream inputStream = getContentResolver().openInputStream(imageUri);
+                        Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+                        ivAvatar.setImageBitmap(bitmap);
+                        String imageToBase64 = ImageUtil.imageToBase64(bitmap);
+                        imageBase64 = imageToBase64;
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         } else if (requestCode == REQUEST_CODE_CHOOSE) {
-
-            if (Build.VERSION.SDK_INT < 19) {
-                handleImageBeforeApi19(data);
-            } else {
-                handleImageOnApi19(data);
+            if (resultCode == RESULT_OK) {
+                if (Build.VERSION.SDK_INT < 19) {
+                    handleImageBeforeApi19(data);
+                } else {
+                    handleImageOnApi19(data);
+                }
             }
-
         }
     }
 
@@ -559,7 +566,7 @@ public class InformationActivity extends AppCompatActivity {
 
     private void resolveMSFContent(Uri uri, String documentId) {
 
-        File file = new File(getCacheDir(), "temp_file" + getContentResolver().getType(uri).split("/")[1]);
+        file = new File(getCacheDir(), "temp_file" + getContentResolver().getType(uri).split("/")[1]);
 
         try {
             InputStream inputStream = getContentResolver().openInputStream(uri);
@@ -601,6 +608,8 @@ public class InformationActivity extends AppCompatActivity {
     private void displayImage(String imagePath) {
         Log.d(TAG, "displayImage: ------------" + imagePath);
         if (imagePath != null) {
+            File file = new File(imagePath);
+            upload(file);
             Bitmap bitmap = BitmapFactory.decodeFile(imagePath);
             ivAvatar.setImageBitmap(bitmap) ;
             String imageToBase64 = ImageUtil.imageToBase64(bitmap);
@@ -625,4 +634,7 @@ public class InformationActivity extends AppCompatActivity {
         startActivityForResult(intent, REQUEST_CODE_CHOOSE);
     }
 
+    private File getFile(){
+        return file;
+    }
 }

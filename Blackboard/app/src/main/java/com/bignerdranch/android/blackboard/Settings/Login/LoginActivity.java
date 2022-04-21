@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
     private String token;
     private API information;
     private Retrofit mRetrofit1;
-
+    private String nickname;
 
     private ImageButton eye;
     private Boolean isHide = true;
@@ -48,6 +48,14 @@ public class LoginActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        SharedPreferences myPreferences = getSharedPreferences("myPreferences", MODE_PRIVATE);
+        Boolean remember = myPreferences.getBoolean("remember", false);
+        if(remember){
+            Intent intent=new Intent(LoginActivity.this,BoardActivity.class);
+            startActivity(intent);
+            LoginActivity.this.finish();
+        }
 
         mNumber = (EditText) findViewById(R.id.number);
         mPassword = (EditText) findViewById(R.id.password);
@@ -82,6 +90,7 @@ public class LoginActivity extends AppCompatActivity {
                 );
 
                 sendNetworkRequest(user);
+
 
             }
         });
@@ -118,6 +127,7 @@ public class LoginActivity extends AppCompatActivity {
                     //获得SharedPreferences的Editor对象
                     SharedPreferences.Editor editor = p.edit();
                     editor.putString("token",token);
+                    editor.putBoolean("remember",true);
                     editor.commit();//提交数据，完成存储操作
 
                     Toast.makeText(LoginActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
@@ -171,15 +181,17 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<Information> call, Response<Information> response) {
                 if (response.isSuccessful()) {
 
-                    String nickname = response.body().getData().getNickname();
+                    nickname = response.body().getData().getNickname();
 
                     Intent intent;
-                    if(nickname!=null){
-                        intent = new Intent(LoginActivity.this, BoardActivity.class);
-                    }else{
+                    if(nickname.isEmpty()){
                         intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                    }else{
+                        intent = new Intent(LoginActivity.this, BoardActivity.class);
                     }
                     startActivity(intent);
+
+                    finish();
 
                 } else {
                     Log.d("LoginActivity","error");

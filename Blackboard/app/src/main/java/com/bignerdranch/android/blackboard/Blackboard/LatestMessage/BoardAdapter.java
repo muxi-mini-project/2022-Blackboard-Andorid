@@ -1,5 +1,6 @@
 package com.bignerdranch.android.blackboard.Blackboard.LatestMessage;
 
+import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,8 @@ import com.bignerdranch.android.blackboard.R;
 
 import java.util.ArrayList;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.BoardViewHolder> {
     private final BoardFragmentRLV boardFragmentRLV;
     //adapter是RV的适配器 用于连数据与UI 所以需要一个数据列表List
@@ -26,13 +29,12 @@ class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.BoardViewHolder> {
         this.data = InData;
     }
 
-
     //绑定布局
-    public class BoardViewHolder extends RecyclerView.ViewHolder {
+    public class BoardViewHolder extends RecyclerView.ViewHolder
+    {
         private TextView textView_name;
-        private ImageView imageView_photo;
+        private CircleImageView imageView_photo;
         private TextView textView_text;
-//        private int i=0;
         private Button Star;
         private TextView blank;
 
@@ -50,16 +52,18 @@ class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.BoardViewHolder> {
 
     @NonNull
     @Override
-    public BoardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public BoardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
+    {
         //需要返回一个 myViewHolder       所以要new一个myViewHolder
         //myViewHolder函数 需要 View        所以要new一个View
         //inflate函数能将xml文件加载成View   所以要调用一个inflate函数(View子类)
-        View view = LayoutInflater.from(boardFragmentRLV.getActivity()).inflate(R.layout.item_message, null, false);
+        View view = LayoutInflater.from(boardFragmentRLV.getActivity()).inflate(R.layout.item_message, parent, false);
         return new BoardViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BoardViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull BoardViewHolder holder, @SuppressLint("RecyclerView") int position)
+    {
         MessageItem messageItem = data.get(position);
 
         holder.textView_name.setText(messageItem.getmName());
@@ -84,12 +88,11 @@ class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.BoardViewHolder> {
         return data.size();
     }
 
-    private OnButtonClickListener onButtonClickListener;
 
+    private OnButtonClickListener onButtonClickListener;
     public void setOnStarClickListener(OnButtonClickListener onButtonClickListener) {
         this.onButtonClickListener = onButtonClickListener;
     }
-
     public interface OnButtonClickListener {
         public void OnButtonClick(View view,int position);
     }

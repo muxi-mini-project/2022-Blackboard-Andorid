@@ -1,7 +1,7 @@
 package com.bignerdranch.android.blackboard.Blackboard.LatestMessage;
 
-import static com.bignerdranch.android.blackboard.R.drawable.star_hollow;
-import static com.bignerdranch.android.blackboard.R.drawable.star_solid;
+import static com.bignerdranch.android.blackboard.R.drawable.star;
+import static com.bignerdranch.android.blackboard.R.drawable.unstar;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -35,8 +35,8 @@ public class BoardFragmentRLV extends Fragment {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         //建立MessageItem的数据          所以调用UpDate并返回数据
-        UpDate upDate = new UpDate();
-        ArrayList<MessageItem> data = upDate.UpDate();
+        Data upDate = new Data();
+        ArrayList<MessageItem> data = upDate.DataList();
 
         //RecyclerView需要adapter来处理数据     新建一个能将List传进去的Adapter
         boardAdapter = new BoardAdapter(this, data);
@@ -55,9 +55,9 @@ public class BoardFragmentRLV extends Fragment {
                 }
 
                 if (data.get(position).ismStar() == 0){
-                    view.setBackground(getResources().getDrawable(star_hollow));
+                    view.setBackground(getResources().getDrawable(unstar));
                 }else{
-                    view.setBackground(getResources().getDrawable(star_solid));
+                    view.setBackground(getResources().getDrawable(star));
                 }
 
             }
@@ -68,12 +68,12 @@ public class BoardFragmentRLV extends Fragment {
     }
 
     //创建数据
-    private class UpDate
+    private class Data
     {
         private ArrayList<MessageItem> items;
 
         //构造时候为items加入100个数据 并返回一个ArrayLIst
-        public ArrayList UpDate()
+        public ArrayList DataList()
         {
             items = new ArrayList<>();
             for (int i=0 ; i<100 ; i++)
@@ -82,7 +82,7 @@ public class BoardFragmentRLV extends Fragment {
                 messageItem.setmName("name" + i);
                 messageItem.setmPhoto(R.drawable.qq);
                 messageItem.setmText(R.string.CCNU);
-                messageItem.setmStar(i%2);
+                messageItem.setmStar(0);
                 items.add(messageItem);
             }
 

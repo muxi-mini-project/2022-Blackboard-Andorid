@@ -47,7 +47,8 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
         //初始化 BottomNavigation
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.board);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener()
+        {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuitem) {
                 switch (menuitem.getItemId()) {
@@ -56,7 +57,9 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
 
                     case R.id.mine:
                         startActivity(new Intent(getApplicationContext(), MineActivity.class));
-                        overridePendingTransition(0, 0);
+                        overridePendingTransition(0, 0 );
+//                        overridePendingTransition(0, android.R.anim.fade_out );
+                        finish();
                         return true;
 
                     case R.id.study:
@@ -159,8 +162,6 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
             organizationButton.setBackground(getDrawable(R.drawable.button_clicked));
         }
     }
-
-
 
     private void showNormalDialog(){
         /* @setIcon 设置对话框图标
