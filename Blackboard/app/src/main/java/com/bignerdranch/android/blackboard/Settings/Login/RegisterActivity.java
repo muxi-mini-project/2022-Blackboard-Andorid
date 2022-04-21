@@ -32,9 +32,11 @@ import androidx.core.content.FileProvider;
 
 import com.bignerdranch.android.blackboard.Utils.API;
 import com.bignerdranch.android.blackboard.Blackboard.BoardActivity;
+import com.bignerdranch.android.blackboard.Blackboard.New.NewActivity;
 import com.bignerdranch.android.blackboard.R;
 import com.bignerdranch.android.blackboard.Settings.Change.ChangeName;
 import com.bignerdranch.android.blackboard.Settings.Change.ImageUtil;
+import com.bignerdranch.android.blackboard.Settings.Change.InformationActivity;
 import com.bignerdranch.android.blackboard.Settings.Change.UploadAvatar;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
@@ -236,7 +238,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void doTake() {
-        file = new File(getExternalCacheDir(), "imageOut.jpeg");
+        file = new File(getExternalCacheDir(), "imageOut.jpg");
         if (file.exists()) {
             file.delete();
         }
@@ -263,29 +265,31 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CODE_TAKE) {
-            if (getFile() == null || !getFile().exists()) {
-                avatar.setImageBitmap(null);
-            } else {
-                upload(getFile());
-                // 获取拍摄的照片
-                try {
-                    InputStream inputStream = getContentResolver().openInputStream(imageUri);
-                    Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
-                    avatar.setImageBitmap(bitmap);
-                    String imageToBase64 = ImageUtil.imageToBase64(bitmap);
-                    imageBase64 = imageToBase64;
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
+            if (resultCode == RESULT_OK) {
+                if (getFile() == null || !getFile().exists()) {
+                    avatar.setImageBitmap(null);
+                } else {
+                    upload(getFile());
+                    // 获取拍摄的照片
+                    try {
+                        InputStream inputStream = getContentResolver().openInputStream(imageUri);
+                        Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+                        avatar.setImageBitmap(bitmap);
+                        String imageToBase64 = ImageUtil.imageToBase64(bitmap);
+                        imageBase64 = imageToBase64;
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         } else if (requestCode == REQUEST_CODE_CHOOSE) {
-
-            if (Build.VERSION.SDK_INT < 19) {
-                handleImageBeforeApi19(data);
-            } else {
-                handleImageOnApi19(data);
+            if (resultCode == RESULT_OK) {
+                if (Build.VERSION.SDK_INT < 19) {
+                    handleImageBeforeApi19(data);
+                } else {
+                    handleImageOnApi19(data);
+                }
             }
-
         }
     }
 

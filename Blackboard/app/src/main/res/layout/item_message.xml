@@ -44,6 +44,7 @@
             android:src="@drawable/girl"
             />
 
+
         <TextView
             android:id="@+id/TV_name"
             android:layout_width="wrap_content"

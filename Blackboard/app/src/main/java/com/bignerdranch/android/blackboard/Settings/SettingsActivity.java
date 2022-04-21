@@ -3,6 +3,7 @@ package com.bignerdranch.android.blackboard.Settings;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -49,6 +50,7 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //写退出程序
+                clear();
                 Intent intent = new Intent(SettingsActivity.this, LoginActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);        //将DengLuActivity至于栈顶
                 startActivity(intent);
@@ -65,4 +67,12 @@ public class SettingsActivity extends AppCompatActivity {
         super.onBackPressed();
         finish();
     }
+
+    public void clear() {
+        SharedPreferences preferences = getSharedPreferences("myPreferences", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.clear();
+        editor.commit();
+    }
+
 }

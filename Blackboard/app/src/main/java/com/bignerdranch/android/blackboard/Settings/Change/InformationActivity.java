@@ -10,7 +10,9 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
-
+import android.graphics.PixelFormat;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -188,6 +190,14 @@ public class InformationActivity extends AppCompatActivity {
 //                    Intent intent = new Intent(InformationActivity.this, SettingsActivity.class);
 //                    startActivity(intent);
 
+
+//                if(back==0){
+//                    Intent intent = new Intent(InformationActivity.this, PageActivity.class);
+//                    startActivity(intent);
+//                } else{
+//                    Intent intent = new Intent(InformationActivity.this, SettingsActivity.class);
+//                    startActivity(intent);
+//                }
                 finish();
             }
         });
@@ -275,7 +285,7 @@ public class InformationActivity extends AppCompatActivity {
 //                    startActivity(intent);
 
                 } else {
-                    Log.d("RegisterActivity", "error");
+                    Log.d("InformationActivity", "error");
                     Toast.makeText(InformationActivity.this, "出错了", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -407,6 +417,7 @@ public class InformationActivity extends AppCompatActivity {
             public void onResponse(Call<UploadAvatar> call, Response<UploadAvatar> response) {
                 if (response.isSuccessful()) {
                     Toast.makeText(InformationActivity.this, "成功了", Toast.LENGTH_SHORT).show();
+                    response.body().getData().getUrl();
                 }
                 else{
                     Toast.makeText(InformationActivity.this, "出错了", Toast.LENGTH_SHORT).show();
@@ -456,7 +467,7 @@ public class InformationActivity extends AppCompatActivity {
     }
 
     private void doTake() {
-        file = new File(getExternalCacheDir(), "imageOut.jpeg");
+        file = new File(getExternalCacheDir(), "imageOut.jpg");
         if (file.exists()) {
             file.delete();
         }
@@ -501,13 +512,13 @@ public class InformationActivity extends AppCompatActivity {
                 }
             }
         } else if (requestCode == REQUEST_CODE_CHOOSE) {
-
-            if (Build.VERSION.SDK_INT < 19) {
-                handleImageBeforeApi19(data);
-            } else {
-                handleImageOnApi19(data);
+            if (resultCode == RESULT_OK) {
+                if (Build.VERSION.SDK_INT < 19) {
+                    handleImageBeforeApi19(data);
+                } else {
+                    handleImageOnApi19(data);
+                }
             }
-
         }
     }
 
