@@ -285,7 +285,7 @@ public class InformationActivity extends AppCompatActivity {
 //                    startActivity(intent);
 
                 } else {
-                    Log.d("RegisterActivity", "error");
+                    Log.d("InformationActivity", "error");
                     Toast.makeText(InformationActivity.this, "出错了", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -417,6 +417,7 @@ public class InformationActivity extends AppCompatActivity {
             public void onResponse(Call<UploadAvatar> call, Response<UploadAvatar> response) {
                 if (response.isSuccessful()) {
                     Toast.makeText(InformationActivity.this, "成功了", Toast.LENGTH_SHORT).show();
+                    response.body().getData().getUrl();
                 }
                 else{
                     Toast.makeText(InformationActivity.this, "出错了", Toast.LENGTH_SHORT).show();
