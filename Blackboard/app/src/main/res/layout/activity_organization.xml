@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintHeight_default="percent"
-        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintHeight_percent="0.06"
 
         app:layout_constraintTop_toTopOf="parent"
         android:gravity="center_vertical">
@@ -75,18 +75,22 @@
             app:layout_constraintTop_toTopOf="@id/photo2"
             app:layout_constraintLeft_toRightOf="@id/photo2"
             android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
             android:text="MUXI"
             android:textSize="20sp"
-            android:gravity="center"/>
+            android:gravity="start|center_vertical"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/tag2"
             android:layout_width="150dp"
             android:layout_height="25dp"
             app:layout_constraintBottom_toBottomOf="@id/photo2"
-            app:layout_constraintLeft_toRightOf="@id/photo2"
+            app:layout_constraintLeft_toLeftOf="@id/name2"
             android:text="天真活泼可爱们"
-            android:gravity="center"/>
+            android:gravity="start|center_vertical"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/black"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

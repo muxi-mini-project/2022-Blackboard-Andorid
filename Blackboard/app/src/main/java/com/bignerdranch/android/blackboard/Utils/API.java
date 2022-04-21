@@ -1,14 +1,14 @@
 package com.bignerdranch.android.blackboard.Utils;
 
+import com.bignerdranch.android.blackboard.Bean.Message.MessageItem;
 import com.bignerdranch.android.blackboard.Bean.Organization.Organization;
-import com.bignerdranch.android.blackboard.Bean.Topic.Topics;
+import com.bignerdranch.android.blackboard.Bean.Organization.Topic.Topics;
 import com.bignerdranch.android.blackboard.Mine.Information;
 import com.bignerdranch.android.blackboard.Mine.Post.Posts;
 import com.bignerdranch.android.blackboard.Settings.Change.ChangeName;
 import com.bignerdranch.android.blackboard.Settings.Change.UploadAvatar;
 import com.bignerdranch.android.blackboard.Settings.Login.LoginResponse;
 import com.bignerdranch.android.blackboard.Settings.Login.User;
-import com.bignerdranch.android.blackboard.Utils.MyResponse;
 
 import java.util.List;
 
@@ -57,6 +57,10 @@ public interface API {
     Call<MyResponse<List<Organization>>> myFollow(
             @Query("limit") int limit,
             @Query("page") int page,@Header("Authorization")String Authorization);
+
+    /*发布通知*/
+    @POST("announcement/content")
+    Call<MyResponse<MessageItem>> announcement(@Body MessageItem messageItem,@Header("Authorization")String Authorization);
 
 
     @POST("login")

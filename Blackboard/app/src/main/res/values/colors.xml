@@ -16,4 +16,6 @@
     <color name="golden">#EE86833f</color>
     <color name="a">#D8FCEA</color>
     <color name="b">#333333</color>
+
+    <color name="message_text">#D8FCEA</color>
 </resources>

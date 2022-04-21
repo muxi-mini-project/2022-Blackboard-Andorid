@@ -47,7 +47,8 @@ public class BoardFragmentRLV extends Fragment {
 
         boardAdapter.setItemOnClickListener(new BoardAdapter.ItemOnClickListener() {
             @Override
-            public void OnStarClick(View view, int position) {
+            public void OnStarClick(View view, int position)
+            {
 //                Toast.makeText(getActivity(), "Star", Toast.LENGTH_SHORT).show();
 
 //                view.setBackground(getResources().getDrawable(star_solid));
@@ -65,15 +66,19 @@ public class BoardFragmentRLV extends Fragment {
 
             }
             @Override
-            public void OnItemClick(String name,int id)
+            public void OnAvatarClick(String name, int id)
             {
 //                Intent intent = OrganizationActivity.newIntent(getActivity(),name,id);
                 Intent intent = OrganizationActivity.newIntent(getActivity(),"MUXI",106);
                 startActivity(intent);
                 Toast.makeText(getActivity(), "还在加工 先来MUXI休息会吧", Toast.LENGTH_SHORT).show();
             }
-        });
+            @Override
+            public void OnItemClick()
+            {
 
+            }
+        });
 
         //返回View
         return view;

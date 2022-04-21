@@ -1,4 +1,4 @@
-package com.bignerdranch.android.blackboard.Bean.Topic;
+package com.bignerdranch.android.blackboard.Bean.Organization.Topic;
 
 public class Topics
 {

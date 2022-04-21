@@ -1,7 +1,6 @@
 package com.bignerdranch.android.blackboard.Blackboard.LatestMessage;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +11,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bignerdranch.android.blackboard.Bean.Organization.OrganizationActivity;
 import com.bignerdranch.android.blackboard.R;
 
 import java.util.ArrayList;
@@ -37,17 +35,16 @@ class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.BoardViewHolder> {
         private CircleImageView imageView_photo;
         private TextView textView_text;
         private Button Star;
-        private TextView blank;
 
-
-        public BoardViewHolder(@NonNull View itemView) {
+        public BoardViewHolder(@NonNull View itemView)
+        {
             super(itemView);
 
             textView_name = itemView.findViewById(R.id.TV_name);
             imageView_photo = itemView.findViewById(R.id.IV_photo);
             textView_text = itemView.findViewById(R.id.TV_text);
             Star = itemView.findViewById(R.id.star);
-//            blank = itemView.findViewById(R.id.blank);
+
         }
     }
 
@@ -61,7 +58,6 @@ class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.BoardViewHolder> {
         View view = LayoutInflater.from(boardFragmentRLV.getActivity()).inflate(R.layout.item_message, parent, false);
         return new BoardViewHolder(view);
     }
-
     @Override
     public void onBindViewHolder(@NonNull BoardViewHolder holder, @SuppressLint("RecyclerView") int position)
     {
@@ -75,32 +71,35 @@ class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.BoardViewHolder> {
         holder.Star.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
-            {
-                    itemOnClickListener.OnStarClick(view,position);
-            }
+            { itemOnClickListener.OnStarClick(view,position); }
         });
+
         holder.imageView_photo.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                itemOnClickListener.OnItemClick(messageItem.getmName(),messageItem.getId());
-            }
+            public void onClick(View view)
+            { itemOnClickListener.OnAvatarClick(messageItem.getmName(),messageItem.getId()); }
+        });
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            { itemOnClickListener.OnItemClick();}
         });
 
 
 
     }
-
     @Override
     public int getItemCount() {
         return data.size();
     }
 
-    //监听接口
+    //接口
     public interface ItemOnClickListener {
         public void OnStarClick(View view, int position);
-        public void OnItemClick(String name,int id);
+        public void OnAvatarClick(String name, int id);
+        public void OnItemClick();
     }
-    //收藏
     private ItemOnClickListener itemOnClickListener;
     public void setItemOnClickListener(ItemOnClickListener itemOnClickListener) {
         this.itemOnClickListener = itemOnClickListener;

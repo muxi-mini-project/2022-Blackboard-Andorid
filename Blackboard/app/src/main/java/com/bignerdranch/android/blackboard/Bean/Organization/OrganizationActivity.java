@@ -19,8 +19,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bignerdranch.android.blackboard.Utils.API;
-import com.bignerdranch.android.blackboard.Bean.Topic.TopicAdapter;
-import com.bignerdranch.android.blackboard.Bean.Topic.Topics;
+import com.bignerdranch.android.blackboard.Bean.Organization.Topic.TopicAdapter;
+import com.bignerdranch.android.blackboard.Bean.Organization.Topic.Topics;
 import com.bignerdranch.android.blackboard.Blackboard.New.PostActivity;
 import com.bignerdranch.android.blackboard.Utils.MyResponse;
 import com.bignerdranch.android.blackboard.R;
