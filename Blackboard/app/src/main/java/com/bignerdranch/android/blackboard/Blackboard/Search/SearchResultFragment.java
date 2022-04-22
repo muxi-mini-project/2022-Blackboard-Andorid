@@ -21,12 +21,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bignerdranch.android.blackboard.Bean.Organization.Organization;
 import com.bignerdranch.android.blackboard.Blackboard.BoardActivity;
 import com.bignerdranch.android.blackboard.Mine.Information;
+import com.bignerdranch.android.blackboard.Mine.Post.Posts;
 import com.bignerdranch.android.blackboard.R;
 import com.bignerdranch.android.blackboard.Settings.Login.LoginActivity;
 import com.bignerdranch.android.blackboard.Settings.Login.RegisterActivity;
 import com.bignerdranch.android.blackboard.Utils.API;
+import com.bignerdranch.android.blackboard.Utils.Utils;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import de.hdodenhof.circleimageview.BuildConfig;
 import okhttp3.OkHttpClient;
@@ -42,9 +45,10 @@ public class SearchResultFragment extends Fragment {
     public RecyclerView mSearchRecyclerView; //定义RecyclerView
     //自定义recyclerview的适配器
     private SearchAdapter mSearchAdapter;
-    private ArrayList<RelativeMessage> mSearchRelativeMessageList = new ArrayList<RelativeMessage>();
-    private ArrayList<RelativeOrganization> mSearchRelativeOrganizationList = new ArrayList<RelativeOrganization>();
+    private List<Search.DataDTO.AnnouncementsDTO> mSearchRelativeMessageList = new ArrayList<>();
+    private List<Search.DataDTO.OrganizationsDTO> mSearchRelativeOrganizationList = new ArrayList<>();
 
+    private String content;
     private int x = 0;
 
     @Nullable
@@ -55,28 +59,45 @@ public class SearchResultFragment extends Fragment {
         //初始化recyclerview
         initRecyclerView();
 
+        if(getArguments()!=null){
+            //取出保存的值
+            content = getArguments().getString("name");
+        }
+
         //填入数据
-        initData();
+        initData(content);
+
+        mSearchAdapter.refresh(mSearchRelativeMessageList,mSearchRelativeOrganizationList);
 
         return view;
     }
 
-    private void initData() {
+    private void initData(String content) {
 
-        for (int i=0;i<2;i++){
-        RelativeMessage relativeMessage = new RelativeMessage();
-        relativeMessage.setTag("#标签"+i);
-        relativeMessage.setContents("发布内容"+i);
-        mSearchRelativeMessageList.add(relativeMessage);
-        }
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://119.3.2.168:8080/api/v1/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
 
+        API get = retrofit.create(API.class);
+        Call<Search> call = get.search(100,0,content);
 
-        for (int i=0;i<2;i++){
-            RelativeOrganization relativeOrganization = new RelativeOrganization();
-            relativeOrganization.setOrganizationName("组织名称"+i);
-            relativeOrganization.setOrganizationIntroduction("组织介绍"+i);
-            mSearchRelativeOrganizationList.add(relativeOrganization);
-        }
+        call.enqueue(new Callback<Search>() {
+            @Override
+            public void onResponse(Call<Search> call, Response<Search> response) {
+
+                Search search = response.body();
+                mSearchRelativeMessageList.addAll(search.getData().getAnnouncements());
+                mSearchRelativeOrganizationList.addAll(search.getData().getOrganizations())
+                mSearchAdapter.refresh(mSearchRelativeMessageList,mSearchRelativeOrganizationList);
+            }
+
+            @Override
+            public void onFailure(Call <Search> call, Throwable t)
+            {
+
+            }
+        });
 
     }
 

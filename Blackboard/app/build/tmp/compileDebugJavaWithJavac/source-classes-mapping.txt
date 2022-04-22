@@ -187,6 +187,10 @@ com/bignerdranch/android/blackboard/Mine/Favourite/FavoritesFragment.java
 com/bignerdranch/android/blackboard/Mine/Favourite/Favorites.java
  com.bignerdranch.android.blackboard.Mine.Favourite.Favorites
  com.bignerdranch.android.blackboard.Mine.Favourite.Favorites$DataDTO
+com/bignerdranch/android/blackboard/Blackboard/Search/Search.java
+ com.bignerdranch.android.blackboard.Blackboard.Search.Search
+ com.bignerdranch.android.blackboard.Blackboard.Search.Search$DataDTO
+ com.bignerdranch.android.blackboard.Blackboard.Search.Search$DataDTO$OrganizationsDTO
 com/bignerdranch/android/blackboard/databinding/FragmentBoardBinding.java
  com.bignerdranch.android.blackboard.databinding.FragmentBoardBinding
 com/bignerdranch/android/blackboard/Bean/Organization/OrganizationActivity.java

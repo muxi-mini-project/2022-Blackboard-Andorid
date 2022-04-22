@@ -1,6 +1,7 @@
 package com.bignerdranch.android.blackboard.Blackboard.Search;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -11,11 +12,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bignerdranch.android.blackboard.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SearchAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
-    private ArrayList<RelativeMessage> mSearchRelativeMessageList;
-    private ArrayList<RelativeOrganization> mSearchRelativeOrganizationList;
+    private List<Search.DataDTO.AnnouncementsDTO> mSearchRelativeMessageList = new ArrayList<>();
+    private List<Search.DataDTO.OrganizationsDTO> mSearchRelativeOrganizationList = new ArrayList<>();
 
 
     public static final int ITEM_TYPE_1 = 1;
@@ -23,7 +25,7 @@ public class SearchAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
 
     //创建构造函数
-    public SearchAdapter(Context context, ArrayList<RelativeMessage> mSearchRelativeMessageList, ArrayList<RelativeOrganization> mSearchRelativeOrganizationList) {
+    public SearchAdapter(Context context, List<Search.DataDTO.AnnouncementsDTO> mSearchRelativeMessageList, List<Search.DataDTO.OrganizationsDTO> mSearchRelativeOrganizationList) {
 
         //将传递过来的数据，赋值给本地变量
         this.context = context; //上下文
@@ -49,7 +51,7 @@ public class SearchAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == ITEM_TYPE_1) {
-            View itemView = View.inflate(context, R.layout.item_relative_message, null);
+            View itemView = LayoutInflater.from(context).inflate(R.layout.item_relative_message,parent,false);
             return new SearchRelativeMessageHolder(itemView);
 
         } else {

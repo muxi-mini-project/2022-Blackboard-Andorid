@@ -191,6 +191,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this, "欢迎您", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(RegisterActivity.this, BoardActivity.class);
                     startActivity(intent);
+                    finish();
 
                 } else {
                     Log.d("RegisterActivity", "error");

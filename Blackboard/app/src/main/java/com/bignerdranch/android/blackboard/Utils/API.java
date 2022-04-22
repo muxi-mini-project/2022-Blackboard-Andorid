@@ -6,6 +6,7 @@ import com.bignerdranch.android.blackboard.Bean.Message.MessageItem;
 import com.bignerdranch.android.blackboard.Bean.Organization.Organization;
 import com.bignerdranch.android.blackboard.Bean.Organization.OrganizationAvatar;
 import com.bignerdranch.android.blackboard.Bean.Organization.Topic.Topics;
+import com.bignerdranch.android.blackboard.Blackboard.Search.Search;
 import com.bignerdranch.android.blackboard.Blackboard.Search.Subscribe;
 import com.bignerdranch.android.blackboard.Mine.Favourite.Favorites;
 import com.bignerdranch.android.blackboard.Mine.Information;
@@ -122,4 +123,7 @@ public interface API {
 
     @POST("organization/follow")
     Call<Subscribe> subscribe(@Body Organization organization, @Header("Authorization")String Authorization);
+
+    @GET("search")
+    Call<Search> search(@Query("limit") int limit, @Query("page") int page, @Query("content") String content);
 }
