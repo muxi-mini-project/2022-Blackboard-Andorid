@@ -1,5 +1,7 @@
 package com.bignerdranch.android.blackboard.Utils;
 
+import android.app.Notification;
+
 import com.bignerdranch.android.blackboard.Bean.Message.MessageItem;
 import com.bignerdranch.android.blackboard.Bean.Organization.Organization;
 import com.bignerdranch.android.blackboard.Bean.Organization.Topic.Topics;
@@ -62,6 +64,20 @@ public interface API {
     /*发布通知*/
     @POST("announcement/content")
     Call<MyResponse<MessageItem>> announcement(@Body MessageItem messageItem,@Header("Authorization")String Authorization);
+
+    /*查看通知*/
+    @GET("announcement")
+    Call<MyResponse<List<MessageItem>>> announcement(
+            @Query("limit") int limit,
+            @Query("page") int page,@Header("Authorization")String Authorization);
+
+    /*查看收藏*/
+    @GET("user/collection")
+    Call<MyResponse<List<MessageItem>>> collected(
+            @Query("limit") int limit,
+            @Query("page") int page,@Header("Authorization")String Authorization);
+
+    /*收藏通知*/
 
 
     @POST("login")

@@ -52,12 +52,12 @@
         "source": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\drawable\\ic_board.png"
     },
     {
-        "merged": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\drawable_button.xml.flat",
-        "source": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\drawable\\button.xml"
-    },
-    {
         "merged": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\drawable_button.xml.flat",
+        "source": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\drawable\\button.xml"
     },
     {
         "merged": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher_round.webp.flat",
@@ -88,12 +88,12 @@
         "source": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\drawable-hdpi\\ic_search.png"
     },
     {
-        "merged": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi_ic_goto.xml.flat",
-        "source": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\drawable-anydpi\\ic_goto.xml"
-    },
-    {
         "merged": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi_ic_goto.xml.flat",
+        "source": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\drawable-anydpi\\ic_goto.xml"
     },
     {
         "merged": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\drawable_button_subscribe.xml.flat",
@@ -128,12 +128,12 @@
         "source": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\drawable-xxxhdpi\\qq.png"
     },
     {
-        "merged": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_ic_add.png.flat",
-        "source": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\drawable-xxhdpi\\ic_add.png"
-    },
-    {
         "merged": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_star_hollow.xml.flat",
         "source": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\drawable-xxxhdpi\\star_hollow.xml"
+    },
+    {
+        "merged": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_ic_add.png.flat",
+        "source": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\drawable-xxhdpi\\ic_add.png"
     },
     {
         "merged": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_register.xml.flat",
@@ -152,12 +152,12 @@
         "source": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\drawable\\bg_register.jpg"
     },
     {
-        "merged": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_mine.xml.flat",
-        "source": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\layout\\activity_mine.xml"
-    },
-    {
         "merged": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_board.xml.flat",
         "source": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\layout\\activity_board.xml"
+    },
+    {
+        "merged": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_mine.xml.flat",
+        "source": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\layout\\activity_mine.xml"
     },
     {
         "merged": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_launcher_background.xml.flat",
@@ -172,12 +172,12 @@
         "source": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\layout\\item_topic.xml"
     },
     {
-        "merged": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_search_result.xml.flat",
-        "source": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\layout\\activity_search_result.xml"
-    },
-    {
         "merged": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\drawable_selector.xml.flat",
         "source": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\drawable\\selector.xml"
+    },
+    {
+        "merged": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_search_result.xml.flat",
+        "source": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\layout\\activity_search_result.xml"
     },
     {
         "merged": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_board.xml.flat",
@@ -206,10 +206,6 @@
     {
         "merged": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_page.xml.flat",
         "source": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\layout\\activity_page.xml"
-    },
-    {
-        "merged": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_message_background.xml.flat",
-        "source": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\drawable-xxxhdpi\\message_background.xml"
     },
     {
         "merged": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_goto.png.flat",
@@ -312,6 +308,10 @@
         "source": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\drawable-xhdpi\\ic_add.png"
     },
     {
+        "merged": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\drawable_message_background.xml.flat",
+        "source": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\drawable\\message_background.xml"
+    },
+    {
         "merged": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_remove_red_eye_24.xml.flat",
         "source": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\drawable\\ic_baseline_remove_red_eye_24.xml"
     },
@@ -390,6 +390,10 @@
     {
         "merged": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_new.xml.flat",
         "source": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\layout\\activity_new.xml"
+    },
+    {
+        "merged": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\drawable_meesage_background1.xml.flat",
+        "source": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\drawable\\meesage_background1.xml"
     },
     {
         "merged": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_ic_settings_back.png.flat",

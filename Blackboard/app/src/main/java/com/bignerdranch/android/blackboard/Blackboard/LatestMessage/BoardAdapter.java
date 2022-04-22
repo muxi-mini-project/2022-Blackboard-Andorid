@@ -11,19 +11,22 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bignerdranch.android.blackboard.Bean.Message.MessageItem;
 import com.bignerdranch.android.blackboard.R;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.BoardViewHolder> {
     private final BoardFragmentRLV boardFragmentRLV;
     //adapter是RV的适配器 用于连数据与UI 所以需要一个数据列表List
-    ArrayList<MessageItem> data;
+    List<MessageItem> data;
 
     //新建adapter需要构造器能将数据传入
-    public BoardAdapter(BoardFragmentRLV boardFragmentRLV, ArrayList<MessageItem> InData) {
+    public BoardAdapter(BoardFragmentRLV boardFragmentRLV, List<MessageItem> InData) {
         this.boardFragmentRLV = boardFragmentRLV;
         this.data = InData;
     }
@@ -63,10 +66,10 @@ class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.BoardViewHolder> {
     {
         MessageItem messageItem = data.get(position);
 
-        holder.textView_name.setText(messageItem.getmName());
-        Drawable photo = boardFragmentRLV.getResources().getDrawable(messageItem.getmPhoto());
-        holder.imageView_photo.setImageDrawable(photo);
-        holder.textView_text.setText(messageItem.getmText());
+        holder.textView_name.setText(messageItem.getOrganization_name());
+//        Drawable photo = boardFragmentRLV.getResources().getDrawable(messageItem.getmPhoto());
+//        holder.imageView_photo.setImageDrawable(photo);
+        holder.textView_text.setText(messageItem.getContents());
 
         holder.Star.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,7 +80,7 @@ class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.BoardViewHolder> {
         holder.imageView_photo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
-            { itemOnClickListener.OnAvatarClick(messageItem.getmName(),messageItem.getId()); }
+            { itemOnClickListener.OnAvatarClick(messageItem.getOrganization_name(),messageItem.getID()); }
         });
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -97,7 +100,7 @@ class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.BoardViewHolder> {
     //接口
     public interface ItemOnClickListener {
         public void OnStarClick(View view, int position);
-        public void OnAvatarClick(String name, int id);
+        public void OnAvatarClick(String name, int OgnId);
         public void OnItemClick();
     }
     private ItemOnClickListener itemOnClickListener;

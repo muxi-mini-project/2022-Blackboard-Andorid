@@ -3,11 +3,11 @@ package com.bignerdranch.android.blackboard.Bean.Message;
 public class MessageItem
 {
 
-    private String group_name;
     private String contents;
+    private String group_name;
     private String organization_name;
 
-    private Integer id;
+    private Integer ID;
     private String createdAt;
     private String updatedAt;
     private Object deletedAt;
@@ -23,5 +23,27 @@ public class MessageItem
         this.contents = contents;
     }
 
+    public MessageItem(String contents, String group_name, String organization_name, Integer ID) {
+        this.contents = contents;
+        this.group_name = group_name;
+        this.organization_name = organization_name;
+        this.ID = ID;
+    }
 
+    /*取值*/
+    public String getContents() {
+        return contents;
+    }
+    public Integer getOrganizationId() {
+        return organizationId;
+    }
+    public String getOrganization_name() {
+        return organization_name;
+    }
+    public String getCreatedAt() {
+        return createdAt;
+    }
+    public Integer getID() {
+        return ID;
+    }
 }

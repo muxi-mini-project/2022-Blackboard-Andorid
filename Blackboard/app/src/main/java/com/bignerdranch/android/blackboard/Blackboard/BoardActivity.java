@@ -32,10 +32,11 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
 
     private BoardFragmentRLV f1;
     private OrganizationFragment f2;
-    private FragmentManager manager1;
+    private FragmentManager manager;
+    private FragmentTransaction transaction;
 
     //用于切换 通知和组织 的按钮
-    int flag[] = new int[]{0, 0};
+    int flag[] = new int[]{1, 0};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +90,8 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
             }
         });
         //设置FragmentManager
-        manager1 = getSupportFragmentManager();
+        manager = getSupportFragmentManager();
+        transaction = manager.beginTransaction();
         //通知按钮
         messageButton = findViewById(R.id.board_message);
         messageButton.setOnClickListener(this);
@@ -98,13 +100,15 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
         organizationButton.setOnClickListener(this);
         //默认点击 通知
         messageButton.performClick();
-
-
+        if (f1 == null) {
+            f1 = new BoardFragmentRLV();
+            transaction.add(R.id.fragment_container, f1);
+        }
     }
 
     @Override
     public void onClick(View view) {
-        FragmentTransaction transaction = manager1.beginTransaction();
+        transaction = manager.beginTransaction();
 
         switch (view.getId()) {
             case R.id.board_message: {
@@ -145,7 +149,6 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
             }
             break;
         }
-
         transaction.commit();
 
         //切换 按钮的颜色background
