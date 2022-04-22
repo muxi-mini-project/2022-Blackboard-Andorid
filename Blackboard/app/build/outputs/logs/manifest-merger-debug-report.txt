@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:2:1-75:12
-INJECTED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:2:1-75:12
-INJECTED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:2:1-75:12
-INJECTED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:2:1-75:12
+ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:2:1-76:12
+INJECTED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:2:1-76:12
+INJECTED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:2:1-76:12
+INJECTED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:2:1-76:12
 MERGED from [androidx.databinding:viewbinding:7.0.2] C:\Users\Lenovo\.gradle\caches\transforms-3\314e1866fb012a7eb1eea66695bd9e77\transformed\jetified-viewbinding-7.0.2\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-ui:2.3.5] C:\Users\Lenovo\.gradle\caches\transforms-3\e8717e30bbc4cf00dfb30661685e96da\transformed\navigation-ui-2.3.5\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.2.1] C:\Users\Lenovo\.gradle\caches\transforms-3\e06ebd1b715f51b78d4c4c9ae709c8a8\transformed\material-1.2.1\AndroidManifest.xml:17:1-24:12
@@ -54,20 +54,20 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\User
 MERGED from [androidx.print:print:1.0.0] C:\Users\Lenovo\.gradle\caches\transforms-3\485578c608519582fc751ff2f7c88476\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Lenovo\.gradle\caches\transforms-3\140757696eca7ec1efbdf7371a4acde0\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\Lenovo\.gradle\caches\transforms-3\18e5cb54f886f7aa7e26ad4e22b3ac23\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:2:1-75:12
-INJECTED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:2:1-75:12
-INJECTED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:2:1-75:12
+INJECTED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:2:1-76:12
+INJECTED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:2:1-76:12
+INJECTED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:2:1-76:12
 	package
 		ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:3:5-50
 		INJECTED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml
 		INJECTED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml
-		ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:2:1-75:12
+		ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:2:1-76:12
 		INJECTED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml
-		ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:2:1-75:12
+		ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:2:1-76:12
 		INJECTED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:2:11-69
@@ -84,7 +84,7 @@ ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManife
 	android:name
 		ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:7:22-62
 application
-ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:9:5-73:19
+ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:9:5-74:19
 MERGED from [com.google.android.material:material:1.2.1] C:\Users\Lenovo\.gradle\caches\transforms-3\e06ebd1b715f51b78d4c4c9ae709c8a8\transformed\material-1.2.1\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.2.1] C:\Users\Lenovo\.gradle\caches\transforms-3\e06ebd1b715f51b78d4c4c9ae709c8a8\transformed\material-1.2.1\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\Lenovo\.gradle\caches\transforms-3\5bc3f959ce93f12bdaaef6045615861e\transformed\constraintlayout-2.0.4\AndroidManifest.xml:9:5-20
@@ -194,33 +194,33 @@ ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManife
 	android:name
 		ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:54:27-74
 activity#com.bignerdranch.android.blackboard.Mine.MineActivity
-ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:57:9-59:39
+ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:58:9-60:39
 	android:exported
-		ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:59:13-36
+		ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:60:13-36
 	android:name
-		ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:58:13-46
+		ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:59:13-46
 activity#com.bignerdranch.android.blackboard.Blackboard.BoardActivity
-ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:60:9-62:48
+ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:61:9-63:48
 	android:exported
-		ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:62:13-36
+		ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:63:13-36
 	android:name
-		ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:61:13-53
+		ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:62:13-53
 provider#androidx.core.content.FileProvider
-ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:64:9-72:20
+ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:65:9-73:20
 	android:grantUriPermissions
-		ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:68:13-47
+		ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:69:13-47
 	android:authorities
-		ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:66:13-83
+		ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:67:13-83
 	android:exported
-		ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:67:13-37
+		ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:68:13-37
 	android:name
-		ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:65:13-62
+		ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:66:13-62
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:69:13-71:49
+ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:70:13-72:49
 	android:resource
-		ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:71:17-46
+		ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:72:17-46
 	android:name
-		ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:70:17-67
+		ADDED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml:71:17-67
 uses-sdk
 INJECTED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from S:\MUXI\2022-Blackboard-Andorid\Blackboard\app\src\main\AndroidManifest.xml

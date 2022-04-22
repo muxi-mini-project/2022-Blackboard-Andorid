@@ -58,13 +58,14 @@ public class BoardFragmentRLV extends Fragment implements SwipeRefreshLayout.OnR
         else
             return view;
 
-        //获取数据
-        NetGetAnnounce(100,0);
-        NetGetLike(100,0);
-
         /*下拉刷新*/
         freshLayout = view.findViewById(R.id.freshMess);
         freshLayout.setOnRefreshListener(this);
+        freshLayout.setRefreshing(true);
+
+        //获取数据
+        NetGetAnnounce(100,0);
+        NetGetLike(100,0);
 
         /*构造一个RecyclerView*/
         //绑定布局
@@ -123,6 +124,7 @@ public class BoardFragmentRLV extends Fragment implements SwipeRefreshLayout.OnR
             {
                 if (response.isSuccessful()) {
                     data.addAll(response.body().getData());
+                    boardAdapter.notifyDataSetChanged();
                     freshLayout.setRefreshing(false);
                 }
             }
@@ -169,4 +171,6 @@ public class BoardFragmentRLV extends Fragment implements SwipeRefreshLayout.OnR
         int FSize = like.size();
         NetGetLike(FSize,1);
     }
+
+
 }
