@@ -39,13 +39,12 @@ import android.widget.Toast;
 
 import com.bignerdranch.android.blackboard.Blackboard.New.NewActivity;
 import com.bignerdranch.android.blackboard.Utils.API;
-import com.bignerdranch.android.blackboard.Bean.Topic.TopicAdapter;
-import com.bignerdranch.android.blackboard.Bean.Topic.Topics;
+import com.bignerdranch.android.blackboard.Bean.Organization.Topic.TopicAdapter;
+import com.bignerdranch.android.blackboard.Bean.Organization.Topic.Topics;
 import com.bignerdranch.android.blackboard.Blackboard.New.PostActivity;
 import com.bignerdranch.android.blackboard.Utils.MyResponse;
 import com.bignerdranch.android.blackboard.R;
 import com.bignerdranch.android.blackboard.Utils.Utils;
-import com.bumptech.glide.Glide;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.io.File;
@@ -70,6 +69,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.POST;
 
 public class OrganizationActivity extends AppCompatActivity
 {
@@ -114,13 +114,15 @@ public class OrganizationActivity extends AppCompatActivity
 
         //初始化界面
         initView();
+
         topicsData = new LinkedList<>();
         adapter = new TopicAdapter(OrganizationActivity.this,topicsData);
         TopicRLV.setAdapter(adapter);
-        adapter.SetAddClick(new TopicAdapter.AddClick() {
+
+        adapter.setItemClick(new TopicAdapter.OnItemClick() {
             @Override
-            public void addClick() {
-                Intent intent = new Intent(OrganizationActivity.this, PostActivity.class);
+            public void addClick(String GroupName) {
+                Intent intent = PostActivity.newIntent(OrganizationActivity.this,name,GroupName);
                 startActivity(intent);
             }
         });
@@ -205,6 +207,7 @@ public class OrganizationActivity extends AppCompatActivity
                     ognName.setText(response.body().getData().getOrganization_name());
                     introduction.setText(response.body().getData().getIntro());
                     String url = response.body().getData().getAvatar();
+
                     Glide.with(OrganizationActivity.this)
                             .load(url)
                             .into(photo);
@@ -244,6 +247,9 @@ public class OrganizationActivity extends AppCompatActivity
                 if(response.isSuccessful())
                 {
                     Toast.makeText(OrganizationActivity.this, "创建话题成功", Toast.LENGTH_SHORT).show();
+                    //获取新的话题
+                    topicsData.add(topics);
+                    adapter.notifyDataSetChanged();
                 }else
                 {
                     Toast.makeText(OrganizationActivity.this, response.code()+"\n"+response.message(), Toast.LENGTH_SHORT).show();
@@ -300,9 +306,7 @@ public class OrganizationActivity extends AppCompatActivity
                         editText.getText().toString());
                 NetCreateTopic(newTopic);
                 dialog.dismiss();
-                //获取新的话题
-                topicsData.add(newTopic);
-                adapter.notifyDataSetChanged();
+
             }
         });
         cancel.setOnClickListener(new View.OnClickListener()

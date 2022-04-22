@@ -1,8 +1,11 @@
 package com.bignerdranch.android.blackboard.Utils;
 
+import android.app.Notification;
+
+import com.bignerdranch.android.blackboard.Bean.Message.MessageItem;
 import com.bignerdranch.android.blackboard.Bean.Organization.Organization;
 import com.bignerdranch.android.blackboard.Bean.Organization.OrganizationAvatar;
-import com.bignerdranch.android.blackboard.Bean.Topic.Topics;
+import com.bignerdranch.android.blackboard.Bean.Organization.Topic.Topics;
 import com.bignerdranch.android.blackboard.Blackboard.Search.Subscribe;
 import com.bignerdranch.android.blackboard.Mine.Favourite.Favorites;
 import com.bignerdranch.android.blackboard.Mine.Information;
@@ -11,7 +14,6 @@ import com.bignerdranch.android.blackboard.Settings.Change.ChangeName;
 import com.bignerdranch.android.blackboard.Settings.Change.UploadAvatar;
 import com.bignerdranch.android.blackboard.Settings.Login.LoginResponse;
 import com.bignerdranch.android.blackboard.Settings.Login.User;
-import com.bignerdranch.android.blackboard.Utils.MyResponse;
 
 import java.util.List;
 
@@ -41,7 +43,7 @@ public interface API {
 
     /*创建话题*/
     @POST("announcement/group")
-    Call<MyResponse<Topics>> createTopic(@Body Topics topics,@Header("Authorization")String Authorization);
+    Call<MyResponse<Topics>> createTopic(@Body Topics topics, @Header("Authorization")String Authorization);
 
     /*查看话题*/
     @GET("announcement/group")
@@ -62,6 +64,25 @@ public interface API {
             @Query("limit") int limit,
             @Query("page") int page,@Header("Authorization")String Authorization);
 
+    /*发布通知*/
+    @POST("announcement/content")
+    Call<MyResponse<MessageItem>> announcement(@Body MessageItem messageItem,@Header("Authorization")String Authorization);
+
+    /*查看通知*/
+    @GET("announcement")
+    Call<MyResponse<List<MessageItem>>> announcement(
+            @Query("limit") int limit,
+            @Query("page") int page,@Header("Authorization")String Authorization);
+
+    /*查看收藏*/
+    @GET("user/collection")
+    Call<MyResponse<List<MessageItem>>> collected(
+            @Query("limit") int limit,
+            @Query("page") int page,@Header("Authorization")String Authorization);
+
+    /*收藏通知*/
+    @POST("announcement/collect")
+    Call<MyResponse<MessageItem>> collectThis(@Body MessageItem messageItem,@Header("Authorization")String Authorization);
 
     @POST("login")
     Call<LoginResponse> post(@Body User user);

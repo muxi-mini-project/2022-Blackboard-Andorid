@@ -1,0 +1,6 @@
+com/bignerdranch/android/blackboard/Bean/Message/MessageItem.java
+ com.bignerdranch.android.blackboard.Bean.Message.MessageItem
+com/bignerdranch/android/blackboard/Bean/Organization/Organization.java
+ com.bignerdranch.android.blackboard.Bean.Organization.Organization
+com/bignerdranch/android/blackboard/Bean/Message/MessageActivity.java
+ com.bignerdranch.android.blackboard.Bean.Message.MessageActivity
