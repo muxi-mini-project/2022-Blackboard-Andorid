@@ -15,6 +15,8 @@ public class MessageItem
     private Integer organizationId;
     private Integer groupId;
 
+    private boolean star = false;
+
     /*构造器*/
     //发布通知
     public MessageItem(String organization_name, String group_name, String contents) {
@@ -27,6 +29,10 @@ public class MessageItem
         this.contents = contents;
         this.group_name = group_name;
         this.organization_name = organization_name;
+        this.ID = ID;
+    }
+
+    public MessageItem(Integer ID) {
         this.ID = ID;
     }
 
@@ -45,5 +51,13 @@ public class MessageItem
     }
     public Integer getID() {
         return ID;
+    }
+    public boolean isStar() {
+        return star;
+    }
+
+    /*改值*/
+    public void setStar(boolean star) {
+        this.star = star;
     }
 }

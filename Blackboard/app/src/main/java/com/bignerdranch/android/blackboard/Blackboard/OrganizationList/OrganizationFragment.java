@@ -30,10 +30,10 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class OrganizationFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener{
+public class OrganizationFragment extends Fragment /*implements SwipeRefreshLayout.OnRefreshListener*/{
 
     private View rootView;
-    private SwipeRefreshLayout fresh;
+//    private SwipeRefreshLayout fresh;
 
     private ExpandableListView ELV;
     private List<List<Organization>> myList = new LinkedList<>();
@@ -46,7 +46,7 @@ public class OrganizationFragment extends Fragment implements SwipeRefreshLayout
             return rootView;
         rootView = inflater.inflate(R.layout.fragment_organization, container, false);
 
-        fresh = rootView.findViewById(R.id.freshOgn);
+//        fresh = rootView.findViewById(R.id.freshOgn);
 
         //获取数据
         NetGetOrgans(1000,0,
@@ -97,7 +97,7 @@ public class OrganizationFragment extends Fragment implements SwipeRefreshLayout
                 List<Organization> createList = new LinkedList<>();
                 createList = response.body().getData();
                 myCreateList.addAll(createList);
-                fresh.setRefreshing(false);
+//                fresh.setRefreshing(false);
             }
             @Override
             public void onFailure(Call<MyResponse<List<Organization>>> call, Throwable t)
@@ -122,10 +122,10 @@ public class OrganizationFragment extends Fragment implements SwipeRefreshLayout
 
     }
 
-    @Override
-    public void onRefresh() {
-        int CreateSize = myCreateList.size();
-        int FollowSize = myFollowList.size();
-        NetGetOrgans(CreateSize,1,FollowSize,1);
-    }
+//    @Override
+//    public void onRefresh() {
+//        int CreateSize = myCreateList.size();
+//        int FollowSize = myFollowList.size();
+//        NetGetOrgans(CreateSize,1,FollowSize,1);
+//    }
 }

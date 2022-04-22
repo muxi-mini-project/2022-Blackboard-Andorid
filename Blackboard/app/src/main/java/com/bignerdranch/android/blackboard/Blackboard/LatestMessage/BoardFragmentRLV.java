@@ -59,12 +59,11 @@ public class BoardFragmentRLV extends Fragment implements SwipeRefreshLayout.OnR
 
         //获取数据
         NetGetAnnounce(100,0);
-        NetGetLike();
+        NetGetLike(100,0);
 
         /*下拉刷新*/
         freshLayout = view.findViewById(R.id.freshMess);
         freshLayout.setOnRefreshListener(this);
-
 
         /*构造一个RecyclerView*/
         //绑定布局
@@ -75,59 +74,35 @@ public class BoardFragmentRLV extends Fragment implements SwipeRefreshLayout.OnR
         LM.setReverseLayout(true);//
         mRecyclerView.setLayoutManager(LM);
         //adapter
-        boardAdapter = new BoardAdapter(this, data);
+        boardAdapter = new BoardAdapter(getActivity(), data,like);
         mRecyclerView.setAdapter(boardAdapter);
         //监听
         boardAdapter.setItemOnClickListener(new BoardAdapter.ItemOnClickListener() {
             @Override
-            public void OnStarClick(View view, int position) {
+            public void OnStarClick(View view, int position)
+            {
+                if (data.get(position).isStar()) {
+                    data.get(position).setStar(false);
+                }
+                else
+                    data.get(position).setStar(true);
             }
-
             @Override
             public void OnAvatarClick(String name, int id) {
                 Intent intent = OrganizationActivity.newIntent(getActivity(),name,id);
                 startActivity(intent);
             }
-
             @Override
-            public void OnItemClick() {
-
-            }
+            public void OnItemClick() { }
         });
-
         //返回View
         return view;
     }
 
     /*网络请求*/
-    private void NetGetLike() {
-        SharedPreferences p = getActivity().getSharedPreferences(Utils.SP, MODE_PRIVATE);
-        String Authorization = p.getString(Utils.TOKEN, null);
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://119.3.2.168:8080/api/v1/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        API get = retrofit.create(API.class);
-        Call<MyResponse<List<MessageItem>>> call = get.collected(1000,0,Authorization);
-
-        call.enqueue(new Callback<MyResponse<List<MessageItem>>>() {
-            @Override
-            public void onResponse(Call<MyResponse<List<MessageItem>>> call, Response<MyResponse<List<MessageItem>>> response)
-            {
-                if (response.isSuccessful())
-                {
-                    like.addAll(response.body().getData());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<MyResponse<List<MessageItem>>> call, Throwable t) {
-                Toast.makeText(getActivity(), "网络出错了", Toast.LENGTH_SHORT).show();
-            }
-        });
+    private void NetUnStar(int id){
     }
+    private void NetStar(int id){}
     private void NetGetAnnounce(int limit ,int page) {
         //获取token
         SharedPreferences p = getActivity().getSharedPreferences(Utils.SP, MODE_PRIVATE);
@@ -158,12 +133,40 @@ public class BoardFragmentRLV extends Fragment implements SwipeRefreshLayout.OnR
             }
         });
     }
-    private void NetCollect()  {}
+    private void NetGetLike(int limit ,int page) {
+        SharedPreferences p = getActivity().getSharedPreferences(Utils.SP, MODE_PRIVATE);
+        String Authorization = p.getString(Utils.TOKEN, null);
 
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://119.3.2.168:8080/api/v1/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        API get = retrofit.create(API.class);
+        Call<MyResponse<List<MessageItem>>> call = get.collected(limit,page,Authorization);
+
+        call.enqueue(new Callback<MyResponse<List<MessageItem>>>() {
+            @Override
+            public void onResponse(Call<MyResponse<List<MessageItem>>> call, Response<MyResponse<List<MessageItem>>> response)
+            {
+                if (response.isSuccessful())
+                {
+                    like.addAll(response.body().getData());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<MyResponse<List<MessageItem>>> call, Throwable t) {
+                Toast.makeText(getActivity(), "网络出错了", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
     @Override
     public void onRefresh()
     {
-        int size = data.size();
-        NetGetAnnounce(size,1);
+        int ASize = data.size();
+        NetGetAnnounce(ASize,1);
+        int FSize = like.size();
+        NetGetLike(FSize,1);
     }
 }

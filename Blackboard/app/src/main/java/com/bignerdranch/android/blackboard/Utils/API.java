@@ -78,7 +78,8 @@ public interface API {
             @Query("page") int page,@Header("Authorization")String Authorization);
 
     /*收藏通知*/
-
+    @POST("announcement/collect")
+    Call<MyResponse<MessageItem>> collectThis(@Body MessageItem messageItem,@Header("Authorization")String Authorization);
 
     @POST("login")
     Call<LoginResponse> post(@Body User user);
