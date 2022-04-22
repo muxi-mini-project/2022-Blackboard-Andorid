@@ -129,7 +129,7 @@ public class OrganizationActivity extends AppCompatActivity
             public void run() {
                 super.run();
                 try {
-                    Thread.sleep(12000);
+                    Thread.sleep(60);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
