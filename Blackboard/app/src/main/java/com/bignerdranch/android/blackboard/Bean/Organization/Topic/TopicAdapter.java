@@ -40,7 +40,9 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicHolder>
             TopicAdd.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    addClick.addClick();
+                    int position = getAdapterPosition();
+                    String GroupName = topicsList.get(position).getGroupName();
+                    onItemClick.addClick(GroupName);
                 }
             });
         }
@@ -63,13 +65,12 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicHolder>
         return topicsList.size();
     }
 
-    public interface AddClick
-    {
-        public void addClick();
+    public interface OnItemClick {
+        public void addClick(String GroupName);
     }
-    private AddClick addClick;
-    public void SetAddClick(AddClick addClick)
+    private OnItemClick onItemClick;
+    public void setItemClick(OnItemClick onItemClick)
     {
-        this.addClick = addClick;
+        this.onItemClick = onItemClick;
     }
 }

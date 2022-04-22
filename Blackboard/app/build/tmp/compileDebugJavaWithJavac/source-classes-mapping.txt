@@ -2,22 +2,28 @@ com/bignerdranch/android/blackboard/databinding/ItemMessageBinding.java
  com.bignerdranch.android.blackboard.databinding.ItemMessageBinding
 com/bignerdranch/android/blackboard/Blackboard/Search/RelativeOrganization.java
  com.bignerdranch.android.blackboard.Blackboard.Search.RelativeOrganization
+com/bignerdranch/android/blackboard/Bean/Organization/OrganizationActivity.java
+ com.bignerdranch.android.blackboard.Bean.Organization.OrganizationActivity
+ com.bignerdranch.android.blackboard.Bean.Organization.OrganizationActivity$1
+ com.bignerdranch.android.blackboard.Bean.Organization.OrganizationActivity$2
+ com.bignerdranch.android.blackboard.Bean.Organization.OrganizationActivity$3
+ com.bignerdranch.android.blackboard.Bean.Organization.OrganizationActivity$4
+ com.bignerdranch.android.blackboard.Bean.Organization.OrganizationActivity$5
+ com.bignerdranch.android.blackboard.Bean.Organization.OrganizationActivity$6
 com/bignerdranch/android/blackboard/databinding/DialogCreateBinding.java
  com.bignerdranch.android.blackboard.databinding.DialogCreateBinding
-com/bignerdranch/android/blackboard/databinding/ActivityAddBinding.java
- com.bignerdranch.android.blackboard.databinding.ActivityAddBinding
 com/bignerdranch/android/blackboard/Blackboard/Search/SearchResultActivity.java
  com.bignerdranch.android.blackboard.Blackboard.Search.SearchResultActivity
  com.bignerdranch.android.blackboard.Blackboard.Search.SearchResultActivity$1
  com.bignerdranch.android.blackboard.Blackboard.Search.SearchResultActivity$2
+com/bignerdranch/android/blackboard/Bean/Organization/Topic/Topics.java
+ com.bignerdranch.android.blackboard.Bean.Organization.Topic.Topics
 com/bignerdranch/android/blackboard/Blackboard/OrganizationList/OrganizationAdapter.java
  com.bignerdranch.android.blackboard.Blackboard.OrganizationList.OrganizationAdapter
  com.bignerdranch.android.blackboard.Blackboard.OrganizationList.OrganizationAdapter$1
  com.bignerdranch.android.blackboard.Blackboard.OrganizationList.OrganizationAdapter$OnChildClickListener
-com/bignerdranch/android/blackboard/Blackboard/LatestMessage/BoardFragmentRLV.java
- com.bignerdranch.android.blackboard.Blackboard.LatestMessage.BoardFragmentRLV
- com.bignerdranch.android.blackboard.Blackboard.LatestMessage.BoardFragmentRLV$1
- com.bignerdranch.android.blackboard.Blackboard.LatestMessage.BoardFragmentRLV$Data
+com/bignerdranch/android/blackboard/databinding/FragmentFavoritesBinding.java
+ com.bignerdranch.android.blackboard.databinding.FragmentFavoritesBinding
 com/bignerdranch/android/blackboard/databinding/ActivityOrganizationBinding.java
  com.bignerdranch.android.blackboard.databinding.ActivityOrganizationBinding
 com/bignerdranch/android/blackboard/Settings/Login/LoginActivity.java
@@ -40,11 +46,8 @@ com/bignerdranch/android/blackboard/Settings/SettingsActivity.java
  com.bignerdranch.android.blackboard.Settings.SettingsActivity$1
  com.bignerdranch.android.blackboard.Settings.SettingsActivity$2
  com.bignerdranch.android.blackboard.Settings.SettingsActivity$3
-com/bignerdranch/android/blackboard/Blackboard/OrganizationList/OrganizationFragment.java
- com.bignerdranch.android.blackboard.Blackboard.OrganizationList.OrganizationFragment
- com.bignerdranch.android.blackboard.Blackboard.OrganizationList.OrganizationFragment$1
- com.bignerdranch.android.blackboard.Blackboard.OrganizationList.OrganizationFragment$2
- com.bignerdranch.android.blackboard.Blackboard.OrganizationList.OrganizationFragment$3
+com/bignerdranch/android/blackboard/Bean/Message/messageActivity.java
+ com.bignerdranch.android.blackboard.Bean.Message.messageActivity
 com/bignerdranch/android/blackboard/Blackboard/BoardActivity.java
  com.bignerdranch.android.blackboard.Blackboard.BoardActivity
  com.bignerdranch.android.blackboard.Blackboard.BoardActivity$1
@@ -91,16 +94,26 @@ com/bignerdranch/android/blackboard/Mine/PageActivity.java
  com.bignerdranch.android.blackboard.Mine.PageActivity
  com.bignerdranch.android.blackboard.Mine.PageActivity$1
  com.bignerdranch.android.blackboard.Mine.PageActivity$2
-com/bignerdranch/android/blackboard/Utils/API.java
- com.bignerdranch.android.blackboard.Utils.API
+com/bignerdranch/android/blackboard/Blackboard/LatestMessage/BoardFragmentRLV.java
+ com.bignerdranch.android.blackboard.Blackboard.LatestMessage.BoardFragmentRLV
+ com.bignerdranch.android.blackboard.Blackboard.LatestMessage.BoardFragmentRLV$1
+ com.bignerdranch.android.blackboard.Blackboard.LatestMessage.BoardFragmentRLV$Data
 com/bignerdranch/android/blackboard/Blackboard/Search/RelativeMessage.java
  com.bignerdranch.android.blackboard.Blackboard.Search.RelativeMessage
-com/bignerdranch/android/blackboard/Blackboard/LatestMessage/MessageDetail.java
- com.bignerdranch.android.blackboard.Blackboard.LatestMessage.MessageDetail
 com/bignerdranch/android/blackboard/databinding/ActivityPageBinding.java
  com.bignerdranch.android.blackboard.databinding.ActivityPageBinding
 com/bignerdranch/android/blackboard/databinding/ActivityNewBinding.java
  com.bignerdranch.android.blackboard.databinding.ActivityNewBinding
+com/bignerdranch/android/blackboard/Mine/MineActivity.java
+ com.bignerdranch.android.blackboard.Mine.MineActivity
+ com.bignerdranch.android.blackboard.Mine.MineActivity$1
+ com.bignerdranch.android.blackboard.Mine.MineActivity$2
+ com.bignerdranch.android.blackboard.Mine.MineActivity$3
+ com.bignerdranch.android.blackboard.Mine.MineActivity$4
+ com.bignerdranch.android.blackboard.Mine.MineActivity$5
+ com.bignerdranch.android.blackboard.Mine.MineActivity$6
+ com.bignerdranch.android.blackboard.Mine.MineActivity$7
+ com.bignerdranch.android.blackboard.Mine.MineActivity$8
 com/bignerdranch/android/blackboard/Settings/Login/DestroyActivityUtil.java
  com.bignerdranch.android.blackboard.Settings.Login.DestroyActivityUtil
 com/bignerdranch/android/blackboard/Settings/Login/LoginResponse.java
@@ -121,8 +134,9 @@ com/bignerdranch/android/blackboard/Blackboard/Search/SearchAdapter.java
  com.bignerdranch.android.blackboard.Blackboard.Search.SearchAdapter$SearchRelativeOrganizationHolder
 com/bignerdranch/android/blackboard/BuildConfig.java
  com.bignerdranch.android.blackboard.BuildConfig
-com/bignerdranch/android/blackboard/Blackboard/New/PostActivity.java
- com.bignerdranch.android.blackboard.Blackboard.New.PostActivity
+com/bignerdranch/android/blackboard/Mine/Post/PostAdapter.java
+ com.bignerdranch.android.blackboard.Mine.Post.PostAdapter
+ com.bignerdranch.android.blackboard.Mine.Post.PostAdapter$postViewHolder
 com/bignerdranch/android/blackboard/databinding/ItemOgnGroupBinding.java
  com.bignerdranch.android.blackboard.databinding.ItemOgnGroupBinding
 com/bignerdranch/android/blackboard/databinding/ItemRelativeOrganizationBinding.java
@@ -136,12 +150,16 @@ com/bignerdranch/android/blackboard/databinding/FragmentPostBinding.java
 com/bignerdranch/android/blackboard/Mine/Post/Posts.java
  com.bignerdranch.android.blackboard.Mine.Post.Posts
  com.bignerdranch.android.blackboard.Mine.Post.Posts$DataDTO
+com/bignerdranch/android/blackboard/databinding/ActivityMessageBinding.java
+ com.bignerdranch.android.blackboard.databinding.ActivityMessageBinding
 com/bignerdranch/android/blackboard/Bean/Organization/Organization.java
  com.bignerdranch.android.blackboard.Bean.Organization.Organization
 com/bignerdranch/android/blackboard/databinding/ItemTitleBinding.java
  com.bignerdranch.android.blackboard.databinding.ItemTitleBinding
 com/bignerdranch/android/blackboard/databinding/FragmentOrganizationBinding.java
  com.bignerdranch.android.blackboard.databinding.FragmentOrganizationBinding
+com/bignerdranch/android/blackboard/databinding/ActivityPostBinding.java
+ com.bignerdranch.android.blackboard.databinding.ActivityPostBinding
 com/bignerdranch/android/blackboard/Blackboard/Search/SearchResultFragment.java
  com.bignerdranch.android.blackboard.Blackboard.Search.SearchResultFragment
  com.bignerdranch.android.blackboard.Blackboard.Search.SearchResultFragment$1
@@ -149,61 +167,48 @@ com/bignerdranch/android/blackboard/Blackboard/LatestMessage/BoardAdapter.java
  com.bignerdranch.android.blackboard.Blackboard.LatestMessage.BoardAdapter
  com.bignerdranch.android.blackboard.Blackboard.LatestMessage.BoardAdapter$1
  com.bignerdranch.android.blackboard.Blackboard.LatestMessage.BoardAdapter$2
+ com.bignerdranch.android.blackboard.Blackboard.LatestMessage.BoardAdapter$3
  com.bignerdranch.android.blackboard.Blackboard.LatestMessage.BoardAdapter$BoardViewHolder
  com.bignerdranch.android.blackboard.Blackboard.LatestMessage.BoardAdapter$ItemOnClickListener
-com/bignerdranch/android/blackboard/Blackboard/New/NewActivity.java
- com.bignerdranch.android.blackboard.Blackboard.New.NewActivity
- com.bignerdranch.android.blackboard.Blackboard.New.NewActivity$1
- com.bignerdranch.android.blackboard.Blackboard.New.NewActivity$2
+com/bignerdranch/android/blackboard/databinding/ActivityBoardBinding.java
+ com.bignerdranch.android.blackboard.databinding.ActivityBoardBinding
 com/bignerdranch/android/blackboard/databinding/ActivitySearchResultBinding.java
  com.bignerdranch.android.blackboard.databinding.ActivitySearchResultBinding
-com/bignerdranch/android/blackboard/Bean/Topic/TopicAdapter.java
- com.bignerdranch.android.blackboard.Bean.Topic.TopicAdapter
- com.bignerdranch.android.blackboard.Bean.Topic.TopicAdapter$AddClick
- com.bignerdranch.android.blackboard.Bean.Topic.TopicAdapter$TopicHolder
- com.bignerdranch.android.blackboard.Bean.Topic.TopicAdapter$TopicHolder$1
 com/bignerdranch/android/blackboard/Mine/Favourite/FavoritesFragment.java
  com.bignerdranch.android.blackboard.Mine.Favourite.FavoritesFragment
 com/bignerdranch/android/blackboard/Mine/Favourite/Favorites.java
  com.bignerdranch.android.blackboard.Mine.Favourite.Favorites
 com/bignerdranch/android/blackboard/databinding/FragmentBoardBinding.java
  com.bignerdranch.android.blackboard.databinding.FragmentBoardBinding
-com/bignerdranch/android/blackboard/Bean/Organization/OrganizationActivity.java
- com.bignerdranch.android.blackboard.Bean.Organization.OrganizationActivity
- com.bignerdranch.android.blackboard.Bean.Organization.OrganizationActivity$1
- com.bignerdranch.android.blackboard.Bean.Organization.OrganizationActivity$2
- com.bignerdranch.android.blackboard.Bean.Organization.OrganizationActivity$3
- com.bignerdranch.android.blackboard.Bean.Organization.OrganizationActivity$4
- com.bignerdranch.android.blackboard.Bean.Organization.OrganizationActivity$5
- com.bignerdranch.android.blackboard.Bean.Organization.OrganizationActivity$6
+com/bignerdranch/android/blackboard/Settings/Change/ImageUtil.java
+ com.bignerdranch.android.blackboard.Settings.Change.ImageUtil
 com/bignerdranch/android/blackboard/databinding/DialogBottomBinding.java
  com.bignerdranch.android.blackboard.databinding.DialogBottomBinding
 com/bignerdranch/android/blackboard/databinding/ActivityRegisterBinding.java
  com.bignerdranch.android.blackboard.databinding.ActivityRegisterBinding
 com/bignerdranch/android/blackboard/Settings/Login/User.java
  com.bignerdranch.android.blackboard.Settings.Login.User
-com/bignerdranch/android/blackboard/Bean/Topic/Topics.java
- com.bignerdranch.android.blackboard.Bean.Topic.Topics
 com/bignerdranch/android/blackboard/databinding/ActivitySearchBinding.java
  com.bignerdranch.android.blackboard.databinding.ActivitySearchBinding
-com/bignerdranch/android/blackboard/Mine/Post/PostAdapter.java
- com.bignerdranch.android.blackboard.Mine.Post.PostAdapter
- com.bignerdranch.android.blackboard.Mine.Post.PostAdapter$postViewHolder
-com/bignerdranch/android/blackboard/databinding/FragmentFavoritesBinding.java
- com.bignerdranch.android.blackboard.databinding.FragmentFavoritesBinding
-com/bignerdranch/android/blackboard/Settings/Change/ImageUtil.java
- com.bignerdranch.android.blackboard.Settings.Change.ImageUtil
-com/bignerdranch/android/blackboard/Mine/MineActivity.java
- com.bignerdranch.android.blackboard.Mine.MineActivity
- com.bignerdranch.android.blackboard.Mine.MineActivity$1
- com.bignerdranch.android.blackboard.Mine.MineActivity$2
- com.bignerdranch.android.blackboard.Mine.MineActivity$3
- com.bignerdranch.android.blackboard.Mine.MineActivity$4
- com.bignerdranch.android.blackboard.Mine.MineActivity$5
- com.bignerdranch.android.blackboard.Mine.MineActivity$6
- com.bignerdranch.android.blackboard.Mine.MineActivity$7
- com.bignerdranch.android.blackboard.Mine.MineActivity$8
-com/bignerdranch/android/blackboard/databinding/ActivityBoardBinding.java
- com.bignerdranch.android.blackboard.databinding.ActivityBoardBinding
-com/bignerdranch/android/blackboard/Utils/collapsibleTextView.java
- com.bignerdranch.android.blackboard.Utils.collapsibleTextView
+com/bignerdranch/android/blackboard/Blackboard/New/NewActivity.java
+ com.bignerdranch.android.blackboard.Blackboard.New.NewActivity
+ com.bignerdranch.android.blackboard.Blackboard.New.NewActivity$1
+ com.bignerdranch.android.blackboard.Blackboard.New.NewActivity$2
+com/bignerdranch/android/blackboard/Bean/Organization/Topic/TopicAdapter.java
+ com.bignerdranch.android.blackboard.Bean.Organization.Topic.TopicAdapter
+ com.bignerdranch.android.blackboard.Bean.Organization.Topic.TopicAdapter$OnItemClick
+ com.bignerdranch.android.blackboard.Bean.Organization.Topic.TopicAdapter$TopicHolder
+ com.bignerdranch.android.blackboard.Bean.Organization.Topic.TopicAdapter$TopicHolder$1
+com/bignerdranch/android/blackboard/Blackboard/OrganizationList/OrganizationFragment.java
+ com.bignerdranch.android.blackboard.Blackboard.OrganizationList.OrganizationFragment
+ com.bignerdranch.android.blackboard.Blackboard.OrganizationList.OrganizationFragment$1
+ com.bignerdranch.android.blackboard.Blackboard.OrganizationList.OrganizationFragment$2
+ com.bignerdranch.android.blackboard.Blackboard.OrganizationList.OrganizationFragment$3
+com/bignerdranch/android/blackboard/Utils/API.java
+ com.bignerdranch.android.blackboard.Utils.API
+com/bignerdranch/android/blackboard/Bean/Message/MessageItem.java
+ com.bignerdranch.android.blackboard.Bean.Message.MessageItem
+com/bignerdranch/android/blackboard/Blackboard/New/PostActivity.java
+ com.bignerdranch.android.blackboard.Blackboard.New.PostActivity
+ com.bignerdranch.android.blackboard.Blackboard.New.PostActivity$1
+ com.bignerdranch.android.blackboard.Blackboard.New.PostActivity$2

@@ -1060,6 +1060,7 @@ color material_slider_halo_color
 color material_slider_inactive_tick_marks_color
 color material_slider_inactive_track_color
 color material_slider_thumb_color
+color message_text
 color more_gray
 color mtrl_bottom_nav_colored_item_tint
 color mtrl_bottom_nav_colored_ripple_color
@@ -1588,6 +1589,7 @@ drawable activity_background
 drawable avatar
 drawable avd_hide_password
 drawable avd_show_password
+drawable back1
 drawable bg_login
 drawable bg_register
 drawable btn_checkbox_checked_mtrl
@@ -1779,7 +1781,6 @@ id autoCompleteToStart
 id back
 id back1
 id back2
-id back_button
 id back_button2
 id barrier
 id baseline
@@ -1836,8 +1837,6 @@ id decor_content_parent
 id default_activity_button
 id deltaRelative
 id dependency_ordering
-id desc_op_tv
-id desc_tv
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -1895,6 +1894,7 @@ id group_divider
 id grouping
 id groups
 id hideable
+id hint
 id home
 id homeAsUp
 id honorRequest
@@ -2239,14 +2239,15 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_add
 layout activity_board
 layout activity_information
 layout activity_login
+layout activity_message
 layout activity_mine
 layout activity_new
 layout activity_organization
 layout activity_page
+layout activity_post
 layout activity_register
 layout activity_search
 layout activity_search_result

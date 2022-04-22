@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Public\\AndroidStudioProjects\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-small-v4\\values-small-v4.xml",
+            "outputFile": "S:\\MUXI\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-small-v4\\values-small-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\粉蓝色的浅梦\\.gradle\\caches\\transforms-3\\e06ebd1b715f51b78d4c4c9ae709c8a8\\transformed\\material-1.2.1\\res\\values-small-v4\\values-small-v4.xml",
+                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-3\\e06ebd1b715f51b78d4c4c9ae709c8a8\\transformed\\material-1.2.1\\res\\values-small-v4\\values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

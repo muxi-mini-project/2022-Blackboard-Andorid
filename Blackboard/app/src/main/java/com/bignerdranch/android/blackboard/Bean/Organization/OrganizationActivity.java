@@ -35,6 +35,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.POST;
 
 public class OrganizationActivity extends AppCompatActivity
 {
@@ -74,20 +75,22 @@ public class OrganizationActivity extends AppCompatActivity
 
         //初始化界面
         initView();
+
         topicsData = new LinkedList<>();
         adapter = new TopicAdapter(OrganizationActivity.this,topicsData);
         TopicRLV.setAdapter(adapter);
-        adapter.SetAddClick(new TopicAdapter.AddClick() {
+
+        adapter.setItemClick(new TopicAdapter.OnItemClick() {
             @Override
-            public void addClick() {
-                Intent intent = new Intent(OrganizationActivity.this, PostActivity.class);
+            public void addClick(String GroupName) {
+                Intent intent = PostActivity.newIntent(OrganizationActivity.this,name,GroupName);
                 startActivity(intent);
             }
         });
 
         //获取详细信息
-        NetGetInformation(name);
-        NetGetTopic(id);
+        NetGetInformation(name);    //获取组织信息
+        NetGetTopic(id);            //获取组织列表
     }
 
 
@@ -183,6 +186,9 @@ public class OrganizationActivity extends AppCompatActivity
                 if(response.isSuccessful())
                 {
                     Toast.makeText(OrganizationActivity.this, "创建话题成功", Toast.LENGTH_SHORT).show();
+                    //获取新的话题
+                    topicsData.add(topics);
+                    adapter.notifyDataSetChanged();
                 }else
                 {
                     Toast.makeText(OrganizationActivity.this, response.code()+"\n"+response.message(), Toast.LENGTH_SHORT).show();
@@ -239,9 +245,7 @@ public class OrganizationActivity extends AppCompatActivity
                         editText.getText().toString());
                 NetCreateTopic(newTopic);
                 dialog.dismiss();
-                //获取新的话题
-                topicsData.add(newTopic);
-                adapter.notifyDataSetChanged();
+
             }
         });
         cancel.setOnClickListener(new View.OnClickListener()

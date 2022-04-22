@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,10 +15,13 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bignerdranch.android.blackboard.Bean.Message.MessageItem;
+import com.bignerdranch.android.blackboard.Bean.Organization.OrganizationActivity;
 import com.bignerdranch.android.blackboard.R;
 import com.bignerdranch.android.blackboard.Utils.API;
 import com.bignerdranch.android.blackboard.Utils.MyResponse;
 import com.bignerdranch.android.blackboard.Utils.Utils;
+
+import java.util.logging.LogManager;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import retrofit2.Call;
@@ -31,7 +35,7 @@ public class PostActivity extends AppCompatActivity {
     private static String EXTRA_OgnName = "OgnName";
     private static String EXTRA_GroupName = "GroupName";
 
-    public Intent newIntent(Context context,String OgnName, String GroupName)
+    public static Intent newIntent(Context context, String OgnName, String GroupName)
     {
         Intent intent = new Intent(context,PostActivity.class);
         intent.putExtra(EXTRA_OgnName,OgnName);
@@ -83,6 +87,7 @@ public class PostActivity extends AppCompatActivity {
         API post = retrofit.create(API.class);
         Call<MyResponse<MessageItem>> call = post.announcement(messageItem,Authorization);
 
+        Log.d("s", call.toString());
         call.enqueue(new Callback<MyResponse<MessageItem>>() {
             @Override
             public void onResponse(Call<MyResponse<MessageItem>> call, Response<MyResponse<MessageItem>> response)
