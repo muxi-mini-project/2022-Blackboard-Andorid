@@ -5,7 +5,7 @@
     <string name="login_button">登录</string>
     <string name="board">通告板</string>
     <string name="mine">我的</string>
-    <string name="board_message">最新消息</string>
+    <string name="board_message">最新通知</string>
     <string name="board_organization">组织列表</string>
     <string name="register_nickname_label">昵称</string>
     <string name="register_nickname">快输入你的专属昵称吧~</string>

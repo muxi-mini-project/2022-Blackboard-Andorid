@@ -2,7 +2,6 @@ package com.bignerdranch.android.blackboard.Blackboard.LatestMessage;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,8 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bignerdranch.android.blackboard.Bean.Message.MessageItem;
 import com.bignerdranch.android.blackboard.R;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -48,7 +45,7 @@ class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.BoardViewHolder> {
             super(itemView);
 
             textView_name = itemView.findViewById(R.id.TV_name);
-            imageView_photo = itemView.findViewById(R.id.IV_photo);
+            imageView_photo = itemView.findViewById(R.id.photoAMD);
             textView_text = itemView.findViewById(R.id.TV_text);
             Star = itemView.findViewById(R.id.star);
 
@@ -80,7 +77,8 @@ class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.BoardViewHolder> {
             @Override
             public void onClick(View view) {
                 itemOnClickListener.OnStarClick(view,position);
-                if (data.get(position).isStar()) holder.Star.setBackground(context.getDrawable(R.drawable.star));
+                if (data.get(position).isStar())
+                     holder.Star.setBackground(context.getDrawable(R.drawable.star));
                 else holder.Star.setBackground(context.getDrawable(R.drawable.unstar));
             }
         });
@@ -91,8 +89,10 @@ class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.BoardViewHolder> {
         });
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            { itemOnClickListener.OnItemClick();}
+            public void onClick(View view) { itemOnClickListener.OnItemClick(
+                    messageItem.getOrganization_name(),messageItem.getUpdatedAt(),
+                    messageItem.getGroup_name(),messageItem.getContents());
+            }
         });
 
     }
@@ -105,7 +105,7 @@ class BoardAdapter extends RecyclerView.Adapter<BoardAdapter.BoardViewHolder> {
     public interface ItemOnClickListener {
         public void OnStarClick(View view, int position);
         public void OnAvatarClick(String name, int OgnId);
-        public void OnItemClick();
+        public void OnItemClick(String name,String date,String topic,String content);
     }
     private ItemOnClickListener itemOnClickListener;
     public void setItemOnClickListener(ItemOnClickListener itemOnClickListener) {

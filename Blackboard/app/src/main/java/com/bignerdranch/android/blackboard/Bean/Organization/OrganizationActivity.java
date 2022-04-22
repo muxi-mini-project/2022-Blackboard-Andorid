@@ -77,10 +77,6 @@ public class OrganizationActivity extends AppCompatActivity
     private static String EXTRA_NAME = "name";
     private static String EXTRA_ID = "id";
 
-
-
-
-
     public static Intent newIntent(Context context,String name,int id)
     {
         Intent intent = new Intent(context,OrganizationActivity.class);
