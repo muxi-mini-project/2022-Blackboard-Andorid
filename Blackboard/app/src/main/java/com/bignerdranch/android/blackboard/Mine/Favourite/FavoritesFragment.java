@@ -1,5 +1,8 @@
 package com.bignerdranch.android.blackboard.Mine.Favourite;
 
+import static android.content.Context.MODE_PRIVATE;
+
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,16 +16,26 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bignerdranch.android.blackboard.Mine.Favourite.Favorites;
 import com.bignerdranch.android.blackboard.Mine.Favourite.FavoritesAdapter;
+import com.bignerdranch.android.blackboard.Mine.Post.Posts;
 import com.bignerdranch.android.blackboard.R;
+import com.bignerdranch.android.blackboard.Utils.API;
+import com.bignerdranch.android.blackboard.Utils.Utils;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class FavoritesFragment extends Fragment {
 
     private View view; //定义view用来设置fragment的layout
     public RecyclerView mFavoritesRecyclerView; //定义RecyclerView
     //定义以post实体类为对象的数据集合
-    private ArrayList<Favorites> favoritesList = new ArrayList<Favorites>();
+    private List<Favorites.DataDTO> favoritesList = new ArrayList<>();
     //自定义recyclerview的适配器
     private FavoritesAdapter mFavoritesAdapter;
 
@@ -37,17 +50,38 @@ public class FavoritesFragment extends Fragment {
         //填入数据
         initData();
 
+        mFavoritesAdapter.refresh(favoritesList);
+
         return view;
     }
 
     private void initData() {
-        for (int i=0;i<10;i++){
-            Favorites favorites = new Favorites();
-            favorites.setUpdatedAt("发布时间"+i);
-            favorites.setContents("发布内容"+i);
-            favorites.setOrganization_name("发布团队"+i);
-            favoritesList.add(favorites);
-        }
+        SharedPreferences p = getActivity().getSharedPreferences(Utils.SP, MODE_PRIVATE);
+        String Authorization = p.getString(Utils.TOKEN, null);
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://119.3.2.168:8080/api/v1/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        API get = retrofit.create(API.class);
+        Call<Favorites> call = get.myFavorites(100,0,Authorization);
+
+        call.enqueue(new Callback<Favorites>() {
+            @Override
+            public void onResponse(Call<Favorites> call, Response<Favorites> response) {
+
+                Favorites favorites = response.body();
+                favoritesList.addAll(favorites.getData());
+                mFavoritesAdapter.refresh(favoritesList);
+            }
+
+            @Override
+            public void onFailure(Call <Favorites> call, Throwable t)
+            {
+
+            }
+        });
     }
 
     private void initRecyclerView() {

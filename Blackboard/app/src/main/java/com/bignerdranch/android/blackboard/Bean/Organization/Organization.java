@@ -53,4 +53,10 @@ public class Organization
     public int getID() {
         return ID;
     }
+
+    public String getAvatar() {
+        return Avatar;
+    }
+
+
 }

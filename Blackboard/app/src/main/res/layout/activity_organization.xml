@@ -65,8 +65,7 @@
             app:layout_constraintTop_toTopOf="@id/content2"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="50dp"
-            android:src="@drawable/qq"/>
+            android:layout_marginLeft="50dp" />
 
         <TextView
             android:id="@+id/name2"
@@ -75,7 +74,7 @@
             app:layout_constraintTop_toTopOf="@id/photo2"
             app:layout_constraintLeft_toRightOf="@id/photo2"
             android:layout_marginLeft="30dp"
-            android:text="MUXI"
+            android:text=""
             android:textSize="20sp"
             android:gravity="center"/>
 
@@ -85,7 +84,7 @@
             android:layout_height="25dp"
             app:layout_constraintBottom_toBottomOf="@id/photo2"
             app:layout_constraintLeft_toRightOf="@id/photo2"
-            android:text="天真活泼可爱们"
+            android:text=""
             android:gravity="center"/>
 
 

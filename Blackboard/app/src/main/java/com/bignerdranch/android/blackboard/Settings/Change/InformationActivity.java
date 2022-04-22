@@ -1,8 +1,10 @@
 package com.bignerdranch.android.blackboard.Settings.Change;
 
+
 import android.Manifest;
 import android.annotation.TargetApi;
 import android.content.ContentUris;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -39,11 +41,16 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 
 import com.bignerdranch.android.blackboard.Utils.API;
 import com.bignerdranch.android.blackboard.Mine.Information;
 import com.bignerdranch.android.blackboard.R;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.BaseRequestOptions;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 
@@ -71,8 +78,7 @@ public class InformationActivity extends AppCompatActivity {
     private API change,changeAvatar;
     private Button informationButton;
     private Button backButton;
-//    private Context context;
-
+    private Context context;
 
     public static final int REQUEST_CODE_TAKE = 1;
     public static final int REQUEST_CODE_CHOOSE = 0;
@@ -133,14 +139,20 @@ public class InformationActivity extends AppCompatActivity {
         backButton = findViewById(R.id.information_back);
         ivAvatar = findViewById(R.id.iv_avatar);
 
+        SharedPreferences p = getSharedPreferences("URL", MODE_PRIVATE);
+        String url = p.getString("url",null);
+        Glide.with(this)
+                .load(url)
+                .into(ivAvatar);
+
 
         sendNetworkRequest();
 
 
 
-        SharedPreferences spfRecord = getSharedPreferences("spfRecord", MODE_PRIVATE);
-        String image64 = spfRecord.getString("image_64", "");
-        ivAvatar.setImageBitmap(ImageUtil.base64ToImage(image64));
+//        SharedPreferences spfRecord = getSharedPreferences("spfRecord", MODE_PRIVATE);
+//        String image64 = spfRecord.getString("image_64", "");
+//        ivAvatar.setImageBitmap(ImageUtil.base64ToImage(image64));
 
 //        base64 = image64;
 
@@ -176,11 +188,10 @@ public class InformationActivity extends AppCompatActivity {
                 Intent intent1 = getIntent();
                 Integer back = intent1.getIntExtra("from",0);
 
-
-                SharedPreferences spfRecord = getSharedPreferences("spfRecord", MODE_PRIVATE);
-                SharedPreferences.Editor edit = spfRecord.edit();
-                edit.putString("image_64", imageBase64);
-                edit.apply();
+//                SharedPreferences spfRecord = getSharedPreferences("spfRecord", MODE_PRIVATE);
+//                SharedPreferences.Editor edit = spfRecord.edit();
+//                edit.putString("image_64", imageBase64);
+//                edit.apply();
 
 
 //                if(back==0){
@@ -298,110 +309,28 @@ public class InformationActivity extends AppCompatActivity {
     }
 
 
-
-
-//    public File FileSaveToInside(Context context, String fileName) {
-//
-//        SharedPreferences spfRecord = getSharedPreferences("spfRecord", MODE_PRIVATE);
-//        String image64 = spfRecord.getString("image_64", null);
-//        Bitmap bitmap = ImageUtil.base64ToImage(image64);
-//
-//        FileOutputStream fos = null;
-//        String path = null;
-//        File file = null;
-//        try {
-//            //设置路径
-//            File folder = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-//            //判断目录是否存在
-//
-//            //目录不存在时自动创建
-//            if (folder.exists() ||folder.mkdir()) {
-//                file = new File(folder, fileName);
-//                fos = new FileOutputStream(file);
-//                //写入文件
-//                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
-//                fos.flush();
-//                path = file.getAbsolutePath();
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            Toast.makeText(InformationActivity.this,e.getMessage()+"1231414",Toast.LENGTH_SHORT).show();
-//
-//        } finally {
-//            try {
-//                if (fos != null) {
-//                    //关闭流
-//                    fos.close();
-//                }
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//                Toast.makeText(InformationActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
-//            }
-//
-//        }
-//
-//        return file;
-//    }
-
-//    private File saveBitmap()
-//    {
-//        SharedPreferences spfRecord = getSharedPreferences("spfRecord", MODE_PRIVATE);
-//        String image64 = spfRecord.getString("image_64", null);
-//        Bitmap bitmap = ImageUtil.base64ToImage(image64);
-//
-//        //创建文件，因为不存在2级目录，所以不用判断exist，要保存png，这里后缀就是png，要保存jpg，后缀就用jpg
-//        File file = new File(Environment.getExternalStorageDirectory() +"/avatar.png");
-//
-//
-//
-//        try {
-//            //文件输出流
-//            FileOutputStream fileOutputStream = new FileOutputStream(file);
-//            //压缩图片，如果要保存png，就用Bitmap.CompressFormat.PNG，要保存jpg就用Bitmap.CompressFormat.JPEG,质量是100%，表示不压缩
-//            bitmap.compress(Bitmap.CompressFormat.PNG,100, fileOutputStream);
-//            //写入，这里会卡顿，因为图片较大
-//            fileOutputStream.flush();
-//            //记得要关闭写入流
-//            fileOutputStream.close();
-//            //成功的提示，写入成功后，请在对应目录中找保存的图片
-//            Toast.makeText(InformationActivity.this,"写入成功！目录" + Environment.getExternalStorageDirectory()+"/avatar.png",Toast.LENGTH_SHORT).show();
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//            //失败的提示
-//            Toast.makeText(InformationActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            //失败的提示
-//            Toast.makeText(InformationActivity.this,e.getMessage(),Toast.LENGTH_SHORT).show();
-//        }
-//        return file;
-//    }
-
-
     private void upload(File file) {
 
+        OkHttpClient.Builder client = new OkHttpClient().newBuilder().connectTimeout(60000, TimeUnit.MILLISECONDS)
+                .readTimeout(60000, TimeUnit.MILLISECONDS)
+                .build().newBuilder();
+
         //创建OkHttp client
-        OkHttpClient.Builder okHttpClientBuilder = new OkHttpClient.Builder();
+//        OkHttpClient.Builder okHttpClientBuilder = new OkHttpClient.Builder();
 
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);//此处有四个级别，body为显示所有
 
         //判断是开发者模式，则调用OkHttp日志记录拦截器，方便debug
         if(BuildConfig.DEBUG) {
-            okHttpClientBuilder.addInterceptor(logging);
+            client.addInterceptor(logging);
         }
 
-
-//        MediaType mediaType = MediaType.Companion.parse("multipart/form-data");
-//        RequestBody fileBody = RequestBody.Companion.create(file,mediaType);
-//        MultipartBody body = new MultipartBody.Builder()
-//                .addFormDataPart("file", file.getName(),fileBody)
-//                .build();
 
         mRetrofit2 = new Retrofit.Builder()
                 .baseUrl("http://119.3.2.168:8080/api/v1/")
                 .addConverterFactory(GsonConverterFactory.create())
-                .client(okHttpClientBuilder.build())
+                .client(client.build())
                 .build();
 
         RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"), file);
@@ -415,9 +344,17 @@ public class InformationActivity extends AppCompatActivity {
         call.enqueue(new Callback<UploadAvatar>() {
             @Override
             public void onResponse(Call<UploadAvatar> call, Response<UploadAvatar> response) {
+
                 if (response.isSuccessful()) {
                     Toast.makeText(InformationActivity.this, "成功了", Toast.LENGTH_SHORT).show();
-                    response.body().getData().getUrl();
+                    String url = response.body().getData().getUrl();
+
+                    SharedPreferences p = getSharedPreferences("URL", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = p.edit();
+                    editor.putString("url",url);
+                    editor.commit();
+
+
                 }
                 else{
                     Toast.makeText(InformationActivity.this, "出错了", Toast.LENGTH_SHORT).show();
@@ -428,13 +365,10 @@ public class InformationActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<UploadAvatar> call, Throwable t) {
-                Toast.makeText(InformationActivity.this, "出错了", Toast.LENGTH_SHORT).show();
+                Toast.makeText(InformationActivity.this, "网络未连接", Toast.LENGTH_SHORT).show();
             }
         });
     }
-
-
-
 
 
     public void takePhoto(View view) {
@@ -504,19 +438,23 @@ public class InformationActivity extends AppCompatActivity {
                         InputStream inputStream = getContentResolver().openInputStream(imageUri);
                         Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
                         ivAvatar.setImageBitmap(bitmap);
-                        String imageToBase64 = ImageUtil.imageToBase64(bitmap);
-                        imageBase64 = imageToBase64;
+//                        String imageToBase64 = ImageUtil.imageToBase64(bitmap);
+//                        imageBase64 = imageToBase64;
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     }
                 }
             }
         } else if (requestCode == REQUEST_CODE_CHOOSE) {
-            if (resultCode == RESULT_OK) {
-                if (Build.VERSION.SDK_INT < 19) {
-                    handleImageBeforeApi19(data);
-                } else {
-                    handleImageOnApi19(data);
+            if(data == null){
+                return;
+            }else{
+                if (resultCode == RESULT_OK) {
+                    if (Build.VERSION.SDK_INT < 19) {
+                        handleImageBeforeApi19(data);
+                    } else {
+                        handleImageOnApi19(data);
+                    }
                 }
             }
         }
@@ -574,9 +512,10 @@ public class InformationActivity extends AppCompatActivity {
             }
             outputStream.flush();
 
+            upload(file);
             Bitmap bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
             ivAvatar.setImageBitmap(bitmap);
-            imageBase64 = ImageUtil.imageToBase64(bitmap);
+//            imageBase64 = ImageUtil.imageToBase64(bitmap);
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -606,8 +545,8 @@ public class InformationActivity extends AppCompatActivity {
             upload(file);
             Bitmap bitmap = BitmapFactory.decodeFile(imagePath);
             ivAvatar.setImageBitmap(bitmap) ;
-            String imageToBase64 = ImageUtil.imageToBase64(bitmap);
-            imageBase64 = imageToBase64;
+//            String imageToBase64 = ImageUtil.imageToBase64(bitmap);
+//            imageBase64 = imageToBase64;
         }
     }
 

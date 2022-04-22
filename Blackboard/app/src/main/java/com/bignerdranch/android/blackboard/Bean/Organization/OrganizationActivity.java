@@ -1,15 +1,34 @@
 package com.bignerdranch.android.blackboard.Bean.Organization;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.Manifest;
+import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.DocumentsContract;
+import android.provider.MediaStore;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
@@ -18,6 +37,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bignerdranch.android.blackboard.Blackboard.New.NewActivity;
 import com.bignerdranch.android.blackboard.Utils.API;
 import com.bignerdranch.android.blackboard.Bean.Topic.TopicAdapter;
 import com.bignerdranch.android.blackboard.Bean.Topic.Topics;
@@ -25,11 +45,26 @@ import com.bignerdranch.android.blackboard.Blackboard.New.PostActivity;
 import com.bignerdranch.android.blackboard.Utils.MyResponse;
 import com.bignerdranch.android.blackboard.R;
 import com.bignerdranch.android.blackboard.Utils.Utils;
+import com.bumptech.glide.Glide;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
+import de.hdodenhof.circleimageview.BuildConfig;
 import de.hdodenhof.circleimageview.CircleImageView;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.RequestBody;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -40,6 +75,10 @@ public class OrganizationActivity extends AppCompatActivity
 {
     private static String EXTRA_NAME = "name";
     private static String EXTRA_ID = "id";
+
+
+
+
 
     public static Intent newIntent(Context context,String name,int id)
     {
@@ -61,6 +100,7 @@ public class OrganizationActivity extends AppCompatActivity
     private Button addTopic;
     private Button backBTN;
     private TextView back;
+    private String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -69,7 +109,7 @@ public class OrganizationActivity extends AppCompatActivity
         setContentView(R.layout.activity_organization);
 
         //获取基本资料
-        String name = getIntent().getStringExtra("name");
+        name = getIntent().getStringExtra("name");
         int id = getIntent().getIntExtra("id",-1);
 
         //初始化界面
@@ -85,9 +125,24 @@ public class OrganizationActivity extends AppCompatActivity
             }
         });
 
-        //获取详细信息
-        NetGetInformation(name);
-        NetGetTopic(id);
+        new Thread() {
+            @Override
+            public void run() {
+                super.run();
+                try {
+                    Thread.sleep(6000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                /**
+                 * 要执行的操作
+                 */
+//                获取详细信息
+                NetGetInformation(name);
+                NetGetTopic(id);
+            }
+        }.start();
+
     }
 
 
@@ -149,6 +204,11 @@ public class OrganizationActivity extends AppCompatActivity
                 {
                     ognName.setText(response.body().getData().getOrganization_name());
                     introduction.setText(response.body().getData().getIntro());
+                    String url = response.body().getData().getAvatar();
+                    Glide.with(OrganizationActivity.this)
+                            .load(url)
+                            .into(photo);
+
                 }else
                 {
                     Toast.makeText(OrganizationActivity.this, "error:"+response.code()+response.message(), Toast.LENGTH_SHORT).show();
@@ -164,6 +224,7 @@ public class OrganizationActivity extends AppCompatActivity
     //请求创建一个话题   并更新话题数据
     private void NetCreateTopic(Topics topics)
     {
+
         //获取token
         SharedPreferences p = getSharedPreferences(Utils.SP, MODE_PRIVATE);
         String Authorization = p.getString(Utils.TOKEN, null);
@@ -258,6 +319,7 @@ public class OrganizationActivity extends AppCompatActivity
     public void ClickBack(View view) {
         finish();
     }
+
 
 
 

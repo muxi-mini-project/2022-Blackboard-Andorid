@@ -1,7 +1,12 @@
 package com.bignerdranch.android.blackboard.Blackboard.Search;
 
+import static android.content.Context.MODE_PRIVATE;
+
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,9 +18,24 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bignerdranch.android.blackboard.Bean.Organization.Organization;
+import com.bignerdranch.android.blackboard.Blackboard.BoardActivity;
+import com.bignerdranch.android.blackboard.Mine.Information;
 import com.bignerdranch.android.blackboard.R;
+import com.bignerdranch.android.blackboard.Settings.Login.LoginActivity;
+import com.bignerdranch.android.blackboard.Settings.Login.RegisterActivity;
+import com.bignerdranch.android.blackboard.Utils.API;
 
 import java.util.ArrayList;
+
+import de.hdodenhof.circleimageview.BuildConfig;
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class SearchResultFragment extends Fragment {
     private View view; //定义view用来设置fragment的layout
@@ -83,6 +103,7 @@ public class SearchResultFragment extends Fragment {
                         subscribe.setText("已关注");
                         subscribe.setTextColor(Color.parseColor("#FF000000"));
                         subscribe.setBackgroundResource(R.drawable.button_subscribed);
+                        subscribe(organization);
                         x = 1;
                     } else {
                         subscribe.setText("关注");
@@ -100,4 +121,48 @@ public class SearchResultFragment extends Fragment {
 
         });
     }
+
+    private void subscribe(Organization organization){
+        //创建OkHttp client
+        OkHttpClient.Builder okHttpClientBuilder = new OkHttpClient.Builder();
+
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+        logging.setLevel(HttpLoggingInterceptor.Level.BODY);//此处有四个级别，body为显示所有
+
+        //判断是开发者模式，则调用OkHttp日志记录拦截器，方便debug
+        if(BuildConfig.DEBUG) {
+            okHttpClientBuilder.addInterceptor(logging);
+        }
+        //构建retrofit
+        Retrofit mRetrofit = new Retrofit.Builder()
+                .baseUrl("http://119.3.2.168:8080/api/v1/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(okHttpClientBuilder.build())
+                .build();
+
+        SharedPreferences p = getActivity().getSharedPreferences("myPreferences", MODE_PRIVATE);
+        String Authorization = p.getString("token",null);
+
+        API subscribe = mRetrofit.create(API.class);
+        Call<Subscribe> call = subscribe.subscribe(organization,Authorization);
+
+        call.enqueue(new Callback<Subscribe>() {
+            @Override
+            public void onResponse(Call<Subscribe> call, Response<Subscribe> response) {
+                if (response.isSuccessful()) {
+
+
+                } else {
+                    Log.d("SearchResultFragment","error");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Subscribe> call, Throwable t) {
+
+            }
+        });
+    }
+
+
 }

@@ -1,7 +1,10 @@
 package com.bignerdranch.android.blackboard.Utils;
 
 import com.bignerdranch.android.blackboard.Bean.Organization.Organization;
+import com.bignerdranch.android.blackboard.Bean.Organization.OrganizationAvatar;
 import com.bignerdranch.android.blackboard.Bean.Topic.Topics;
+import com.bignerdranch.android.blackboard.Blackboard.Search.Subscribe;
+import com.bignerdranch.android.blackboard.Mine.Favourite.Favorites;
 import com.bignerdranch.android.blackboard.Mine.Information;
 import com.bignerdranch.android.blackboard.Mine.Post.Posts;
 import com.bignerdranch.android.blackboard.Settings.Change.ChangeName;
@@ -85,4 +88,17 @@ public interface API {
             @Query("page") int page, @Header("Authorization")String Authorization);
 
 
+    @GET("user/collection")
+    Call<Favorites> myFavorites(
+            @Query("limit") int limit,
+            @Query("page") int page, @Header("Authorization")String Authorization);
+
+    @Multipart
+    @POST("organization/{organization_name}/image")
+    Call<OrganizationAvatar> changeImage(@Path("organization_name") String organization_name,
+                                         @Part MultipartBody.Part file,
+                                         @Header("Authorization")String Authorization);
+
+    @POST("organization/follow")
+    Call<Subscribe> subscribe(@Body Organization organization, @Header("Authorization")String Authorization);
 }

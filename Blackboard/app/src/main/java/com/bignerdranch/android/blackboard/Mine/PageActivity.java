@@ -1,7 +1,11 @@
 package com.bignerdranch.android.blackboard.Mine;
 
+
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +23,9 @@ import com.bignerdranch.android.blackboard.Mine.Post.PostFragment;
 import com.bignerdranch.android.blackboard.R;
 import com.bignerdranch.android.blackboard.Settings.Change.ImageUtil;
 import com.bignerdranch.android.blackboard.Settings.Change.InformationActivity;
+import com.bumptech.glide.Glide;
+
+import java.io.InputStream;
 
 import de.hdodenhof.circleimageview.BuildConfig;
 import okhttp3.OkHttpClient;
@@ -41,12 +48,10 @@ public class PageActivity extends AppCompatActivity implements View.OnClickListe
     private Retrofit mRetrofit;
     private API information;
     private ImageView ivAvatar;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page);
 
@@ -54,9 +59,11 @@ public class PageActivity extends AppCompatActivity implements View.OnClickListe
 
         ivAvatar = findViewById(R.id.page_portrait);
 
-        SharedPreferences spfRecord = getSharedPreferences("spfRecord", MODE_PRIVATE);
-        String image64 = spfRecord.getString("image_64", "");
-        ivAvatar.setImageBitmap(ImageUtil.base64ToImage(image64));
+        SharedPreferences p = getSharedPreferences("URL", MODE_PRIVATE);
+        String url = p.getString("url",null);
+        Glide.with(this)
+                .load(url)
+                .into(ivAvatar);
 
         init();
 

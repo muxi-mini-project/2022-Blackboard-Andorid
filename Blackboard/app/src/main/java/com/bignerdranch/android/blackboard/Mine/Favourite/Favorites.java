@@ -1,45 +1,46 @@
 package com.bignerdranch.android.blackboard.Mine.Favourite;
 
-import java.io.Serializable;
+import java.util.List;
 
-public class Favorites implements Serializable {
-    private String contents;//通知内容
-    private String organizationName;//团队名
-    private String updatedAt;//发布时间
+public class Favorites {
 
-    public Favorites(){
+    private Integer code;
 
+    private String message;
+
+    private List<DataDTO> data;
+
+    public List<DataDTO> getData() {
+        return data;
     }
 
-    public Favorites(String contents, String organization_name, String updatedAt) {
-        this.contents = contents;
-        this.organizationName = organization_name;
-        this.updatedAt = updatedAt;
+    public void setData(List<DataDTO> data) {
+        this.data = data;
     }
 
-    public String getContents() {
-        return contents;
-    }
+    public static class DataDTO {
 
-    public void setContents(String contents) {
-        this.contents = contents;
-    }
+        private Integer ID;
 
-    public String getOrganization_name() {
-        return organizationName;
-    }
+        private String CreatedAt;
 
-    public void setOrganization_name(String organization_name) {
-        this.organizationName = organization_name;
-    }
+        private String UpdatedAt;
 
-    public String getUpdatedAt() {
-        return updatedAt;
-    }
+        private String DeletedAt;
 
-    public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
-    }
+        private String student_id;
 
+        private Integer announcement_id;
+
+        private String announcement;
+
+        public String getAnnouncement() {
+            return announcement;
+        }
+
+        public void setAnnouncement(String announcement) {
+            this.announcement = announcement;
+        }
+    }
 }
 

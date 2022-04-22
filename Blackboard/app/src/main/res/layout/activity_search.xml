@@ -8,6 +8,7 @@
     android:background="@drawable/activity_background"
     tools:context=".Blackboard.Search.SearchActivity">
 
+
     <Button
         android:id="@+id/search_back"
         android:layout_width="25dp"
@@ -37,6 +38,7 @@
         android:textSize="17sp"
         android:onClick="ClickBack"
         />
+
 
     <EditText
         android:id="@+id/search_edittext"

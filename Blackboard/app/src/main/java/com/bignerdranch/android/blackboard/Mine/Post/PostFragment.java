@@ -67,7 +67,7 @@ public class PostFragment extends Fragment {
                 .build();
 
         API get = retrofit.create(API.class);
-        Call<Posts> call = get.myPost(5,0,Authorization);
+        Call<Posts> call = get.myPost(100,0,Authorization);
 
         call.enqueue(new Callback<Posts>() {
             @Override

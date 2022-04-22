@@ -23,6 +23,7 @@ import com.bignerdranch.android.blackboard.Blackboard.BoardActivity;
 import com.bignerdranch.android.blackboard.R;
 import com.bignerdranch.android.blackboard.Settings.Change.ImageUtil;
 import com.bignerdranch.android.blackboard.Settings.SettingsActivity;
+import com.bumptech.glide.Glide;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import de.hdodenhof.circleimageview.BuildConfig;
@@ -59,9 +60,11 @@ public class MineActivity extends AppCompatActivity {
         settingsButton = findViewById(R.id.settings);
         ivAvatar = findViewById(R.id.mine_portrait);
 
-        SharedPreferences spfRecord = getSharedPreferences("spfRecord", MODE_PRIVATE);
-        String image64 = spfRecord.getString("image_64", "");
-        ivAvatar.setImageBitmap(ImageUtil.base64ToImage(image64));
+        SharedPreferences p = getSharedPreferences("URL", MODE_PRIVATE);
+        String url = p.getString("url",null);
+        Glide.with(this)
+                .load(url)
+                .into(ivAvatar);
 
         sendNetworkRequest();
 
