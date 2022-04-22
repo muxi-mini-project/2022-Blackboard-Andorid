@@ -8,7 +8,7 @@
     android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/content"
+        android:id="@+id/conAMD"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintDimensionRatio="7:4"
@@ -25,7 +25,7 @@
         >
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/IV_photo"
+            android:id="@+id/photoAMD"
             android:layout_width="0dp"
             android:layout_height="0dp"
 
@@ -53,9 +53,9 @@
             app:layout_constraintHeight_default="percent"
             app:layout_constraintHeight_percent="0.15"
 
-            app:layout_constraintTop_toTopOf="@id/IV_photo"
-            app:layout_constraintBottom_toBottomOf="@id/date"
-            app:layout_constraintStart_toEndOf="@id/IV_photo"
+            app:layout_constraintTop_toTopOf="@id/photoAMD"
+            app:layout_constraintBottom_toBottomOf="@id/nameAMD"
+            app:layout_constraintStart_toEndOf="@id/photoAMD"
             app:layout_constraintEnd_toEndOf="parent"
 
             app:layout_constraintHorizontal_bias="0.08"
@@ -66,7 +66,7 @@
             />
 
         <TextView
-            android:id="@+id/date"
+            android:id="@+id/nameAMD"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
 
@@ -74,7 +74,7 @@
             app:layout_constraintHeight_percent="0.06"
 
             app:layout_constraintTop_toBottomOf="@id/TV_name"
-            app:layout_constraintBottom_toBottomOf="@id/IV_photo"
+            app:layout_constraintBottom_toBottomOf="@id/photoAMD"
             app:layout_constraintStart_toStartOf="@id/TV_name"
             app:layout_constraintEnd_toStartOf="@id/star"
 
@@ -115,7 +115,7 @@
             app:layout_constraintWidth_default="percent"
             app:layout_constraintWidth_percent="0.9"
 
-            app:layout_constraintTop_toBottomOf="@id/IV_photo"
+            app:layout_constraintTop_toBottomOf="@id/photoAMD"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

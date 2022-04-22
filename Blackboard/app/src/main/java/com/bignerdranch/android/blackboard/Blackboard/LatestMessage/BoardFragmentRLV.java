@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.bignerdranch.android.blackboard.Bean.Message.MessageActivity;
 import com.bignerdranch.android.blackboard.Bean.Message.MessageItem;
 import com.bignerdranch.android.blackboard.Bean.Organization.OrganizationActivity;
 import com.bignerdranch.android.blackboard.Bean.Organization.Topic.Topics;
@@ -70,8 +71,6 @@ public class BoardFragmentRLV extends Fragment implements SwipeRefreshLayout.OnR
         mRecyclerView = (RecyclerView) view.findViewById(R.id.rlv_board);
         //linearlayout
         LinearLayoutManager LM = new LinearLayoutManager(getActivity());
-        LM.setStackFromEnd(true);//由底部开始展示
-        LM.setReverseLayout(true);//
         mRecyclerView.setLayoutManager(LM);
         //adapter
         boardAdapter = new BoardAdapter(getActivity(), data,like);
@@ -79,8 +78,7 @@ public class BoardFragmentRLV extends Fragment implements SwipeRefreshLayout.OnR
         //监听
         boardAdapter.setItemOnClickListener(new BoardAdapter.ItemOnClickListener() {
             @Override
-            public void OnStarClick(View view, int position)
-            {
+            public void OnStarClick(View view, int position) {
                 if (data.get(position).isStar()) {
                     data.get(position).setStar(false);
                 }
@@ -93,7 +91,10 @@ public class BoardFragmentRLV extends Fragment implements SwipeRefreshLayout.OnR
                 startActivity(intent);
             }
             @Override
-            public void OnItemClick() { }
+            public void OnItemClick(String name,String date,String topic,String content) {
+                Intent intent = MessageActivity.newIntent(getActivity(),name,date,topic,getId(),content);
+                startActivity(intent);
+            }
         });
         //返回View
         return view;
@@ -123,7 +124,6 @@ public class BoardFragmentRLV extends Fragment implements SwipeRefreshLayout.OnR
                 if (response.isSuccessful()) {
                     data.addAll(response.body().getData());
                     freshLayout.setRefreshing(false);
-                    mRecyclerView.scrollToPosition(boardAdapter.getItemCount()-1);
                 }
             }
 

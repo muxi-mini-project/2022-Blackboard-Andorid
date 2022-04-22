@@ -9,7 +9,7 @@ public class MessageItem
 
     private Integer ID;
     private String createdAt;
-    private String updatedAt;
+    private String UpdatedAt;
     private Object deletedAt;
     private String publisherId;
     private Integer organizationId;
@@ -54,6 +54,12 @@ public class MessageItem
     }
     public boolean isStar() {
         return star;
+    }
+    public String getUpdatedAt() {
+        return UpdatedAt;
+    }
+    public String getGroup_name() {
+        return group_name;
     }
 
     /*改值*/

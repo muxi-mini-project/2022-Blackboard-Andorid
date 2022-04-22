@@ -45,6 +45,7 @@ import com.bignerdranch.android.blackboard.Blackboard.New.PostActivity;
 import com.bignerdranch.android.blackboard.Utils.MyResponse;
 import com.bignerdranch.android.blackboard.R;
 import com.bignerdranch.android.blackboard.Utils.Utils;
+import com.bumptech.glide.Glide;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.io.File;
@@ -75,10 +76,6 @@ public class OrganizationActivity extends AppCompatActivity
 {
     private static String EXTRA_NAME = "name";
     private static String EXTRA_ID = "id";
-
-
-
-
 
     public static Intent newIntent(Context context,String name,int id)
     {

@@ -103,7 +103,7 @@ public class SearchResultFragment extends Fragment {
                         subscribe.setText("已关注");
                         subscribe.setTextColor(Color.parseColor("#FF000000"));
                         subscribe.setBackgroundResource(R.drawable.button_subscribed);
-                        subscribe(organization);
+//                        subscribe(organization);
                         x = 1;
                     } else {
                         subscribe.setText("关注");
