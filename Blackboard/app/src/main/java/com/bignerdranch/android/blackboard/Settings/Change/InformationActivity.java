@@ -141,7 +141,7 @@ public class InformationActivity extends AppCompatActivity {
 
         SharedPreferences p = getSharedPreferences("URL", MODE_PRIVATE);
         String url = p.getString("url",null);
-        Glide.with(this)
+        Glide.with(this.getApplicationContext())
                 .load(url)
                 .into(ivAvatar);
 

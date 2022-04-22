@@ -45,6 +45,7 @@ import com.bignerdranch.android.blackboard.Blackboard.New.PostActivity;
 import com.bignerdranch.android.blackboard.Utils.MyResponse;
 import com.bignerdranch.android.blackboard.R;
 import com.bignerdranch.android.blackboard.Utils.Utils;
+import com.bumptech.glide.Glide;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.io.File;
@@ -132,7 +133,7 @@ public class OrganizationActivity extends AppCompatActivity
             public void run() {
                 super.run();
                 try {
-                    Thread.sleep(6000);
+                    Thread.sleep(12000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -208,7 +209,7 @@ public class OrganizationActivity extends AppCompatActivity
                     introduction.setText(response.body().getData().getIntro());
                     String url = response.body().getData().getAvatar();
 
-                    Glide.with(OrganizationActivity.this)
+                    Glide.with(OrganizationActivity.this.getApplicationContext())
                             .load(url)
                             .into(photo);
 
