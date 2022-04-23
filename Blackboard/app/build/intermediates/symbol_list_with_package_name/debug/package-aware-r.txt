@@ -2034,7 +2034,8 @@ id register_button
 id register_iv_avatar
 id relative
 id relative_message_contents
-id relative_message_tag
+id relative_message_organization_name
+id relative_message_time
 id relative_organization_introduction
 id relative_organization_name
 id reverseSawtooth

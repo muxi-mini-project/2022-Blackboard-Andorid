@@ -2033,7 +2033,8 @@ int id register_button 0x7f080158
 int id register_iv_avatar 0x7f080159
 int id relative 0x7f08015a
 int id relative_message_contents 0x7f08015b
-int id relative_message_tag 0x7f08015c
+int id relative_message_organization_name 0x7f0801f4
+int id relative_message_time 0x7f0801f5
 int id relative_organization_introduction 0x7f08015d
 int id relative_organization_name 0x7f08015e
 int id reverseSawtooth 0x7f08015f

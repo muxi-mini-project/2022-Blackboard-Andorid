@@ -24,12 +24,12 @@
         "source": "C:\\Users\\Public\\AndroidStudioProjects\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\drawable\\edittext_style_focused.xml"
     },
     {
-        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\navigation_nav_graph.xml.flat",
-        "source": "C:\\Users\\Public\\AndroidStudioProjects\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\navigation\\nav_graph.xml"
-    },
-    {
         "merged": "C:\\Users\\Public\\AndroidStudioProjects\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\drawable_button_page_left.xml.flat",
         "source": "C:\\Users\\Public\\AndroidStudioProjects\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\drawable\\button_page_left.xml"
+    },
+    {
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\navigation_nav_graph.xml.flat",
+        "source": "C:\\Users\\Public\\AndroidStudioProjects\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\navigation\\nav_graph.xml"
     },
     {
         "merged": "C:\\Users\\Public\\AndroidStudioProjects\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\layout_item_title.xml.flat",
@@ -84,16 +84,16 @@
         "source": "C:\\Users\\Public\\AndroidStudioProjects\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\drawable-v24\\bg_login.jpg"
     },
     {
-        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_ic_baseline_add_circle_outline_24.xml.flat",
-        "source": "C:\\Users\\Public\\AndroidStudioProjects\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_baseline_add_circle_outline_24.xml"
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi_ic_settings_back.xml.flat",
+        "source": "C:\\Users\\Public\\AndroidStudioProjects\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\drawable-anydpi\\ic_settings_back.xml"
     },
     {
         "merged": "C:\\Users\\Public\\AndroidStudioProjects\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\drawable_selector.xml.flat",
         "source": "C:\\Users\\Public\\AndroidStudioProjects\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\drawable\\selector.xml"
     },
     {
-        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi_ic_settings_back.xml.flat",
-        "source": "C:\\Users\\Public\\AndroidStudioProjects\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\drawable-anydpi\\ic_settings_back.xml"
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_ic_baseline_add_circle_outline_24.xml.flat",
+        "source": "C:\\Users\\Public\\AndroidStudioProjects\\2022-Blackboard-Andorid\\Blackboard\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_baseline_add_circle_outline_24.xml"
     },
     {
         "merged": "C:\\Users\\Public\\AndroidStudioProjects\\2022-Blackboard-Andorid\\Blackboard\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_ic_add.png.flat",
