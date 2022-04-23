@@ -46,9 +46,11 @@
         <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/layout/dialog_bottom.xml" value="0.13323201621073963" />
         <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/layout/dialog_create.xml" value="0.2504528985507246" />
         <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/layout/fragment_board.xml" value="0.13323201621073963" />
+        <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/layout/fragment_favorites.xml" value="0.176" />
         <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/layout/fragment_organization.xml" value="0.13323201621073963" />
         <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/layout/fragment_post.xml" value="0.13323201621073963" />
         <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/layout/item.xml" value="0.27395833333333336" />
+        <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/layout/item_favorites.xml" value="0.27395833333333336" />
         <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/layout/item_message.xml" value="0.264" />
         <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/layout/item_ogn_group.xml" value="0.2504528985507246" />
         <entry key="..\:/MUXI/2022-Blackboard-Andorid/Blackboard/app/src/main/res/layout/item_ogn_list.xml" value="0.2504528985507246" />

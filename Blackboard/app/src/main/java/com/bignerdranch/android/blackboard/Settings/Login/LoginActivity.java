@@ -183,7 +183,7 @@ public class LoginActivity extends AppCompatActivity {
                     nickname = response.body().getData().getNickname();
 
                     Intent intent;
-                    if(nickname.isEmpty()){
+                    if(nickname.equals(" ")){
                         intent = new Intent(LoginActivity.this, RegisterActivity.class);
                     }else{
                         intent = new Intent(LoginActivity.this, BoardActivity.class);

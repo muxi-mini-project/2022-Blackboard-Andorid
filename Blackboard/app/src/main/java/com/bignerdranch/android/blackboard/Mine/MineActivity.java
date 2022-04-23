@@ -190,6 +190,12 @@ public class MineActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+    }
+
     private void showNormalDialog(){
         /* @setIcon 设置对话框图标
          * @setTitle 设置对话框标题
