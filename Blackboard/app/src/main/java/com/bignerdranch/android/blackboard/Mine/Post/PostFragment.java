@@ -27,7 +27,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class PostFragment extends Fragment {
+public class    PostFragment extends Fragment {
 
     private View view; //定义view用来设置fragment的layout
     public RecyclerView mPostRecyclerView; //定义RecyclerView

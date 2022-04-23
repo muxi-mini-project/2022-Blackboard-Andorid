@@ -119,6 +119,8 @@ public class PageActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (view.getId()) {
             case R.id.page_post:
+                pagePostButton.setBackground(getDrawable(R.drawable.button_clicked));
+                pageFavoritesButton.setBackground(getDrawable(R.drawable.button_unclicked));
                 if (f3 == null) {
                     f3 = new PostFragment();
                     transaction.add(R.id.page_fragment_container, f3);
@@ -127,6 +129,8 @@ public class PageActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             case R.id.page_favorites:
+                pageFavoritesButton.setBackground(getDrawable(R.drawable.button_clicked));
+                pagePostButton.setBackground(getDrawable(R.drawable.button_unclicked));
                 if (f4 == null) {
                     f4 = new FavoritesFragment();
                     transaction.add(R.id.page_fragment_container, f4);

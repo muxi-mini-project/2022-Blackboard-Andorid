@@ -15,13 +15,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bignerdranch.android.blackboard.Bean.Message.MessageItem;
-import com.bignerdranch.android.blackboard.Bean.Organization.OrganizationActivity;
 import com.bignerdranch.android.blackboard.R;
 import com.bignerdranch.android.blackboard.Utils.API;
 import com.bignerdranch.android.blackboard.Utils.MyResponse;
 import com.bignerdranch.android.blackboard.Utils.Utils;
-
-import java.util.logging.LogManager;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import retrofit2.Call;
@@ -110,7 +107,7 @@ public class PostActivity extends AppCompatActivity {
     private void initView() {
         photo = findViewById(R.id.photo);
         editText = findViewById(R.id.edit);
-        topic = findViewById(R.id.topic);
+        topic = findViewById(R.id.topicAMD);
         addPhoto = findViewById(R.id.addPhoto);
         send = findViewById(R.id.send);
     }

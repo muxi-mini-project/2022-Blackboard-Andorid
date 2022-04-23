@@ -93,6 +93,9 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
         //设置FragmentManager
         manager = getSupportFragmentManager();
         transaction = manager.beginTransaction();
+        f1 = new BoardFragmentRLV();
+        transaction.add(R.id.fragment_container,f1);
+        transaction.show(f1);
         //通知按钮
         messageButton = findViewById(R.id.board_message);
         messageButton.setOnClickListener(this);
@@ -100,11 +103,8 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
         organizationButton = findViewById(R.id.board_organization);
         organizationButton.setOnClickListener(this);
         //默认点击 通知
+        organizationButton.performClick();
         messageButton.performClick();
-        if (f1 == null) {
-            f1 = new BoardFragmentRLV();
-            transaction.add(R.id.fragment_container, f1);
-        }
     }
 
     @Override

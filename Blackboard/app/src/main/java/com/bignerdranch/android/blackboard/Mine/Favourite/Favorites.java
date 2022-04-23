@@ -34,6 +34,7 @@ public class Favorites {
 
         private String announcement;
 
+//        public String get
         public String getAnnouncement() {
             return announcement;
         }

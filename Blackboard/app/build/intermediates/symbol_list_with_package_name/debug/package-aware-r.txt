@@ -1694,7 +1694,6 @@ id Child_TV
 id ELV
 id FUNCTION
 id FirstFragment
-id IV_photo
 id META
 id NO_DEBUG
 id OgnIntro
@@ -1820,12 +1819,14 @@ id clear_text
 id clip_horizontal
 id clip_vertical
 id collapseActionView
+id conAMD
 id confirm_button
 id container
 id content
 id content1
 id content2
 id content3
+id contentAMD
 id contentPanel
 id coordinator
 id cos
@@ -1833,7 +1834,7 @@ id create
 id custom
 id customPanel
 id cut
-id date
+id dateAMD
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -1877,6 +1878,7 @@ id eye
 id fade
 id favorites_contents
 id favorites_recyclerview
+id favourite_name
 id fill
 id fill_horizontal
 id fill_vertical
@@ -1976,6 +1978,7 @@ id my_message
 id my_page
 id my_post
 id name2
+id nameAMD
 id nav_controller_view_tag
 id nav_graph
 id nav_host_fragment_container
@@ -2017,6 +2020,7 @@ id peekHeight
 id percent
 id photo
 id photo2
+id photoAMD
 id pin
 id position
 id positive
@@ -2104,6 +2108,7 @@ id src_in
 id src_over
 id standard
 id star
+id starAMD
 id start
 id startHorizontal
 id startVertical
@@ -2157,7 +2162,7 @@ id toggle
 id top
 id topPanel
 id top_navigation
-id topic
+id topicAMD
 id topicName
 id touch_outside
 id transitionToEnd

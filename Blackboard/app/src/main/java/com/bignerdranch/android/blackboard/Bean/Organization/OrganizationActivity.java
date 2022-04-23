@@ -77,10 +77,6 @@ public class OrganizationActivity extends AppCompatActivity
     private static String EXTRA_NAME = "name";
     private static String EXTRA_ID = "id";
 
-
-
-
-
     public static Intent newIntent(Context context,String name,int id)
     {
         Intent intent = new Intent(context,OrganizationActivity.class);
@@ -133,7 +129,7 @@ public class OrganizationActivity extends AppCompatActivity
             public void run() {
                 super.run();
                 try {
-                    Thread.sleep(12000);
+                    Thread.sleep(60);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

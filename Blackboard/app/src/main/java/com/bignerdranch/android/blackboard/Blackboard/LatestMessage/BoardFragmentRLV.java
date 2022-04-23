@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.bignerdranch.android.blackboard.Bean.Message.MessageActivity;
 import com.bignerdranch.android.blackboard.Bean.Message.MessageItem;
 import com.bignerdranch.android.blackboard.Bean.Organization.OrganizationActivity;
 import com.bignerdranch.android.blackboard.Bean.Organization.Topic.Topics;
@@ -53,25 +54,24 @@ public class BoardFragmentRLV extends Fragment implements SwipeRefreshLayout.OnR
     {
         //需要返回一个View        所以调用inflate
         if (view == null)
-            view = inflater.inflate(R.layout.fragment_board, container, false);
+            view = inflater.inflate(R.layout.fragment_board, container,false);
         else
             return view;
-
-        //获取数据
-        NetGetAnnounce(100,0);
-        NetGetLike(100,0);
 
         /*下拉刷新*/
         freshLayout = view.findViewById(R.id.freshMess);
         freshLayout.setOnRefreshListener(this);
+        freshLayout.setRefreshing(true);
+
+        //获取数据
+        NetGetAnnounce(100,0);
+        NetGetLike(100,0);
 
         /*构造一个RecyclerView*/
         //绑定布局
         mRecyclerView = (RecyclerView) view.findViewById(R.id.rlv_board);
         //linearlayout
         LinearLayoutManager LM = new LinearLayoutManager(getActivity());
-        LM.setStackFromEnd(true);//由底部开始展示
-        LM.setReverseLayout(true);//
         mRecyclerView.setLayoutManager(LM);
         //adapter
         boardAdapter = new BoardAdapter(getActivity(), data,like);
@@ -79,8 +79,7 @@ public class BoardFragmentRLV extends Fragment implements SwipeRefreshLayout.OnR
         //监听
         boardAdapter.setItemOnClickListener(new BoardAdapter.ItemOnClickListener() {
             @Override
-            public void OnStarClick(View view, int position)
-            {
+            public void OnStarClick(View view, int position) {
                 if (data.get(position).isStar()) {
                     data.get(position).setStar(false);
                 }
@@ -93,7 +92,10 @@ public class BoardFragmentRLV extends Fragment implements SwipeRefreshLayout.OnR
                 startActivity(intent);
             }
             @Override
-            public void OnItemClick() { }
+            public void OnItemClick(String name,String date,String topic,String content) {
+                Intent intent = MessageActivity.newIntent(getActivity(),name,date,topic,getId(),content);
+                startActivity(intent);
+            }
         });
         //返回View
         return view;
@@ -120,10 +122,12 @@ public class BoardFragmentRLV extends Fragment implements SwipeRefreshLayout.OnR
             @Override
             public void onResponse(Call<MyResponse<List<MessageItem>>> call, Response<MyResponse<List<MessageItem>>> response)
             {
-                if (response.isSuccessful()) {
+                if (response.isSuccessful())
+                {
                     data.addAll(response.body().getData());
+                    boardAdapter.notifyDataSetChanged();
                     freshLayout.setRefreshing(false);
-                    mRecyclerView.scrollToPosition(boardAdapter.getItemCount()-1);
+                    mRecyclerView.scrollToPosition(0);
                 }
             }
 
@@ -169,4 +173,6 @@ public class BoardFragmentRLV extends Fragment implements SwipeRefreshLayout.OnR
         int FSize = like.size();
         NetGetLike(FSize,1);
     }
+
+
 }

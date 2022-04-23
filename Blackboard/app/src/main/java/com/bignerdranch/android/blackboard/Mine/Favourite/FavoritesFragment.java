@@ -42,13 +42,14 @@ public class FavoritesFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_favorites, container, false);
+        view = inflater.inflate(R.layout.fragment_favorites, container,false);
 
         //初始化recyclerview
         initRecyclerView();
 
         //填入数据
         initData();
+
 
         mFavoritesAdapter.refresh(favoritesList);
 
@@ -69,8 +70,8 @@ public class FavoritesFragment extends Fragment {
 
         call.enqueue(new Callback<Favorites>() {
             @Override
-            public void onResponse(Call<Favorites> call, Response<Favorites> response) {
-
+            public void onResponse(Call<Favorites> call, Response<Favorites> response)
+            {
                 Favorites favorites = response.body();
                 favoritesList.addAll(favorites.getData());
                 mFavoritesAdapter.refresh(favoritesList);

@@ -54,7 +54,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/IV_photo"
+            android:id="@+id/photoAMD"
             android:layout_width="0dp"
             android:layout_height="0dp"
 
@@ -62,35 +62,139 @@
             app:layout_constraintHeight_percent="0.1"
             app:layout_constraintDimensionRatio="1:1"
 
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
 
             app:layout_constraintHorizontal_bias="0.05"
             app:layout_constraintVertical_bias="0.05"
 
             android:src="@drawable/girl"
+            android:onClick="JumpOrganization"
             />
 
         <TextView
-            android:id="@+id/date"
+            android:id="@+id/nameAMD"
             android:layout_width="0dp"
             android:layout_height="0dp"
 
             app:layout_constraintHeight_default="percent"
-            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintHeight_percent="0.05"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.4"
+
+
+            app:layout_constraintTop_toTopOf="@id/photoAMD"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/photoAMD"
+            app:layout_constraintEnd_toStartOf="@id/starAMD"
+
+            app:layout_constraintVertical_bias="0"
+
+            android:hint="组织"
+            android:gravity="center"
+            android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/dateAMD"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent="0.03"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.25"
+
+
+            app:layout_constraintTop_toBottomOf="@id/nameAMD"
+            app:layout_constraintBottom_toTopOf="@id/conAMD"
+            app:layout_constraintStart_toEndOf="@id/photoAMD"
+            app:layout_constraintEnd_toStartOf="@id/topicAMD"
+
+            app:layout_constraintVertical_bias="0.5"
+
+            android:hint="时间"
+            android:textSize="15sp"
+            android:gravity="center_vertical"
+            android:maxLength="10"/>
+        <TextView
+            android:id="@+id/topicAMD"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent="0.03"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.25"
+
+
+            app:layout_constraintTop_toBottomOf="@id/nameAMD"
+            app:layout_constraintBottom_toTopOf="@id/conAMD"
+            app:layout_constraintStart_toEndOf="@id/dateAMD"
+            app:layout_constraintEnd_toStartOf="@id/starAMD"
+
+            app:layout_constraintVertical_bias="0.5"
+
+            android:hint="话题"
+            android:textSize="15sp"/>
+
+        <Button
+            android:id="@+id/starAMD"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent="0.08"
             app:layout_constraintDimensionRatio="1:1"
 
-            app:layout_constraintTop_toTopOf="@id/IV_photo"
+
+            app:layout_constraintTop_toTopOf="@id/photoAMD"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintHorizontal_bias="0.9"
+
+            app:layout_constraintVertical_bias="0"
+            android:background="@drawable/unstar"/>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/conAMD"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            app:layout_constraintHeight_default="percent"
+            app:layout_constraintHeight_percent="0.7"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.9"
+
+            app:layout_constraintTop_toBottomOf="@id/photoAMD"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
 
-            app:layout_constraintHorizontal_bias="0.05"
-            app:layout_constraintVertical_bias="0.05"
+            app:layout_constraintVertical_bias="0.3"
+            android:background="@drawable/message_background1">
+            <TextView
+                android:id="@+id/contentAMD"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
 
-            android:hint="时间"/>
+                app:layout_constraintHeight_default="percent"
+                app:layout_constraintHeight_percent="0.95"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.95"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:hint="内容"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
