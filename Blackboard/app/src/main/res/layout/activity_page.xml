@@ -101,7 +101,8 @@
             android:layout_below="@+id/page_post"
             android:layout_alignBottom="@id/page_post"
             android:layout_alignParentBottom="true"
-            android:background="@color/white" />
+            android:background="@color/white"
+            />
 
     </RelativeLayout>
 

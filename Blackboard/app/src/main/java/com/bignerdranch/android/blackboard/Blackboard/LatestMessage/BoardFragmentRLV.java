@@ -54,7 +54,7 @@ public class BoardFragmentRLV extends Fragment implements SwipeRefreshLayout.OnR
     {
         //需要返回一个View        所以调用inflate
         if (view == null)
-            view = inflater.inflate(R.layout.fragment_board, container, false);
+            view = inflater.inflate(R.layout.fragment_board, container,false);
         else
             return view;
 
@@ -122,10 +122,12 @@ public class BoardFragmentRLV extends Fragment implements SwipeRefreshLayout.OnR
             @Override
             public void onResponse(Call<MyResponse<List<MessageItem>>> call, Response<MyResponse<List<MessageItem>>> response)
             {
-                if (response.isSuccessful()) {
+                if (response.isSuccessful())
+                {
                     data.addAll(response.body().getData());
                     boardAdapter.notifyDataSetChanged();
                     freshLayout.setRefreshing(false);
+                    mRecyclerView.scrollToPosition(0);
                 }
             }
 

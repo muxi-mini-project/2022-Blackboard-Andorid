@@ -1878,6 +1878,7 @@ id eye
 id fade
 id favorites_contents
 id favorites_recyclerview
+id favourite_name
 id fill
 id fill_horizontal
 id fill_vertical

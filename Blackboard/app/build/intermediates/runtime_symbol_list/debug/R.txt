@@ -1877,6 +1877,7 @@ int id eye 0x7f0800bc
 int id fade 0x7f0800bd
 int id favorites_contents 0x7f0800be
 int id favorites_recyclerview 0x7f0800bf
+int id favourite_name 0x7f0801f8
 int id fill 0x7f0800c0
 int id fill_horizontal 0x7f0800c1
 int id fill_vertical 0x7f0800c2

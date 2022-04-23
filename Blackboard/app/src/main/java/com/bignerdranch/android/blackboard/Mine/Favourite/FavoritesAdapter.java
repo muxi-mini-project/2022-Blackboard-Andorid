@@ -42,6 +42,7 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.favo
         //根据点击位置绑定数据
         Favorites.DataDTO favorites = data.get(position);
 
+//        holder.mName.setText(favorites.get);
         holder.mItemFavoritesContents.setText(favorites.getAnnouncement());//获取实体类中的contents字段并设置
     }
 
@@ -59,10 +60,12 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.favo
     //自定义viewHolder
     class favoritesViewHolder extends RecyclerView.ViewHolder {
         private TextView mItemFavoritesContents;
+        private TextView mName;
 
         public favoritesViewHolder(final View itemView) {
             super(itemView);
             mItemFavoritesContents = (TextView) itemView.findViewById(R.id.favorites_contents);
+            mName = itemView.findViewById(R.id.favourite_name);
         }
     }
 
