@@ -9,10 +9,13 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bignerdranch.android.blackboard.Mine.Post.Posts;
 import com.bignerdranch.android.blackboard.R;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class SearchAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
@@ -55,7 +58,7 @@ public class SearchAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             return new SearchRelativeMessageHolder(itemView);
 
         } else {
-            View itemView = View.inflate(context, R.layout.item_relative_organization, null);
+            View itemView = LayoutInflater.from(context).inflate(R.layout.item_relative_organization,parent,false);
             return new SearchRelativeOrganizationHolder(itemView);
         }
     }
@@ -66,15 +69,17 @@ public class SearchAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof SearchRelativeMessageHolder) {
             SearchRelativeMessageHolder searchRelativeMessageViewHolder = (SearchRelativeMessageHolder) holder;
-            RelativeMessage relativeMessage = mSearchRelativeMessageList.get(position);
-            searchRelativeMessageViewHolder.mItemRelativeMessageTag.setText(relativeMessage.getTag());
-            searchRelativeMessageViewHolder.mItemRelativeMessageContents.setText(relativeMessage.getContents());
+            Search.DataDTO.AnnouncementsDTO message = mSearchRelativeMessageList.get(position);
+            searchRelativeMessageViewHolder.mItemRelativeMessageOrganization.setText(message.getOrganization_name());
+            searchRelativeMessageViewHolder.mItemRelativeMessageContents.setText(message.getContents());
+            searchRelativeMessageViewHolder.mItemRelativeMessageTime.setText(message.getCreatedAt());
 
         }else {
+            position = position-mSearchRelativeMessageList.size();
             SearchRelativeOrganizationHolder searchRelativeOrganizationHolder = (SearchRelativeOrganizationHolder) holder;
-            RelativeOrganization relativeOrganization = mSearchRelativeOrganizationList.get(position-mSearchRelativeMessageList.size());
-            searchRelativeOrganizationHolder.mItemRelativeOrganizationName.setText(relativeOrganization.getOrganizationName());
-            searchRelativeOrganizationHolder.mItemRelativeOrganizationIntroduction.setText(relativeOrganization.getOrganizationIntroduction());
+            Search.DataDTO.OrganizationsDTO organization = mSearchRelativeOrganizationList.get(position);
+            searchRelativeOrganizationHolder.mItemRelativeOrganizationName.setText(organization.getOrganization_name());
+            searchRelativeOrganizationHolder.mItemRelativeOrganizationIntroduction.setText(organization.getIntro());
             searchRelativeOrganizationHolder.mItemRelativeOrganizationSubscribe.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -94,6 +99,10 @@ public class SearchAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     }
 
 
+    public void refresh(List<Search.DataDTO.AnnouncementsDTO> list1,List<Search.DataDTO.OrganizationsDTO> list2) {
+//        this.data.addAll(list);
+        notifyDataSetChanged();
+    }
 
 
     /**
@@ -118,13 +127,15 @@ public class SearchAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     public class SearchRelativeMessageHolder extends RecyclerView.ViewHolder{
         //自定义viewHolder
-        TextView mItemRelativeMessageTag;
+        TextView mItemRelativeMessageOrganization;
         TextView mItemRelativeMessageContents;
+        TextView mItemRelativeMessageTime;
 
         public SearchRelativeMessageHolder(View itemView) {
             super(itemView);
-            mItemRelativeMessageTag = (TextView) itemView.findViewById(R.id.relative_message_tag);
+            mItemRelativeMessageOrganization = (TextView) itemView.findViewById(R.id.relative_message_organization_name);
             mItemRelativeMessageContents = (TextView) itemView.findViewById(R.id.relative_message_contents);
+            mItemRelativeMessageTime = (TextView) itemView.findViewById(R.id.relative_message_time);
 
 //            itemView.setOnClickListener(new View.OnClickListener() {
 //                @Override
@@ -145,13 +156,13 @@ public class SearchAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         private TextView mItemRelativeOrganizationName;
         private TextView mItemRelativeOrganizationIntroduction;
         private Button mItemRelativeOrganizationSubscribe;
+//        private CircleImageView mItemRelativeOrganizationAvatar;
 
         public SearchRelativeOrganizationHolder (View itemView){
             super(itemView);
             mItemRelativeOrganizationName = itemView.findViewById(R.id.relative_organization_name);
             mItemRelativeOrganizationIntroduction = itemView.findViewById(R.id.relative_organization_introduction);
             mItemRelativeOrganizationSubscribe = itemView.findViewById(R.id.subscribe);
-
         }
     }
 

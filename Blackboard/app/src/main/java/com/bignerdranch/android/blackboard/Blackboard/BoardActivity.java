@@ -19,6 +19,7 @@ import com.bignerdranch.android.blackboard.Blackboard.LatestMessage.BoardFragmen
 import com.bignerdranch.android.blackboard.Blackboard.New.NewActivity;
 import com.bignerdranch.android.blackboard.Blackboard.OrganizationList.OrganizationFragment;
 import com.bignerdranch.android.blackboard.Blackboard.Search.SearchActivity;
+import com.bignerdranch.android.blackboard.Blackboard.Search.SearchResultActivity;
 import com.bignerdranch.android.blackboard.Mine.MineActivity;
 import com.bignerdranch.android.blackboard.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -76,7 +77,7 @@ public class BoardActivity extends AppCompatActivity implements View.OnClickList
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(BoardActivity.this, SearchActivity.class);
+                Intent intent = new Intent(BoardActivity.this, SearchResultActivity.class);
                 startActivity(intent);
             }
         });

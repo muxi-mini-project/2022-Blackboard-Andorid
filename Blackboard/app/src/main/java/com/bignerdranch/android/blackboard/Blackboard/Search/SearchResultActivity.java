@@ -20,7 +20,7 @@ public class SearchResultActivity extends AppCompatActivity {
     private Button searchResultBackButton;
     private EditText searchResultEdittext;
     private SearchResultFragment fg;
-    private FragmentManager mFragmentManager;
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,31 +32,22 @@ public class SearchResultActivity extends AppCompatActivity {
         searchResultBackButton = findViewById(R.id.search_result_back);
         searchResultEdittext = findViewById(R.id.search_result_edittext);
 
-        Intent intent = getIntent();
-        String searchResult = intent.getStringExtra("search");
-        searchResultEdittext.setText(searchResult);
+
 
         searchResultButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String content = searchResultEdittext.toString();
-
+                FragmentManager mFragmentManager = getSupportFragmentManager();
                 FragmentTransaction transaction = mFragmentManager.beginTransaction();
-                if (fg == null) {
-                    fg = new SearchResultFragment();
-                    Bundle bundle = new Bundle();
-                    bundle.putString("content", content);
-                    //fragment保存参数，传入一个Bundle对象
-                    fg.setArguments(bundle);
-                    transaction.add(R.id.fragment_search, fg);
-                } else {
-                    fg = new SearchResultFragment();
-                    Bundle bundle = new Bundle();
-                    bundle.putString("content", content);
-                    //fragment保存参数，传入一个Bundle对象
-                    fg.setArguments(bundle);
-                    transaction.replace(R.id.fragment_search,fg);
-                }
+                String content = searchResultEdittext.getText().toString();
+                fg = new SearchResultFragment();
+
+
+                Bundle bundle = new Bundle();
+                bundle.putString("content", content);
+                //fragment保存参数，传入一个Bundle对象
+                fg.setArguments(bundle);
+                transaction.replace(R.id.fragment_search, fg);
                 transaction.commit();
 
             }

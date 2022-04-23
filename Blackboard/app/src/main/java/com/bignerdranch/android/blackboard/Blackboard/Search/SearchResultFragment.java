@@ -61,7 +61,7 @@ public class SearchResultFragment extends Fragment {
 
         if(getArguments()!=null){
             //取出保存的值
-            content = getArguments().getString("name");
+            content = getArguments().getString("content");
         }
 
         //填入数据
@@ -88,7 +88,7 @@ public class SearchResultFragment extends Fragment {
 
                 Search search = response.body();
                 mSearchRelativeMessageList.addAll(search.getData().getAnnouncements());
-                mSearchRelativeOrganizationList.addAll(search.getData().getOrganizations())
+                mSearchRelativeOrganizationList.addAll(search.getData().getOrganizations());
                 mSearchAdapter.refresh(mSearchRelativeMessageList,mSearchRelativeOrganizationList);
             }
 
